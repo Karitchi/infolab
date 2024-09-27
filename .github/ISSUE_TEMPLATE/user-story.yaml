@@ -68,10 +68,6 @@ body:
       placeholder: "1. \n2. \n3."
     validations:
       required: true
-    
-  - type: checkboxes
-    id: additional_notes
-    attributes:
       label: Additional Notes
       description: "Select any relevant notes or considerations."
       options:

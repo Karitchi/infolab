@@ -7,14 +7,14 @@ assignees: ''
 
 ---
 
-## 1. DESCRIPTION
+## 1. Description
 
-## 2. MOCKUPS
+## 2. Mockups
 
-## 3. ACCEPTANCE CRITERIA
+## 3. Acceptance criteria
 
-## 4. PREREQUISITES (AND DEPENDENCIES)
+## 4. Prerequisites (and dependencies)
 
-## 5. USEFUL TECHNICAL INFORMATION
+## 5. Useful technical information
 
-## 6. TECHNICAL TASK LIST
+## 6. Technical task list

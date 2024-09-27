@@ -57,8 +57,6 @@ body:
       label: Useful Technical Information
       description: "Include any technical details that may assist in implementation."
       placeholder: "Technical information goes here."
-    validations:
-      required: true
 
   - type: textarea
     id: technical_task_list

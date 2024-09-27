@@ -12,7 +12,7 @@ body:
   attributes:
     value: |
       Thanks for taking the time to fill out this bug! If you need real-time help, join us on Discord.
-body:
+      
 - type: input
   id: prevalence
   attributes:

@@ -8,11 +8,11 @@ assignees: ''
 ---
 
 body:
-- type: input
-  id: story_title
+- type: markdown
   attributes:
-    label: User Story Title
-    description: "Provide a concise title for the user story."
-    placeholder: "As a user, I want to..."
-  validations:
-    required: true
+    value: "## Welcome!"
+- type: markdown
+  attributes:
+    value: |
+      Thanks for taking the time to fill out this bug! If you need real-time help, join us on Discord.
+

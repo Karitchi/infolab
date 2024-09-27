@@ -9,10 +9,10 @@ body:
         Use this template to define user stories clearly. Fill in all sections to ensure we capture the necessary information for development.
 
   - type: input
-    id: story_title
+    id: user_request
     attributes:
-      label: User Story Title
-      description: "Provide a concise title for the user story."
+      label: User Request
+      description: "Provide a concise user request for the user story."
       placeholder: "As a user, I want to..."
     validations:
       required: true

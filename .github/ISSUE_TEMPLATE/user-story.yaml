@@ -15,7 +15,7 @@ body:
     validations:
       required: true
 
-  - type: markdown
+  - type: textarea
     id: description
     attributes:
       label: Description
@@ -24,7 +24,7 @@ body:
     validations:
       required: true
 
-  - type: markdown
+  - type: textarea
     id: mockups
     attributes:
       label: Mockups
@@ -33,7 +33,7 @@ body:
     validations:
       required: true
     
-  - type: markdown
+  - type: textarea
     id: acceptance_criteria
     attributes:
       label: Acceptance Criteria
@@ -42,7 +42,7 @@ body:
     validations:
       required: true
 
-  - type: markdown
+  - type: textarea
     id: prerequisites
     attributes:
       label: Prerequisites (and Dependencies)
@@ -51,7 +51,7 @@ body:
     validations:
       required: true
     
-  - type: markdown
+  - type: textarea
     id: useful_technical_info
     attributes:
       label: Useful Technical Information
@@ -60,7 +60,7 @@ body:
     validations:
       required: true
 
-  - type: markdown
+  - type: textarea
     id: technical_task_list
     attributes:
       label: Technical Task List

@@ -1,7 +1,7 @@
 ---
 name: User Story
-about: A template for capturing user stories with detailed requirements and specifications.
-title: Title
+description: A template for capturing user stories with detailed requirements and specifications.
+title: ""
 labels: ''
 assignees: ''
 body:

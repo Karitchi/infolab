@@ -1,0 +1,28 @@
+name: infolab                                 # Name of the project
+
+services:
+# ---
+  infolab-nodejs:
+    build:
+      context: .                              # Build context set to the current directory
+      dockerfile: Dockerfile                  # Specifies the Dockerfile to use
+    container_name: infolab-nodejs            # Name of the container
+    command: ["npm", "run", "dev"]            # Command to run when the container starts
+    ports:
+      - '3000:3000'                           # Maps port 3000 on host to port 3000 in container
+    restart: unless-stopped                   # Automatically restarts the container unless it is stopped manually
+    develop:
+      watch:
+        - action: sync
+          path: ./app
+          target: /infolab/app                # Ensure the target path matches the WORKDIR in Dockerfile
+        - action: rebuild
+          path: package.json                  # Rebuild the container when package.json changes
+# ---
+  infolab-npm:
+    image: node:20
+    container_name: infolab-npm
+    volumes:
+      - ./package.json:/infolab/package.json              # Mount package.json
+      - ./package-lock.json:/infolab/package-lock.json    # Mount package-lock.json (if it exists)
+    working_dir: /infolab

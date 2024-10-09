@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## User Story Template
+        ## User Story
         Use this template to define user stories clearly. Fill in all sections to ensure we capture the necessary information for development.
 
   - type: textarea

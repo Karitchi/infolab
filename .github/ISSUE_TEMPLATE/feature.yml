@@ -3,11 +3,25 @@ description: "A template for capturing user stories with detailed requirements a
 labels: "US"
 projects: "infolab"
 body:
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Description
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Provide a detailed description of the user story, including context and any relevant background information."
+      placeholder: "Describe the user story in detail."
+    validations:
+      required: true
+      
   - type: markdown
     attributes:
       value: |
         ## User Story
-        Use this template to define user stories clearly. Fill in all sections to ensure we capture the necessary information for development.
 
   - type: textarea
     id: user_role
@@ -50,7 +64,6 @@ body:
       value: |
         ---
         ## Technical Information
-        The sections below provide the necessary technical details for implementing the user story.
 
   - type: textarea
     id: mockup

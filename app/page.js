@@ -1,17 +1,27 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';  // Assure-toi d'importer les styles Splide
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css"; // Assure-toi d'importer les styles Splide
 
 export default function Home() {
   const [weatherData, setWeatherData] = useState(null);
+  const [trains, setTrains] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Fonction pour obtenir l'icône météo appropriée
   const getWeatherIcon = (conditions) => {
-    const { cloudcover, precipitation, snow, temperature, time, sunrise, sunset, thunderstorm } = conditions;
+    const {
+      cloudcover,
+      precipitation,
+      snow,
+      temperature,
+      time,
+      sunrise,
+      sunset,
+      thunderstorm,
+    } = conditions;
 
     // Convertir les heures de lever et coucher du soleil en objets Date
     const currentTime = new Date(time);
@@ -55,7 +65,6 @@ export default function Home() {
     }
   };
 
-
   useEffect(() => {
     const getLocation = () => {
       if (navigator.geolocation) {
@@ -71,12 +80,12 @@ export default function Home() {
         latitude: latitude,
         longitude: longitude,
         hourly: [
-          "temperature_2m",      // Température
-          "precipitation",       // Précipitations (pluie)
-          "cloudcover"           // Couverture nuageuse
+          "temperature_2m", // Température
+          "precipitation", // Précipitations (pluie)
+          "cloudcover", // Couverture nuageuse
         ].join(","),
         timezone: "Europe/Berlin",
-        forecast_days: 1
+        forecast_days: 1,
       });
 
       const url = `https://api.open-meteo.com/v1/forecast?${params.toString()}`;
@@ -103,13 +112,16 @@ export default function Home() {
         const data = timeValues.map((time, index) => ({
           time,
           temperature: Math.round(temperatureValues[index]),
-          precipitation: precipitationValues[index],       // Précipitations
-          cloudcover: cloudcoverValues[index],             // Couverture nuageuse
+          precipitation: precipitationValues[index], // Précipitations
+          cloudcover: cloudcoverValues[index], // Couverture nuageuse
         }));
 
         setWeatherData(data);
       } catch (err) {
-        console.error("Erreur lors de la récupération des données météo : ", err);
+        console.error(
+          "Erreur lors de la récupération des données météo : ",
+          err
+        );
         setError("Erreur lors du chargement des données météo.");
       } finally {
         setLoading(false);
@@ -125,66 +137,144 @@ export default function Home() {
     getLocation();
   }, []);
 
+  useEffect(() => {
+    // Requête vers notre API locale pour obtenir les horaires des 3 prochains trains
+    fetch(`/api/train-schedule?station_id=BE.NMBS.008814001`) // Exemple : Bruxelles-Midi
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erreur lors de la récupération des horaires");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Données API :", data);
+        setTrains(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <p>Chargement des horaires...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
     <div>
       <header className="bg-gray-800 text-white fixed w-full top-0 left-0">
-        <nav className="flex justify-center items-center h-16"style={{backgroundColor: '#B8CDAB'}}>
-          <div className="text-3xl font-bold" style={{color: '#4E4E4E'}}>OpenLab</div>
+        <nav
+          className="flex justify-center items-center h-16"
+          style={{ backgroundColor: "#B8CDAB" }}
+        >
+          <div className="text-3xl font-bold" style={{ color: "#4E4E4E" }}>
+            OpenLab
+          </div>
         </nav>
       </header>
-        <section 
-          className="exterior-weather" 
-          style={{ width: '100vw', height: '500px', backgroundColor: '#4E4E4E', padding: '20px', borderRadius: '10px' }}
-        >
-          <h2 className="section-title">Exterior</h2>
-          {loading && <p>Chargement des données météo...</p>}
-          {error && <p>{error}</p>}
-          {weatherData && (
-            <Splide options={{
-              type: 'loop',
+      <section
+        className="exterior-weather"
+        style={{
+          width: "100vw",
+          height: "500px",
+          backgroundColor: "#4E4E4E",
+          padding: "20px",
+          borderRadius: "10px",
+        }}
+      >
+        <h2 className="section-title">Exterior</h2>
+        {loading && <p>Chargement des données météo...</p>}
+        {error && <p>{error}</p>}
+        {weatherData && (
+          <Splide
+            options={{
+              type: "loop",
               perPage: 4,
               autoplay: true,
-              gap: '1rem',
-              width: '100%', // Carrousel occupe toute la largeur
+              gap: "1rem",
+              width: "100%", // Carrousel occupe toute la largeur
               arrows: true,
               pagination: true,
-              display: 'flex',              // Utilisation de flexbox
-              flexDirection: 'column',      // Pour empiler les éléments verticalement
-              justifyContent: 'center',     // Centrage vertical
-              alignItems: 'center'
-            }}>
-              {weatherData.map((item, index) => (
-                <SplideSlide 
-                  key={index} 
+              display: "flex", // Utilisation de flexbox
+              flexDirection: "column", // Pour empiler les éléments verticalement
+              justifyContent: "center", // Centrage vertical
+              alignItems: "center",
+            }}
+          >
+            {weatherData.map((item, index) => (
+              <SplideSlide
+                key={index}
+                style={{
+                  textAlign: "center",
+                  padding: "15px",
+                  backgroundColor: "#273c55",
+                  borderRadius: "10px",
+                  marginTop: "50px",
+                  backgroundColor: "#B8CDAB",
+                  display: "flex", // Utilisation de flexbox
+                  flexDirection: "column", // Pour empiler les éléments verticalement
+                  justifyContent: "center", // Centrage vertical
+                  alignItems: "center", // Centrage horizontal
+                }}
+              >
+                <p
                   style={{
-                    textAlign: 'center', 
-                    padding: '15px', 
-                    backgroundColor: '#273c55', 
-                    borderRadius: '10px', 
-                    marginTop: '50px', 
-                    backgroundColor: '#B8CDAB',
-                    display: 'flex',              // Utilisation de flexbox
-                    flexDirection: 'column',      // Pour empiler les éléments verticalement
-                    justifyContent: 'center',     // Centrage vertical
-                    alignItems: 'center'          // Centrage horizontal
+                    fontSize: "14px",
+                    marginBottom: "10px",
+                    fontWeight: "bold",
                   }}
                 >
-                  <p style={{ fontSize: '14px', marginBottom: '10px', fontWeight: 'bold'}}>
-                    {item.time.toLocaleDateString()} {item.time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </p>
-                  <img 
-                    style={{ width: '50px', height: '50px', marginBottom: '10px' }} 
-                    src={getWeatherIcon(item)} 
-                    alt="weather icon" 
-                  />
-                  <p style={{ fontSize: '18px', fontWeight: 'bold', alignItems: 'center' }}>
-                    {item.temperature}°C
-                  </p>
-                </SplideSlide>
-              ))}
-            </Splide>
-          )}
-        </section>
+                  {item.time.toLocaleDateString()}{" "}
+                  {item.time.toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </p>
+                <img
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    marginBottom: "10px",
+                  }}
+                  src={getWeatherIcon(item)}
+                  alt="weather icon"
+                />
+                <p
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "bold",
+                    alignItems: "center",
+                  }}
+                >
+                  {item.temperature}°C
+                </p>
+              </SplideSlide>
+            ))}
+          </Splide>
+        )}
+      </section>
+
+      <h1>Horaires des 3 prochains trains</h1>
+      {trains.length > 0 ? (
+        <ul>
+          {trains.map((train, index) => (
+            <li key={index}>
+              <strong>Destination:</strong> {train.destination} <br />
+              <strong>Heure de départ:</strong> {train.departureTime} <br />
+              <strong>Quai:</strong> {train.platform} <br />
+              <strong>Train:</strong> {train.vehicle}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Aucun train disponible.</p>
+      )}
     </div>
   );
 }
@@ -288,4 +378,3 @@ export default function Home() {
     </div>
   );
 }*/
-

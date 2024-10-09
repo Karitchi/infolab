@@ -9,15 +9,6 @@ body:
         ## User Story Template
         Use this template to define user stories clearly. Fill in all sections to ensure we capture the necessary information for development.
 
-  - type: input
-    id: title
-    attributes:
-      label: Title
-      description: "Provide a concise title for the user story."
-      placeholder: "Title of the user story"
-    validations:
-      required: true
-
   - type: textarea
     id: user_role
     attributes:

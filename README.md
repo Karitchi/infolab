@@ -17,8 +17,6 @@ bun dev
 Or for docker:
 
 ```bash
-# build the image
-docker compose build
 # run the container
 docker compose up --watch
 ```

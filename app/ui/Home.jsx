@@ -168,16 +168,16 @@ export default function Home() {
 
   return (
     <div>
-      <header className="bg-gray-800 text-white fixed w-full top-0 left-0">
-        <nav
+      <div className="bg-gray-800 text-white fixed w-full top-0 left-0">
+        <div
           className="flex justify-center items-center h-16"
           style={{ backgroundColor: "#B8CDAB" }}
         >
           <div className="text-3xl font-bold" style={{ color: "#4E4E4E" }}>
             OpenLab
           </div>
-        </nav>
-      </header>
+        </div>
+      </div>
       <section
         className="exterior-weather"
         style={{

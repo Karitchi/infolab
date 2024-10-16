@@ -15,7 +15,6 @@ export default Schedule => {
         return response.json();
       })
       .then((data) => {
-        console.log("Données API :", data);
         setTrains(data);
         setLoading(false);
       })

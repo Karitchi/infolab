@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
-export default Weather => {
+export default function Weather () {
 
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);

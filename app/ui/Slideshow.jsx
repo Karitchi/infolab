@@ -3,10 +3,8 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
-import Panel1 from './Panel1';
-import Panel2 from './Panel2';
-import Panel3 from './Panel3';
-import Home from './Home';
+import Weather from './Weather';
+import Schedule from './Schedule';
 
 export default Slideshow => {
   return (
@@ -17,23 +15,18 @@ export default Slideshow => {
         height: '100vh',
         arrows: false,    // Hide navigation arrows
         pagination: false, // Hide pagination dots
-        // autoplay: true,    // Enable automatic cycling
-        // interval: 5000,    // Time between transitions (in ms)
+        autoplay: true,    // Enable automatic cycling
+        interval: 10000,    // Time between transitions (in ms)
         wheel: true,       // Enable mousewheel control
-        // waitForTransition: true,
+        waitForTransition: true,
+        wheelMinThreshold: 50,
       }}
     >
       <SplideSlide>
-        <Panel1 />
+        <Weather />
       </SplideSlide>
       <SplideSlide>
-        <Panel2 />
-      </SplideSlide>
-      <SplideSlide>
-        <Panel3 />
-      </SplideSlide>
-      <SplideSlide>
-        <Home />
+        <Schedule />
       </SplideSlide>
     </Splide>
   );

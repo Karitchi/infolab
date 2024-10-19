@@ -1,7 +1,9 @@
 import Slideshow from "./ui/Slideshow";
 
 const Page = () => {
-  return <Slideshow />;
+  return(
+    <Slideshow />
+  );
 };
 
 export default Page;

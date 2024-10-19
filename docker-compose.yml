@@ -1,28 +1,46 @@
-name: infolab                                 # Name of the project
-
+name: infolab
 services:
 # ---
-  infolab-nodejs:
+  nodejs:
     build:
-      context: .                              # Build context set to the current directory
-      dockerfile: Dockerfile                  # Specifies the Dockerfile to use
-    container_name: infolab-nodejs            # Name of the container
-    command: ["npm", "run", "dev"]            # Command to run when the container starts
+      context: .
+      dockerfile: Dockerfile.node
+    environment:
+      - ENV POSTGRES_DB=${POSTGRES_DB:-infolab}
+      - ENV POSTGRES_USER=${POSTGRES_USER:-infolab}
+      - ENV POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-infolab}
+    command: ["npm", "run", "dev"]
     ports:
-      - '3000:3000'                           # Maps port 3000 on host to port 3000 in container
-    restart: unless-stopped                   # Automatically restarts the container unless it is stopped manually
+      - '3000:3000'
+    restart: unless-stopped
     develop:
       watch:
         - action: sync
           path: ./app
-          target: /infolab/app                # Ensure the target path matches the WORKDIR in Dockerfile
+          target: /infolab/app
         - action: rebuild
-          path: package.json                  # Rebuild the container when package.json changes
+          path: package.json
+    networks:
+      - infolab
 # ---
-  infolab-npm:
-    image: node:20
-    container_name: infolab-npm
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-infolab}
+      POSTGRES_USER: ${POSTGRES_USER:-infolab}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-infolab}
+    ports:
+      - '5432:5432'
     volumes:
-      - ./package.json:/infolab/package.json              # Mount package.json
-      - ./package-lock.json:/infolab/package-lock.json    # Mount package-lock.json (if it exists)
-    working_dir: /infolab
+      - postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - infolab
+# ---
+volumes:
+  postgres:
+# ---
+networks:
+  infolab:

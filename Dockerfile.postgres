@@ -1,0 +1,13 @@
+# Use the official PostgreSQL image from the Docker Hub
+FROM postgres:17
+
+# Set default environment variables for PostgreSQL
+ENV POSTGRES_DB=${POSTGRES_DB:-infolab}
+ENV POSTGRES_USER=${POSTGRES_USER:-infolab}
+ENV POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-infolab}
+
+# Copy the initialization script to the Docker image
+COPY initialize_db.sql /docker-entrypoint-initdb.d/
+
+# Expose the default PostgreSQL port
+EXPOSE 5432

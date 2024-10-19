@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
-    "openmeteo": "^1.1.4",
     "next": "14.2.14",
+    "openmeteo": "^1.1.4",
+    "pg": "^8.13.0",
     "react": "^18",
     "react-dom": "^18"
   },

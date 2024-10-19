@@ -5,10 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.node
-    environment:
-      - ENV POSTGRES_DB=${POSTGRES_DB:-infolab}
-      - ENV POSTGRES_USER=${POSTGRES_USER:-infolab}
-      - ENV POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-infolab}
     command: ["npm", "run", "dev"]
     ports:
       - '3000:3000'
@@ -16,8 +12,8 @@ services:
     develop:
       watch:
         - action: sync
-          path: ./app
-          target: /infolab/app
+          path: ./
+          target: /infolab
         - action: rebuild
           path: package.json
     networks:
@@ -27,10 +23,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.postgres
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB:-infolab}
-      POSTGRES_USER: ${POSTGRES_USER:-infolab}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-infolab}
+    env_file:
+      - .env.docker  # Specify the custom env file here
     ports:
       - '5432:5432'
     volumes:

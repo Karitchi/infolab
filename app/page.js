@@ -158,8 +158,27 @@ export default function Home() {
       });
   }, []);
 
+  //TEST DATA - Utilisation de useEffect pour récupérer les événements du calendrier
+  useEffect(() => {
+    fetch(`/api/calendar?date=2024-10-24`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erreur lors de la récupération des événements");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Événements du calendrier :", data); //TEST DATA
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la récupération des événements :", error); //TEST DATA
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
   if (loading) {
-    return <p>Chargement des horaires...</p>;
+    return <p>Chargement des données...</p>;
   }
 
   if (error) {
@@ -169,15 +188,13 @@ export default function Home() {
   return (
     <div>
       <header className="bg-gray-800 text-white fixed w-full top-0 left-0">
-        <nav
-          className="flex justify-center items-center h-16"
-          style={{ backgroundColor: "#B8CDAB" }}
-        >
+        <nav className="flex justify-center items-center h-16" style={{ backgroundColor: "#B8CDAB" }}>
           <div className="text-3xl font-bold" style={{ color: "#4E4E4E" }}>
             OpenLab
           </div>
         </nav>
       </header>
+
       <section
         className="exterior-weather"
         style={{
@@ -278,6 +295,7 @@ export default function Home() {
     </div>
   );
 }
+
 
 /*export default function Home() {
   return (

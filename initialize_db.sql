@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS announcements (
     announcement_id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(user_id) ON DELETE CASCADE,
     title VARCHAR(255) NOT NULL,
-    body TEXT NOT NULL,
+    body VARCHAR(1000) NOT NULL,
     author VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

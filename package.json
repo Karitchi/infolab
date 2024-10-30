@@ -10,12 +10,9 @@
   },
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
-    "googleapis": "^144.0.0",
-    "ical": "^0.8.0",
     "next": "14.2.14",
-    "node-fetch": "^3.3.2",
-    "nodemailer": "^6.9.15",
     "openmeteo": "^1.1.4",
+    "pg": "^8.13.0",
     "react": "^18",
     "react-dom": "^18"
   },

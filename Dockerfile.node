@@ -14,6 +14,11 @@ USER infolab
 # Set the working directory to /infolab within the container
 WORKDIR /infolab
 
+# Set environment variables for PostgreSQL
+ENV POSTGRES_DB=${POSTGRES_DB:-infolab}
+ENV POSTGRES_USER=${POSTGRES_USER:-infolab}
+ENV POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-infolab}
+
 # Install dependencies:
 # Copy the package.json and package-lock.json files into the working directory
 # and change their ownership to the 'infolab' user and group

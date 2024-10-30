@@ -1,12 +1,9 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/react-splide/css"; // Assure-toi d'importer les styles Splide
 
-export default function Home() {
+export default function Weather () {
+
   const [weatherData, setWeatherData] = useState(null);
-  const [trains, setTrains] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -137,64 +134,18 @@ export default function Home() {
     getLocation();
   }, []);
 
-  useEffect(() => {
-    // Requête vers notre API locale pour obtenir les horaires des 3 prochains trains
-    fetch(`/api/train-schedule?station_id=BE.NMBS.008814001`) // Exemple : Bruxelles-Midi
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erreur lors de la récupération des horaires");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Données API :", data);
-        setTrains(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setError(error.message);
-        setLoading(false);
-      });
-  }, []);
-
-  //TEST DATA - Utilisation de useEffect pour récupérer les événements du calendrier
-  useEffect(() => {
-    fetch(`/api/calendar?date=2024-10-24`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erreur lors de la récupération des événements");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Événements du calendrier :", data); //TEST DATA
-      })
-      .catch((error) => {
-        console.error("Erreur lors de la récupération des événements :", error); //TEST DATA
-        setError(error.message);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <p>Chargement des données...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
   return (
     <div>
-      <header className="bg-gray-800 text-white fixed w-full top-0 left-0">
-        <nav className="flex justify-center items-center h-16" style={{ backgroundColor: "#B8CDAB" }}>
+      <div className="bg-gray-800 text-white fixed w-full left-0">
+        <div
+          className="flex justify-center items-center h-16"
+          style={{ backgroundColor: "#B8CDAB" }}
+        >
           <div className="text-3xl font-bold" style={{ color: "#4E4E4E" }}>
             OpenLab
           </div>
-        </nav>
-      </header>
-
+        </div>
+      </div>
       <section
         className="exterior-weather"
         style={{
@@ -276,123 +227,8 @@ export default function Home() {
           </Splide>
         )}
       </section>
-
-      <h1>Horaires des 3 prochains trains</h1>
-      {trains.length > 0 ? (
-        <ul>
-          {trains.map((train, index) => (
-            <li key={index}>
-              <strong>Destination:</strong> {train.destination} <br />
-              <strong>Heure de départ:</strong> {train.departureTime} <br />
-              <strong>Quai:</strong> {train.platform} <br />
-              <strong>Train:</strong> {train.vehicle}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Aucun train disponible.</p>
-      )}
     </div>
   );
-}
 
+};
 
-/*export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
-}*/

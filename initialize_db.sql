@@ -47,3 +47,16 @@ CREATE TABLE IF NOT EXISTS classroom_environment_metrics (
     back_sound_level DECIMAL(5, 2) NOT NULL,
     collected_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Insert a dummy user if it doesn't already exist
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM users WHERE email = 'dummy@example.com'
+    ) THEN
+        INSERT INTO users (first_name, last_name, email, password, role)
+        VALUES ('Dummy', 'User', 'dummy@example.com', 'dummy_password', 'staff');
+    ELSE
+        RAISE NOTICE 'Dummy user already exists.';
+    END IF;
+END $$;

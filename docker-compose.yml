@@ -1,13 +1,12 @@
 name: infolab
 services:
-# ---
   nodejs:
     build:
       context: .
       dockerfile: Dockerfile.node
     command: ["npm", "run", "dev"]
     ports:
-      - '3000:3000'
+      - "3000:3000"
     restart: unless-stopped
     develop:
       watch:
@@ -18,23 +17,22 @@ services:
           path: package.json
     networks:
       - infolab
-# ---
   postgres:
     build:
       context: .
       dockerfile: Dockerfile.postgres
     env_file:
-      - .env.docker  # Specify the custom env file here
+      - .env.docker # Specify the custom env file here
     ports:
-      - '5432:5432'
+      - "5432:5432"
     volumes:
       - postgres:/var/lib/postgresql/data
     restart: unless-stopped
     networks:
       - infolab
-# ---
+
 volumes:
   postgres:
-# ---
+
 networks:
   infolab:

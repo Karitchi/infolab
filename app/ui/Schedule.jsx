@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default Schedule => {
+export default (Schedule) => {
   const [trains, setTrains] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

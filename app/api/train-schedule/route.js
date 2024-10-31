@@ -12,7 +12,7 @@ export async function GET(request) {
     if (!data.departures || !data.departures.departure) {
       return NextResponse.json(
         { message: "Aucun départ trouvé." },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -29,7 +29,7 @@ export async function GET(request) {
     console.error("Erreur lors de la récupération des horaires:", error);
     return NextResponse.json(
       { message: "Erreur lors de la récupération des horaires." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

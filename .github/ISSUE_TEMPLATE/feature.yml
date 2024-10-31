@@ -3,7 +3,6 @@ description: "A template for capturing user stories with detailed requirements a
 labels: "US"
 projects: "infolab"
 body:
-
   - type: markdown
     attributes:
       value: |
@@ -17,7 +16,7 @@ body:
       placeholder: "Describe the user story in detail."
     validations:
       required: true
-      
+
   - type: markdown
     attributes:
       value: |

@@ -22,7 +22,9 @@ export const testDbConnection = async () => {
     console.log(`${green}Successfully connected to the database.${reset}`);
     client.release();
   } catch (error) {
-    console.error(`${red}Failed to connect to the database: ${error.message}${reset}`);
+    console.error(
+      `${red}Failed to connect to the database: ${error.message}${reset}`,
+    );
     process.exit(1);
   }
 };
@@ -43,7 +45,7 @@ export const pgConnect = async () => {
   const timeout = setTimeout(() => {
     console.error("A client has been checked out for more than 5 seconds!");
     console.error(
-      `The last executed query on this client was: ${client.lastQuery}`
+      `The last executed query on this client was: ${client.lastQuery}`,
     );
   }, 5000);
   // monkey patch the query method to keep track of the last query executed

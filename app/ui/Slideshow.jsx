@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef } from 'react';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/splide.min.css';
+import React, { useEffect, useRef } from "react";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/dist/css/splide.min.css";
 
-import TransitionManager from '../lib/TransitionManager';
+import TransitionManager from "../lib/TransitionManager";
 
-import Weather from './Weather';
-import Schedule from './Schedule';
+import Weather from "./Weather";
+import Schedule from "./Schedule";
 
 const splideOptions = {
-  direction: 'ttb',
+  direction: "ttb",
   rewind: true,
-  height: '100vh',
+  height: "100vh",
   arrows: false,
   pagination: false,
   autoplay: false,
@@ -32,13 +32,17 @@ const Slideshow = () => {
 
   const handleSlideMove = async (Splide, slideIndex = 0) => {
     transitionManager.resetTimer(timerRef);
-    timerRef.current = await transitionManager.startTimer(timerRef, slideIndex, panelsDisplayDuration);
+    timerRef.current = await transitionManager.startTimer(
+      timerRef,
+      slideIndex,
+      panelsDisplayDuration,
+    );
     transitionManager.scroll(Splide);
   };
 
-useEffect(() => {
-  return () => transitionManager.resetTimer(timerRef); // Cleanup timer on unmount
-}, []);
+  useEffect(() => {
+    return () => transitionManager.resetTimer(timerRef); // Cleanup timer on unmount
+  }, []);
 
   return (
     <Splide
@@ -47,8 +51,12 @@ useEffect(() => {
       onMoved={handleSlideMove} // Only trigger timer on slide move
       onMounted={handleSlideMove}
     >
-      <SplideSlide><Weather /></SplideSlide>
-      <SplideSlide><Schedule /></SplideSlide>
+      <SplideSlide>
+        <Weather />
+      </SplideSlide>
+      <SplideSlide>
+        <Schedule />
+      </SplideSlide>
     </Splide>
   );
 };

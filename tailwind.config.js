@@ -5,5 +5,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  theme: {
+    extend: {
+      fontFamily: {
+        dosis: ["var(--font-dosis)"],
+      },
+      colors: {
+        "secondary-blue": "#172937",
+      },
+    },
+  },
   plugins: [],
 };

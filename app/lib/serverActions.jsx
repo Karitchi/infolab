@@ -16,34 +16,27 @@ const addFormDataToDatabase = async (formData) => {
   );
 };
 
-export async function addAnnouncement(formData) {
+export async function addAnnouncement(currentState, formData) {
   try {
-    // Validate the form data
-    const validatedData = await schema.validateAsync(
+    await schema.validateAsync(
       {
         title: formData.get("title"),
         body: formData.get("body"),
         author: formData.get("author"),
       },
       {
-        abortEarly: false, // Optional: allows all validation errors to be collected
+        abortEarly: false, // Return all errors
       }
     );
+  } catch (error) {
+    return { success: false, error: error.details };
+  }
 
-    // Proceed with adding the announcement to the database
+  try {
     await addFormDataToDatabase(formData);
 
-    console.log("New announcement added to the database");
     return { success: true };
   } catch (error) {
-    // Handle validation errors
-    if (error.isJoi) {
-      console.error("Validation Error:", error.details);
-      return { success: false, errors: error.details };
-    }
-
-    // Handle other errors (like database errors)
-    console.error("Failed to add new announcement to the database", error);
-    return { success: false, error };
+    return { success: false, error: error.details };
   }
 }

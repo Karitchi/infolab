@@ -5,20 +5,20 @@ const   AddAnnounceInputs = () => {
         name="title"
         type="text"
         placeholder="Title here..."
-        required
+        // required
         className=" p-2 rounded bg-transparent focus:outline-none "
       />
       <textarea
         name="body"
         placeholder="Description here..."
-        required
+        // required
         className="p-2 rounded bg-transparent focus:outline-none flex-grow"
       />
       <input
         name="author"
         type="text"
         placeholder="Author here..."
-        required
+        // required
         className="p-2 rounded bg-transparent focus:outline-none text-right"
       />
     </div>

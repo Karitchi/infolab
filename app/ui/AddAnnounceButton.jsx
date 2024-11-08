@@ -6,8 +6,8 @@ const AddAnnounceButton = () => {
       type="submit"
       className="bg-secondary-blue rounded-full flex w-fit p-8 space-x-8"
     >
-      <span className="flex-grow m-auto">Add this new announcement</span>
-      <Image src="/icons/save.svg" alt="Icon" width={150} height={150} />
+      <Image src="/icons/save.svg" alt="Icon" width={50} height={50} />
+      <span className="flex-grow m-auto">Add this new announce</span>
     </button>
   );
 };

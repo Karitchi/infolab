@@ -18,18 +18,15 @@ const AddAnnouncementPage = () => {
   const notify = () => toast("item added successfully!");
 
   return (
-    <>
+    <div className="flex flex-grow flex-col">
       <Title title="Announces" />
-      <form
-        action={formAction}
-        className="text-5xl space-y-4 flex flex-grow flex-col"
-      >
-        <ToastContainer />
+      <form action={formAction} className="flex flex-grow flex-col">
+        {/* <ToastContainer /> */}
         <AddAnnounceInputs />
-        <AddAnnounceButton />
         {/* {isPending ? "Loading..." : formState?.success ? notify() : notify()} */}
+        <AddAnnounceButton />
       </form>
-    </>
+    </div>
   );
 };
 

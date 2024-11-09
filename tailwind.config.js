@@ -7,9 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        dosis: ["var(--font-dosis)"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        "secondary-blue": "#172937",
       },
     },
   },

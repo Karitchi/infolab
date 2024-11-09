@@ -37,3 +37,5 @@ EXPOSE 3000
 # Command to run the development server using npm
 # The application will start by running the 'dev' script defined in package.json
 CMD ["npm", "run", "dev"]
+
+RUN npm install ical

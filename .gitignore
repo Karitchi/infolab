@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# clé api google
+/config/google-credentials.json
+/config/client_secret_747520506444-3gujluqhbfstv4p85t7llld9upadqa1m.apps.googleusercontent.com.json
+
+config/client_secret_747520506444-3gujluqhbfstv4p85t7llld9upadqa1m.apps.googleusercontent.com.json

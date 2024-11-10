@@ -4,19 +4,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.node
-      target: development
+      target: production
     ports:
       - "3000:3000"
     restart: unless-stopped
     depends_on:
       - postgres
-    develop:
-      watch:
-        - action: sync
-          path: ./
-          target: /infolab
-        - action: rebuild
-          path: package.json
     networks:
       - infolab
 

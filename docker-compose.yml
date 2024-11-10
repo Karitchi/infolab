@@ -30,6 +30,7 @@ services:
   #   restart: unless-stopped
   #   networks:
   #     - infolab
+  
   nodejs:
     build:
       context: .
@@ -38,8 +39,6 @@ services:
     ports:
       - "3000:3000"
     restart: unless-stopped
-    env_file:
-      - .env.docker # Specify the custom env file here
     depends_on:
       - postgres
     develop:
@@ -56,8 +55,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.postgres
-    env_file:
-      - .env.docker
     ports:
       - "5432:5432"
     volumes:

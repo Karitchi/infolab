@@ -21,6 +21,7 @@ const AddAnnouncementPage = () => {
     if (isPending) {
       toastId = toast.loading("Adding your announcement... Just a moment!");
     } else if (formState.success) {
+      toast.dismiss(toastId);
       toast.success("Announcement added successfully!", { id: toastId });
     } else if (formState.error) {
       toast.dismiss(toastId);

@@ -30,7 +30,7 @@ jobs:
           context: .
           file: Dockerfile.node
           push: true
-          tags: ghcr.io/${{ github.repository }}/node:latest
+          tags: ghcr.io/karitchi/infolab/node:latest
 
       - name: Build and push Postgres image
         uses: docker/build-push-action@v4
@@ -38,8 +38,8 @@ jobs:
           context: .
           file: Dockerfile.postgres
           push: true
-          tags: ghcr.io/${{ github.repository }}/postgres:latest
-
+          tags: ghcr.io/karitchi/infolab/postgres:latest
+          
       - name: Verify the images were pushed
         run: |
           echo "Node image has been pushed to GitHub Container Registry: ghcr.io/${{ github.repository }}/node:latest"

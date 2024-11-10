@@ -1,7 +1,7 @@
 import Slideshow from "./ui/Slideshow";
-import { pgConnect, testDbConnection } from "./lib/database";
+import { testDbConnection } from "./lib/database";
 
-testDbConnection();
+// testDbConnection();
 
 const Page = () => {
   return <Slideshow />;

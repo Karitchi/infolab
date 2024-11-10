@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import Image from 'next/image';
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
@@ -203,7 +204,7 @@ export default function Weather() {
                     minute: "2-digit",
                   })}
                 </p>
-                <img
+                <Image
                   style={{
                     width: "50px",
                     height: "50px",
@@ -211,6 +212,8 @@ export default function Weather() {
                   }}
                   src={getWeatherIcon(item)}
                   alt="weather icon"
+                  width={50}
+                  height={50}
                 />
                 <p
                   style={{

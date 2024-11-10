@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-export default (Schedule) => {
+// Assign arrow function to a variable
+const Schedule = () => {
   const [trains, setTrains] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -53,3 +54,8 @@ export default (Schedule) => {
     </div>
   );
 };
+
+// Add display name
+Schedule.displayName = 'Schedule';
+
+export default Schedule;

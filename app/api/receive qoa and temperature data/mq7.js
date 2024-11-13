@@ -1,9 +1,10 @@
 // pages/api/mq7.js
-let ppm_CO = 0; // Stocker temporairement la dernière valeur du capteur
+
+let ppm_CO = 0; // Variable pour stocker la dernière valeur reçue du capteur
 
 export default function handler(req, res) {
     if (req.method === 'POST') {
-        // Stocker la valeur reçue du capteur
+        // Recevoir la valeur de concentration de CO
         ppm_CO = req.body.ppm;
         console.log("Concentration de CO reçue :", ppm_CO);
         res.status(200).json({ message: 'Données reçues avec succès' });

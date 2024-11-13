@@ -48,6 +48,17 @@ CREATE TABLE IF NOT EXISTS classroom_environment_metrics (
     collected_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
+CREATE TABLE IF NOT EXISTS raspberry_schedules (
+    schedule_id SERIAL PRIMARY KEY,
+    day VARCHAR(10) UNIQUE NOT NULL,
+    hours INT[] NOT NULL,  -- Tableau d'heures
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_raspberry_schedules_day_hour ON raspberry_schedules(day, hour);
+
+
 -- Insert a dummy user if it doesn't already exist
 DO $$
 BEGIN

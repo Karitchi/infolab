@@ -134,15 +134,24 @@ export default function Weather() {
     getLocation();
   }, []);
 
+  const handleLoginRedirect = () => {
+    navigate('/');
+  };
+
   return (
     <div>
       <div className="bg-gray-800 text-white fixed w-full left-0">
         <div
-          className="flex justify-center items-center h-16"
+          className="flex justify-center items-center h-16 px-4"
           style={{ backgroundColor: "#B8CDAB" }}
         >
           <div className="text-3xl font-bold" style={{ color: "#4E4E4E" }}>
             OpenLab
+          </div>
+          <div className="ml-auto" style={{ backgroundColor: '#08CC0A', display: 'inline-block', padding: '1px' }}>
+            <button onClick={handleLoginRedirect} className="flex">
+              <img src='/icons/engrenage.webp' alt='Admin Connect' className='h-12 w-12' />
+            </button>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-name: Run Integration Tests
+name: Run All Tests
 
 on:
   push:
@@ -12,50 +12,29 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    env:
-      TESTCONTAINERS_RYUK_DISABLED: true
-      DOCKER_HOST: tcp://localhost:2375
-      DOCKER_TLS_VERIFY: 0
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install dependencies
+      - name: Set up Docker
         run: |
           sudo apt-get update
           sudo apt-get install -y docker-compose
-
-      # Configure Docker (nécessaire pour Testcontainers)
-      - name: Setup Docker in GitHub Actions
-        run: |
           sudo service docker start
-          docker network create infolab
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+      - name: Build and start services
+        run: docker compose up --build -d
+
+      - name: Wait for services to start
+        run: |
+          echo "Waiting for services to be ready..."
+          sleep 20
 
       - name: Install dependencies
         run: npm ci
 
-      # Start Docker services
-      - name: Start services with Docker Compose
-        run: |
-          docker-compose -f docker-compose.yml up -d postgres nodejs
+      - name: Run all tests
+        run: npm run test
 
-      - name: Wait for services to be ready
-        run: |
-          until curl -s http://localhost:3000 > /dev/null; do
-            echo "Waiting for Node.js service to be ready..."
-            sleep 5
-          done
-
-      # Run tests
-      - name: Run integration tests
-        run: npm test
-
-      # Cleanup
-      - name: Clean up Docker
-        run: docker-compose -f docker-compose.yml down
+      - name: Stop and clean up
+        run: docker compose down

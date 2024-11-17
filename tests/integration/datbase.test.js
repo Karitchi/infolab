@@ -15,7 +15,6 @@ describe("API Integration Tests", () => {
       .withDatabase("infolab")
       .withUsername("infolab")
       .withPassword("infolab")
-      .withExposedPorts(5433)
       .start();
 
     pool = new Pool({

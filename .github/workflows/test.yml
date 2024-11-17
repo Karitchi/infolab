@@ -6,7 +6,7 @@ on:
       - '*'
   pull_request:
     branches:
-      - main
+      - '*'
 
 jobs:
   test:
@@ -14,15 +14,23 @@ jobs:
 
     env:
       TESTCONTAINERS_RYUK_DISABLED: true
+      DOCKER_HOST: tcp://localhost:2375
+      DOCKER_TLS_VERIFY: 0
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Docker Compose
+      - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install docker-compose
+          sudo apt-get install -y docker-compose
+
+      # Configure Docker (nécessaire pour Testcontainers)
+      - name: Setup Docker in GitHub Actions
+        run: |
+          sudo service docker start
+          docker network create infolab
 
       - name: Install Node.js
         uses: actions/setup-node@v3
@@ -32,5 +40,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
+      # Start Docker services
+      - name: Start services with Docker Compose
+        run: |
+          docker-compose -f docker-compose.yml up -d postgres nodejs
+
+      - name: Wait for services to be ready
+        run: |
+          until curl -s http://localhost:3000 > /dev/null; do
+            echo "Waiting for Node.js service to be ready..."
+            sleep 5
+          done
+
+      # Run tests
+      - name: Run integration tests
         run: npm test
+
+      # Cleanup
+      - name: Clean up Docker
+        run: docker-compose -f docker-compose.yml down

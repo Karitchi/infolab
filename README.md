@@ -45,19 +45,20 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Tests
 
-Les tests sont automatiquement exécutés via **GitHub Actions** à chaque push ou création de pull request. Vous pouvez suivre l'état des tests grâce au badge ci-dessous. Si les tests échouent, le badge sera rouge.
+Tests are automatically run via **GitHub Actions** on each push or pull request creation. You can track the status of the tests via the badge below. If the tests fail, the badge will be red.
 
 ![Tests](https://github.com/Karitchi/infolab/actions/workflows/test.yml/badge.svg)
 
-### Créer vos tests d'intégration ou autres
+### Create Your Integration Tests or Others
 
-Pour créer vos propres tests, vous pouvez utiliser `database.test.js` pour les tests qui nécessitent une copie de notre base de données.
+To create your own tests, you can use `database.test.js` for tests that require a copy of our database.
 
-Pour tout autre test, vous êtes libre de rédiger vos tests en CommonJS (pas d'import, mais des `require`), et d'ajouter simplement un fichier `XXX.test.js` dans la section /test/integration.
+For any other test, you are free to write your tests in CommonJS (no imports, but `require`), and simply add a file `XXX.test.js` in the /test/integration section (those new added tests would automatically be tested by jest in the ci/cd pipeline on each push or pull).
 
-### Exécuter les tests en local
+### Run Tests Locally
 
-Pour tester localement, exécutez :
+To test locally, run:
 
 ```bash
 npm run test
+

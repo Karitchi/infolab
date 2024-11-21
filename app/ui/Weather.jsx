@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useRouter } from "next/navigation";
 import Image from 'next/image';
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   // Fonction pour obtenir l'icône météo appropriée
   const getWeatherIcon = (conditions) => {
@@ -135,7 +137,7 @@ export default function Weather() {
   }, []);
 
   const handleLoginRedirect = () => {
-    navigate('/');
+    router.push("/login");
   };
 
   return (

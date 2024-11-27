@@ -56,8 +56,6 @@ CREATE TABLE IF NOT EXISTS raspberry_schedules (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE UNIQUE INDEX IF NOT EXISTS idx_raspberry_schedules_day_hour ON raspberry_schedules(day, hour);
-
 
 -- Insert a dummy user if it doesn't already exist
 DO $$

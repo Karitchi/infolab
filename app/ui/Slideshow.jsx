@@ -8,6 +8,7 @@ import TransitionManager from "../lib/TransitionManager";
 
 import Weather from "./Weather";
 import Schedule from "./Schedule";
+import SoundData from "@/app/ui/SoundData";
 
 const splideOptions = {
   direction: "ttb",
@@ -56,6 +57,9 @@ const Slideshow = () => {
       </SplideSlide>
       <SplideSlide>
         <Schedule />
+      </SplideSlide>
+      <SplideSlide>
+        <SoundData />
       </SplideSlide>
     </Splide>
   );

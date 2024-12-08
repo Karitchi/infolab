@@ -6,8 +6,8 @@ import "@splidejs/splide/dist/css/splide.min.css";
 
 import TransitionManager from "../lib/TransitionManager";
 
-import Weather from "./Weather";
-import Schedule from "./Schedule";
+import Dashboard from "./Dashboard"; // Importer le composant Dashboard
+import Schedule from "./Schedule"; // Garder les autres sections nécessaires
 
 const splideOptions = {
   direction: "ttb",
@@ -22,7 +22,7 @@ const splideOptions = {
   speed: 1000,
 };
 
-const panelsDisplayDuration = [10000, 10000]; // Duration for each panel
+const panelsDisplayDuration = [10000, 10000, 10000]; // Durée pour chaque panel
 
 const transitionManager = new TransitionManager();
 
@@ -35,7 +35,7 @@ const Slideshow = () => {
     timerRef.current = await transitionManager.startTimer(
       timerRef,
       slideIndex,
-      panelsDisplayDuration,
+      panelsDisplayDuration
     );
     transitionManager.scroll(Splide);
   };
@@ -52,7 +52,7 @@ const Slideshow = () => {
       onMounted={handleSlideMove}
     >
       <SplideSlide>
-        <Weather />
+        <Dashboard /> 
       </SplideSlide>
       <SplideSlide>
         <Schedule />
@@ -62,3 +62,5 @@ const Slideshow = () => {
 };
 
 export default Slideshow;
+
+

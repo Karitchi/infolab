@@ -136,6 +136,7 @@ export default function Weather() {
 
   return (
     <div>
+      
       <div className="bg-gray-800 text-white fixed w-full left-0">
         <div
           className="flex justify-center items-center h-16"

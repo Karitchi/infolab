@@ -69,7 +69,7 @@ const Dashboard = () => {
           longitude: "4.3517",
           hourly: ["temperature_2m", "cloudcover", "precipitation", "snowfall", "windspeed_10m"].join(","),
           timezone: "Europe/Berlin",
-          forecast_days: 1,
+          forecast_days: 2,
         });
 
         const url = `https://api.open-meteo.com/v1/forecast?${params.toString()}`;
@@ -80,7 +80,7 @@ const Dashboard = () => {
 
         const hourly = weather.hourly;
 
-        // Obtenir l'heure actuelle et arrondir à l'heure précédente
+        // Obtenir l'heure actuelle
         const now = new Date();
         const currentHour = new Date(
           now.getFullYear(),
@@ -103,7 +103,21 @@ const Dashboard = () => {
             wind: Math.round(hourly.windspeed_10m[index] || 0), // Vent arrondi
           }))
           .filter((item) => item.time >= currentHour) // Inclure l'heure actuelle et les suivantes
-          .slice(0, 8); // Limiter à 8 heures futures
+          .slice(0, 9); // Limiter à 9 heures futures (heure actuelle incluse)
+
+        // Compléter avec des heures vides si moins de 9
+        while (data.length < 9) {
+          const lastTime = data.length > 0 ? data[data.length - 1].time : currentHour;
+          data.push({
+            time: new Date(lastTime.getTime() + 3600000), // Ajouter 1h à la dernière heure
+            temperature: null,
+            cloudcover: 0,
+            precipitation: 0,
+            snow: 0,
+            isDaytime: true,
+            wind: 0,
+          });
+        }
 
         setWeatherData(data);
       } catch (err) {
@@ -195,17 +209,17 @@ const Dashboard = () => {
                 {item.time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
               </p>
               <img
-                src={getWeatherIcon(item)}
+                src={item.temperature !== null ? getWeatherIcon(item) : "/icons/default.png"}
                 alt="weather icon"
                 style={{ width: "150px", height: "150px", margin: "0 auto" }}
               />
-              <p style={{ marginBottom: 20, fontSize: "60px" }}>{item.temperature} °C</p>
+              <p style={{ marginBottom: 20, fontSize: "60px" }}>
+                {item.temperature !== null ? `${item.temperature} °C` : "N/A"}
+              </p>
             </div>
           ))}
         </div>
       </section>
-
-      {/* Section Intérieur */}
       <section
         style={{
           flex: 1,
@@ -328,5 +342,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-

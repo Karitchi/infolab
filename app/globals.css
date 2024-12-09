@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.splide {
+  height: 100%; /* Ensure Splide fills the height of the parent */
+}
+
+.splide__track {
+  height: 100%; /* Ensure the track fills the height */
+  /* display: flex; Flexbox ensures proper alignment */
+}
+
+.splide__list {
+  height: 100%; /* Allow slides to take full height */
+}

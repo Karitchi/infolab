@@ -8,11 +8,12 @@ import TransitionManager from "../lib/TransitionManager";
 
 import Weather from "./Weather";
 import Schedule from "./Schedule";
+import Announce from "./Annouce";
 
 const splideOptions = {
   direction: "ttb",
   rewind: true,
-  height: "100vh",
+  height: "100%",
   arrows: false,
   pagination: false,
   autoplay: false,
@@ -35,9 +36,9 @@ const Slideshow = () => {
     timerRef.current = await transitionManager.startTimer(
       timerRef,
       slideIndex,
-      panelsDisplayDuration,
+      panelsDisplayDuration
     );
-    transitionManager.scroll(Splide);
+    // transitionManager.scroll(Splide);
   };
 
   useEffect(() => {
@@ -51,10 +52,13 @@ const Slideshow = () => {
       onMoved={handleSlideMove} // Only trigger timer on slide move
       onMounted={handleSlideMove}
     >
-      <SplideSlide>
+      <SplideSlide className="p-8 flex flex-grow">
         <Weather />
       </SplideSlide>
-      <SplideSlide>
+      <SplideSlide className="p-8 flex flex-grow">
+        <Announce />
+      </SplideSlide>
+      <SplideSlide className="p-8 flex flex-grow">
         <Schedule />
       </SplideSlide>
     </Splide>

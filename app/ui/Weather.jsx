@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import Image from 'next/image';
+import Image from "next/image";
+import Title from "./Title";
 
 export default function Weather() {
   const [weatherData, setWeatherData] = useState(null);
@@ -99,7 +100,7 @@ export default function Weather() {
 
         const timeValues = Array.from(
           { length: hourly.time.length },
-          (_, i) => new Date(hourly.time[i]),
+          (_, i) => new Date(hourly.time[i])
         );
 
         const temperatureValues = hourly.temperature_2m;
@@ -117,7 +118,7 @@ export default function Weather() {
       } catch (err) {
         console.error(
           "Erreur lors de la récupération des données météo : ",
-          err,
+          err
         );
         setError("Erreur lors du chargement des données météo.");
       } finally {
@@ -136,16 +137,7 @@ export default function Weather() {
 
   return (
     <div>
-      <div className="bg-gray-800 text-white fixed w-full left-0">
-        <div
-          className="flex justify-center items-center h-16"
-          style={{ backgroundColor: "#B8CDAB" }}
-        >
-          <div className="text-3xl font-bold" style={{ color: "#4E4E4E" }}>
-            OpenLab
-          </div>
-        </div>
-      </div>
+      <Title title="Weather" />
       <section
         className="exterior-weather"
         style={{

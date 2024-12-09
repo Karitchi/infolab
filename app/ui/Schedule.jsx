@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Title from "./Title";
 
 // Assign arrow function to a variable
 const Schedule = () => {
@@ -36,6 +37,7 @@ const Schedule = () => {
 
   return (
     <div>
+      <Title title="Departures" />
       <h1>Horaires des 3 prochains trains</h1>
       {trains.length > 0 ? (
         <ul>
@@ -56,6 +58,6 @@ const Schedule = () => {
 };
 
 // Add display name
-Schedule.displayName = 'Schedule';
+Schedule.displayName = "Schedule";
 
 export default Schedule;

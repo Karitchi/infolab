@@ -42,7 +42,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-
 ## Tests
 
 Tests are automatically run via **GitHub Actions** on each push or pull request creation. You can track the status of the tests via the badge below. If the tests fail, the badge will be red.
@@ -57,8 +56,14 @@ For any other test, you are free to write your tests in CommonJS (no imports, bu
 
 ### Run Tests Locally
 
-To test locally, run:
+1. with npm
 
 ```bash
 npm run test
+```
 
+2. with docker
+
+```bash
+docker compose -f docker-compose.test.yml run --rm test
+```

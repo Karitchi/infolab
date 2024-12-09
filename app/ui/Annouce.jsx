@@ -20,7 +20,7 @@ const splideOptions = {
   gap: "32px",
 };
 
-const panelsDisplayDuration = [2000, 2000]; // Duration for each panel
+const panelsDisplayDuration = [10000, 10000]; // Duration for each panel
 
 const transitionManager = new TransitionManager();
 
@@ -37,7 +37,7 @@ const Announce = () => {
       slideIndex,
       panelsDisplayDuration
     );
-    // transitionManager.scroll(Splide);
+    transitionManager.scroll(Splide);
   };
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const Announce = () => {
 
     updateAnnouncements();
     const interval = setInterval(updateAnnouncements, 5000);
-    
+
     return () => {
       clearInterval(interval); // Cleanup interval on component unmount
     };

@@ -38,7 +38,7 @@ const Slideshow = () => {
       slideIndex,
       panelsDisplayDuration
     );
-    // transitionManager.scroll(Splide);
+    transitionManager.scroll(Splide);
   };
 
   useEffect(() => {

@@ -2,11 +2,11 @@ import pg from "pg";
 const { Pool } = pg;
 
 const pool = new Pool({
-  user: "infolab" | process.env.PGUSER,
-  password: "infolab" | process.env.PGPASSWORD,
-  host: "infolab-postgres-1" | process.env.PGHOST,
-  port: 5432 | process.env.PGPORT,
-  database: "infolab" | process.env.PGDATABASE,
+  user: process.env.PGUSER || "infolab",
+  password: process.env.PGPASSWORD || "infolab",
+  host: process.env.PGHOST || "localhost",
+  port: process.env.PGPORT || 5432,
+  database: process.env.PGDATABASE || "infolab",
 });
 
 export const testDbConnection = async () => {

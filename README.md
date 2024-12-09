@@ -41,3 +41,29 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Tests
+
+Tests are automatically run via **GitHub Actions** on each push or pull request creation. You can track the status of the tests via the badge below. If the tests fail, the badge will be red.
+
+![Tests](https://github.com/Karitchi/infolab/actions/workflows/test.yml/badge.svg)
+
+### Create Your Integration Tests or Others
+
+To create your own tests, you can use `database.test.js` for tests that require a copy of our database.
+
+For any other test, you are free to write your tests in CommonJS (no imports, but `require`), and simply add a file `XXX.test.js` in the /test/integration section (those new added tests would automatically be tested by jest in the ci/cd pipeline on each push or pull).
+
+### Run Tests Locally
+
+1. with npm
+
+```bash
+npm run test
+```
+
+2. with docker
+
+```bash
+docker compose -f docker-compose.test.yml run --rm test
+```

@@ -1,17 +1,16 @@
 import { Pool } from "pg";
-// import bcrypt from "bcrypt";
-import { NextResponse } from 'next/server'; // Pour manipuler la réponse
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import { NextResponse } from 'next/server';
 
-// Configuration de la connexion à la base de données PostgreSQL
 const pool = new Pool({
     user: "infolab",
     host: "localhost",
     database: "infolab",
     password: "infolab",
-    port: 5432, // Port par défaut de PostgreSQL
+    port: 5432,
 });
 
-// Gérer les requêtes POST
 export async function POST(request) {
     try {
         const body = await request.json();
@@ -21,18 +20,22 @@ export async function POST(request) {
             return NextResponse.json({ error: 'Email et mot de passe requis' }, { status: 400 });
         }
 
-        // Vérification utilisateur dans la base de données
-        const user = await pool.query(
-            "SELECT * FROM users WHERE email = $1",
-            [email]
-        );
+        const user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
 
         if (user.rowCount === 0) {
-            return NextResponse.json({ error: 'Utilisateur non trouvé' }, { status: 401 });
+            return NextResponse.json({ error: 'Email ou mot de passe incorrect' }, { status: 401 });
         }
 
-        // Exemple : générer un token d'authentification
-        const authToken = 'dummy_token'; // Remplacez par votre logique de token
+        const isValidPassword = await bcrypt.compare(password, user.rows[0].password);
+        if (!isValidPassword) {
+            return NextResponse.json({ error: 'Email ou mot de passe incorrect' }, { status: 401 });
+        }
+
+        const authToken = jwt.sign(
+            { userId: user.rows[0].id },
+            'your_secret_key',
+            { expiresIn: '1h' }
+        );
 
         return NextResponse.json(
             { message: 'Connexion réussie', auth_token: authToken },

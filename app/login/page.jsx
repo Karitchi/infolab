@@ -6,8 +6,8 @@ import axios from "axios";
 
 function LoginPage() {
     const router = useRouter();
-    const [email, setEmail] = useState(""); // Ajouté pour capturer l'email
-    const [password, setPassword] = useState(""); // Ajouté pour capturer le mot de passe
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
@@ -15,28 +15,32 @@ function LoginPage() {
         e.preventDefault();
         if (loading) return;
 
+        if (!email.includes("@") || password.length < 8) {
+            setError("Email ou mot de passe invalide");
+            return;
+        }
+
         setLoading(true);
         setError("");
 
         try {
-            const response = await axios.post(`/api/login`, {
-                email,
-                password,
-            });
+            const response = await axios.post(`/api/login`, { email, password });
             if (response.status === 200) {
-                console.log(response.data);
                 localStorage.setItem("auth_token", response.data.auth_token);
-                localStorage.setItem("refresh_auth_token", response.data.refresh_auth_token);
                 router.push("/admin");
-                window.location.reload();
             } else {
                 setError(response.data.error);
             }
         } catch (err) {
-            console.error("Erreur de connexion :", err);
-            setError("Une erreur s'est produite lors de la connexion");
+            if (err.response) {
+                setError(err.response.data.error || "Erreur interne du serveur");
+            } else if (err.request) {
+                setError("Impossible de contacter le serveur. Vérifiez votre connexion.");
+            } else {
+                setError("Une erreur inattendue s'est produite.");
+            }
         } finally {
-            setTimeout(() => setLoading(false), 2000);
+            setTimeout(() => setLoading(false), 1000); // Ajout du délai de 1 seconde
         }
     };
 
@@ -44,31 +48,31 @@ function LoginPage() {
         <div>
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
-                <label>
-                    Email:
+                <fieldset disabled={loading}>
+                    <label htmlFor="email">Email:</label>
                     <input
+                        id="email"
                         type="email"
                         style={{ color: "black" }}
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                </label>
-                <br />
-                <label>
-                    Password:
+                    <br />
+                    <label htmlFor="password">Password:</label>
                     <input
+                        id="password"
                         type="password"
                         style={{ color: "black" }}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                </label>
-                <br />
-                <button type="submit" disabled={loading}>
-                    {loading ? "Loading..." : "Login"}
-                </button>
+                    <br />
+                    <button type="submit">
+                        {loading ? "Loading..." : "Login"}
+                    </button>
+                </fieldset>
                 {error && <p style={{ color: "red" }}>{error}</p>}
             </form>
         </div>

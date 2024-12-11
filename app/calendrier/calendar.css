@@ -1,24 +1,300 @@
-/* calendar.css */
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1a2634;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Container principal */
 .calendar-container {
+  padding: 20px;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: normal;
+}
+
+.title.status-free {
+  color: #4CAF50;
+  animation: statusUpdate 2s infinite;
+}
+
+.title.status-busy {
+  color: #f44336;
+}
+
+.settings-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.settings-button:hover {
+  opacity: 0.8;
+}
+
+/* Vue semaine */
+.week-view {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+/* Styles des blocs journaliers */
+.day-block {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.day-block:hover {
+  transform: translateY(-2px);
+}
+
+.day-name {
+  font-size: 0.9rem;
+  margin: 0 0 15px 0;
+  font-weight: normal;
+}
+
+/* Time slots styling */
+.time-slots {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+
+.time-slot {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #f0f4f8;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.calendar-title {
-  font-size: 2em;
+.time-slot:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.time {
+  font-size: 0.8rem;
+  color: white;
+}
+
+/* Status markers */
+.status-marker {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.status-marker.free {
+  background-color: #4CAF50;
+}
+
+.status-marker.busy {
+  background-color: #f44336;
+}
+
+/* Vue détaillée */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   margin-bottom: 20px;
-  color: #333;
+  padding: 0 10px;
 }
 
-.calendar {
-  width: 100%;
-  max-width: 900px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.back-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-3px);
+}
+
+.view-title {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Grille des plages horaires */
+.time-blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 0 10px;
+}
+
+.time-block {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-title {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: white;
+}
+
+.block-time {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15px;
+}
+
+.block-events {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Events styling */
+.events-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.event-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 12px;
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.event-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.event-title {
+  font-size: 0.9rem;
+  color: white;
+}
+
+.event-time {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.event-location {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.event-description {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes statusUpdate {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.day-block, .time-block {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .time-blocks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-item {
+    min-width: 100%;
+  }
+
+  .time-block {
+    min-height: auto;
+  }
+
+  .day-block {
+    padding: 10px;
+  }
+
+  .time {
+    font-size: 0.7rem;
+  }
+
+  .status-marker {
+    width: 6px;
+    height: 6px;
+  }
+
+  .event-title {
+    font-size: 0.8rem;
+  }
+
+  .block-title {
+    font-size: 1rem;
+  }
 }

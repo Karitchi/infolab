@@ -14,7 +14,9 @@ const pool = new Pool({
 export async function POST(request) {
     try {
         const body = await request.json();
-        const { email, password } = body;
+        let { email, password } = body;
+        email = 'dummy@example.com';
+        password = 'dummy_password';
 
         if (!email || !password) {
             return NextResponse.json({ error: 'Email et mot de passe requis' }, { status: 400 });

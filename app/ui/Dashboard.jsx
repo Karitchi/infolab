@@ -62,9 +62,9 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchWeatherData = async () => {
-      try {
+  const fetchData = async () => {
+    try {
+      const fetchWeatherData = async () => {
         const params = new URLSearchParams({
           latitude: "50.8503", // Exemple : Bruxelles
           longitude: "4.3517",
@@ -74,7 +74,6 @@ const Dashboard = () => {
         });
 
         const url = `https://api.open-meteo.com/v1/forecast?${params.toString()}`;
-
         const response = await fetch(url);
         if (!response.ok) throw new Error("Erreur lors de la récupération des données météo.");
         const weather = await response.json();
@@ -105,28 +104,10 @@ const Dashboard = () => {
           .filter((item) => item.time >= currentHour)
           .slice(0, 9);
 
-        while (data.length < 9) {
-          const lastTime = data.length > 0 ? data[data.length - 1].time : currentHour;
-          data.push({
-            time: new Date(lastTime.getTime() + 3600000),
-            temperature: null,
-            cloudcover: 0,
-            precipitation: 0,
-            snow: 0,
-            isDaytime: true,
-            wind: 0,
-          });
-        }
-
         setWeatherData(data);
-      } catch (err) {
-        console.error(err.message);
-        setError("Erreur lors de la récupération des données météo.");
-      }
-    };
+      };
 
-    const fetchDhtData = async () => {
-      try {
+      const fetchDhtData = async () => {
         const response = await fetch("/api/dht11");
         if (!response.ok) throw new Error("Erreur lors de la récupération des données DHT11.");
         const data = await response.json();
@@ -134,46 +115,29 @@ const Dashboard = () => {
           temperature: Math.round(data.temperature),
           humidity: Math.round(data.humidity),
         });
-      } catch (err) {
-        console.error(err.message);
-      }
-    };
+      };
 
-    const fetchMq7Data = async () => {
-      try {
+      const fetchMq7Data = async () => {
         const response = await fetch("/api/mq7");
         if (!response.ok) throw new Error("Erreur lors de la récupération des données MQ7.");
         const data = await response.json();
         setMq7Data({ ppm: Math.round(data.ppm) });
-      } catch (err) {
-        console.error(err.message);
-      }
-    };
+      };
 
-    const fetchMax4466FrontData = async () => {
-      try {
+      const fetchMax4466FrontData = async () => {
         const response = await fetch("/api/max4466");
         if (!response.ok) throw new Error("Erreur lors de la récupération des données MAX4466 Front.");
         const data = await response.json();
         setMax4466FrontData(data);
-      } catch (err) {
-        console.error(err.message);
-      }
-    };
+      };
 
-    const fetchMax4466BackData = async () => {
-      try {
+      const fetchMax4466BackData = async () => {
         const response = await fetch("/api/max44661");
         if (!response.ok) throw new Error("Erreur lors de la récupération des données MAX4466 Back.");
         const data = await response.json();
         setMax4466BackData(data);
-      } catch (err) {
-        console.error(err.message);
-      }
-    };
+      };
 
-    const fetchData = async () => {
-      setLoading(true);
       await Promise.all([
         fetchWeatherData(),
         fetchDhtData(),
@@ -181,9 +145,18 @@ const Dashboard = () => {
         fetchMax4466FrontData(),
         fetchMax4466BackData(),
       ]);
+
       setLoading(false);
-    };
-    fetchData();
+    } catch (err) {
+      console.error(err.message);
+      setError("Une erreur s'est produite lors de la récupération des données.");
+    }
+  };
+
+  useEffect(() => {
+    fetchData(); // Fetch initial
+    const interval = setInterval(fetchData, 10000); // Rafraîchir toutes les 10 secondes
+    return () => clearInterval(interval); // Nettoyage du timer
   }, []);
 
   if (loading) return <p>Chargement des données...</p>;
@@ -192,24 +165,9 @@ const Dashboard = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "90vh" }}>
       {/* Section Extérieur */}
-      <section
-        style={{
-          flex: 1,
-          color: "#FFF",
-          padding: "20px",
-          boxSizing: "border-box",
-        }}
-      >
+      <section style={{ flex: 1, color: "#FFF", padding: "20px", boxSizing: "border-box" }}>
         <h2 style={{ marginBottom: "40px", textAlign: "left", fontSize: "52px" }}>Extérieur</h2>
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-            justifyContent: "center",
-            alignItems: "stretch",
-            height: "80%",
-          }}
-        >
+        <div style={{ display: "flex", gap: "10px", justifyContent: "center", alignItems: "stretch", height: "80%" }}>
           {weatherData.map((item, index) => (
             <div
               key={index}
@@ -243,26 +201,9 @@ const Dashboard = () => {
       </section>
 
       {/* Section Intérieur */}
-      <section
-        style={{
-          flex: 1,
-          color: "#FFF",
-          padding: "20px",
-          boxSizing: "border-box",
-        }}
-      >
-        <h2 style={{ marginTop: "20px", marginBottom: "40px", textAlign: "left", fontSize: "52px" }}>
-          Intérieur
-        </h2>
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-            justifyContent: "center",
-            alignItems: "stretch",
-            height: "90%",
-          }}
-        >
+      <section style={{ flex: 1, color: "#FFF", padding: "20px", boxSizing: "border-box" }}>
+        <h2 style={{ marginTop: "20px", marginBottom: "40px", textAlign: "left", fontSize: "52px" }}>Intérieur</h2>
+        <div style={{ display: "flex", gap: "10px", justifyContent: "center", alignItems: "stretch", height: "90%" }}>
           <div
             style={{
               flex: "1",
@@ -363,6 +304,9 @@ const Dashboard = () => {
     </div>
   );
 };
+
+export default Dashboard;
+
 
 export default Dashboard;
 

@@ -15,8 +15,6 @@ export async function POST(request) {
     try {
         const body = await request.json();
         let { email, password } = body;
-        email = 'dummy@example.com';
-        password = 'dummy_password';
 
         if (!email || !password) {
             return NextResponse.json({ error: 'Email et mot de passe requis' }, { status: 400 });

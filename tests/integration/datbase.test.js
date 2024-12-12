@@ -39,7 +39,7 @@ describe("API Integration Tests", () => {
     await postgresContainer.stop();
   });
 
-  //test d'integration sur la fonctionalité raspberry schedule; il vérifie que tout est ok pour l'api get et qu'il récupere correctement les données
+  //test d'integration sur la fonctionnalité raspberry schedule; il vérifie que tout est ok pour l'api get et qu'il récupere correctement les données
   it("should return a valid schedule JSON", async () => {
     try {
       const insertQuery = `

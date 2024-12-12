@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { useEffect, useRef, useState } from "react";
 
-import TransitionManager from "../lib/TransitionManager";
-
-import Weather from "./Weather";
+import { fetchComponentVisibility } from "@/app/lib/serverActionVisibility";
+import Announce from "./Annouce";
 import Schedule from "./Schedule";
+import Weather from "./Weather";
 
 const splideOptions = {
   direction: "ttb",
   rewind: true,
-  height: "100vh",
+  height: "100%",
   arrows: false,
   pagination: false,
   autoplay: false,
@@ -22,41 +22,98 @@ const splideOptions = {
   speed: 1000,
 };
 
-const panelsDisplayDuration = [10000, 10000]; // Duration for each panel
-
-const transitionManager = new TransitionManager();
+const defaultDisplayDuration = 10000;
 
 const Slideshow = () => {
   const splideRef = useRef(null);
   const timerRef = useRef(null);
+  const [components, setComponents] = useState([]);
 
-  const handleSlideMove = async (Splide, slideIndex = 0) => {
-    transitionManager.resetTimer(timerRef);
-    timerRef.current = await transitionManager.startTimer(
-      timerRef,
-      slideIndex,
-      panelsDisplayDuration,
-    );
-    transitionManager.scroll(Splide);
+  const fetchVisibility = async () => {
+    try {
+      const result = await fetchComponentVisibility();
+      const orderedComponents = result
+        .filter((component) => component.is_visible)
+        .sort((a, b) => a.order_index - b.order_index);
+      setComponents(orderedComponents);
+    } catch (error) {
+      console.error("Error fetching component visibility:", error);
+    }
+  };
+
+  const startTimer = (splideInstance, slideIndex = 0) => {
+    if (!splideInstance) return;
+
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+
+    const duration = defaultDisplayDuration;
+
+    timerRef.current = setTimeout(() => {
+      splideInstance.go("+1");
+    }, duration);
   };
 
   useEffect(() => {
-    return () => transitionManager.resetTimer(timerRef); // Cleanup timer on unmount
+    fetchVisibility();
+    const interval = setInterval(fetchVisibility, 15000);
+
+    const splideInstance = splideRef.current?.splide;
+
+    if (splideInstance) {
+      const onMounted = () => {
+        console.log("Splide mounted");
+        startTimer(splideInstance, 0);
+      };
+
+      const onMoved = (newIndex) => {
+        console.log(`Slide moved to index ${newIndex}`);
+        startTimer(splideInstance, newIndex);
+      };
+
+      splideInstance.on("mounted", onMounted);
+      splideInstance.on("moved", onMoved);
+
+      return () => {
+        splideInstance.off("mounted", onMounted);
+        splideInstance.off("moved", onMoved);
+        if (timerRef.current) {
+          clearTimeout(timerRef.current);
+        }
+      };
+    }
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <Splide
-      ref={splideRef}
-      options={splideOptions}
-      onMoved={handleSlideMove} // Only trigger timer on slide move
-      onMounted={handleSlideMove}
-    >
-      <SplideSlide>
-        <Weather />
-      </SplideSlide>
-      <SplideSlide>
-        <Schedule />
-      </SplideSlide>
+    <Splide ref={splideRef} options={splideOptions}>
+      {components.map(({ component_name }) => {
+        if (component_name === "Weather") {
+          return (
+            <SplideSlide key={component_name} className="p-8 flex flex-grow">
+              <Weather />
+            </SplideSlide>
+          );
+        }
+        if (component_name === "Announce") {
+          return (
+            <SplideSlide key={component_name} className="p-8 flex flex-grow">
+              <Announce />
+            </SplideSlide>
+          );
+        }
+        if (component_name === "Schedule") {
+          return (
+            <SplideSlide key={component_name} className="p-8 flex flex-grow">
+              <Schedule />
+            </SplideSlide>
+          );
+        }
+        return null;
+      })}
     </Splide>
   );
 };

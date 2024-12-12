@@ -34,6 +34,8 @@ services:
 
 volumes:
   postgres:
+    name: postgres
 
 networks:
   infolab:
+    name: infolab

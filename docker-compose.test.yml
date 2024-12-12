@@ -1,0 +1,11 @@
+services:
+  test:
+    image: node
+    command: npm run test
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock" # Docker socket
+      - "./:/infolab" # Mount the current directory to /infolab inside the container
+    working_dir: /infolab # Set the working directory inside the container
+    network_mode: host # Use host network mode
+    stdin_open: true # Keep stdin open for interactive mode
+    tty: true # Allocate a pseudo-TTY

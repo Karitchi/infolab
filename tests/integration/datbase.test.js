@@ -4,7 +4,6 @@ const { PostgreSqlContainer } = require("testcontainers");
 const { Pool } = require("pg");
 const fetch = require("node-fetch");
 
-
 //creation de notre docker de test avec Testcontainer (copie de notre db)
 describe("API Integration Tests", () => {
   let postgresContainer;
@@ -40,7 +39,7 @@ describe("API Integration Tests", () => {
     await postgresContainer.stop();
   });
 
-  //test d'integration; il vérifie que tout est ok pour l'api get et qu'il récupere correctement les données
+  //test d'integration sur la fonctionalité raspberry schedule; il vérifie que tout est ok pour l'api get et qu'il récupere correctement les données
   it("should return a valid schedule JSON", async () => {
     try {
       const insertQuery = `
@@ -58,13 +57,23 @@ describe("API Integration Tests", () => {
     }
 
     try {
-      const apiResponse = await fetch("http://localhost:3000/api/raspberry-schedule");
-      expect(apiResponse.status).toBe(200)
+      const apiResponse = await fetch(
+        "http://localhost:3000/api/raspberry-schedule"
+      );
+      expect(apiResponse.status).toBe(200);
       const data = await apiResponse.json();
 
       console.log("API Response Data:", data);
-      const validDays = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
-      const validHours = (hours) => hours.every((hour) => hour >= 8 && hour <= 17);
+      const validDays = [
+        "lundi",
+        "mardi",
+        "mercredi",
+        "jeudi",
+        "vendredi",
+        "samedi",
+      ];
+      const validHours = (hours) =>
+        hours.every((hour) => hour >= 8 && hour <= 17);
 
       data.forEach((entry) => {
         expect(Object.keys(entry)).toEqual(["day", "hours"]);

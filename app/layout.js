@@ -11,7 +11,7 @@ const dosis = Dosis({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dosis.variable} font-dosis`}>
-      <body className="bg-gradient-to-b from-[#091925] to-[#275173] text-white flex flex-col h-screen text-4xl p-8 space-y-8">
+      <body className="bg-gradient-to-b from-[#091925] to-[#275173] text-white flex flex-col h-screen text-4xl space-y-8">
         {children}
       </body>
     </html>

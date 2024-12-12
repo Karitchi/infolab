@@ -5,6 +5,7 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import { useEffect, useRef, useState } from "react";
 
 import { fetchComponentVisibility } from "@/app/lib/serverActionVisibility";
+import TransitionManager from "../lib/TransitionManager";
 import Announce from "./Annouce";
 import Schedule from "./Schedule";
 import Weather from "./Weather";
@@ -28,6 +29,8 @@ const Slideshow = () => {
   const splideRef = useRef(null);
   const timerRef = useRef(null);
   const [components, setComponents] = useState([]);
+  const [panelsDisplayDuration, setPanelsDisplayDuration] = useState([]);
+  const transitionManager = new TransitionManager();
 
   const fetchVisibility = async () => {
     try {
@@ -36,6 +39,12 @@ const Slideshow = () => {
         .filter((component) => component.is_visible)
         .sort((a, b) => a.order_index - b.order_index);
       setComponents(orderedComponents);
+
+      // Update display durations (if available, otherwise use default)
+      const durations = orderedComponents.map((component) =>
+        component.display_duration || defaultDisplayDuration
+      );
+      setPanelsDisplayDuration(durations);
     } catch (error) {
       console.error("Error fetching component visibility:", error);
     }
@@ -44,16 +53,12 @@ const Slideshow = () => {
   const startTimer = (splideInstance, slideIndex = 0) => {
     if (!splideInstance) return;
 
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
+    transitionManager.resetTimer(timerRef);
 
-    const duration = defaultDisplayDuration;
-
-    timerRef.current = setTimeout(() => {
-      splideInstance.go("+1");
-    }, duration);
+    const duration = panelsDisplayDuration[slideIndex] || defaultDisplayDuration;
+    transitionManager.startTimer(timerRef, slideIndex, panelsDisplayDuration).then(() => {
+      transitionManager.scroll(splideInstance);
+    });
   };
 
   useEffect(() => {
@@ -79,14 +84,12 @@ const Slideshow = () => {
       return () => {
         splideInstance.off("mounted", onMounted);
         splideInstance.off("moved", onMoved);
-        if (timerRef.current) {
-          clearTimeout(timerRef.current);
-        }
+        transitionManager.resetTimer(timerRef);
       };
     }
 
     return () => clearInterval(interval);
-  }, []);
+  }, [panelsDisplayDuration]);
 
   return (
     <Splide ref={splideRef} options={splideOptions}>

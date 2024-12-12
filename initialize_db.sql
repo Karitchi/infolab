@@ -48,6 +48,14 @@ CREATE TABLE IF NOT EXISTS classroom_environment_metrics (
     collected_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS component_visibility (
+    id SERIAL PRIMARY KEY,
+    component_name VARCHAR(255) NOT NULL UNIQUE,
+    is_visible BOOLEAN NOT NULL DEFAULT TRUE,
+    parent_id INT DEFAULT NULL REFERENCES component_visibility(id),
+    order_index INT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE IF NOT EXISTS raspberry_schedules (
     schedule_id SERIAL PRIMARY KEY,

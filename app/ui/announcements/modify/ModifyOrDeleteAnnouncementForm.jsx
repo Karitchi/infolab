@@ -1,11 +1,9 @@
-import { useActionState } from "react";
-
-import DeleteAnnouncementButton from "./DeleteAnnouncementButton";
+import DeleteAnnouncementButton from "../delete/DeleteAnnouncementButton";
 import AnnouncementBodyInput from "../add/inputs/AnnouncementBodyInput";
 import AnnouncementAuthorInput from "../add/inputs/AnnouncementAuthorInput";
 import AnnouncementTitleInput from "../add/inputs/AnnouncementTitleInput";
 
-const DeleteAnnouncementForm = ({ announcement }) => {
+const ModifyOrDeleteAnnouncementForm = ({ announcement }) => {
   return (
     <>
       {/* <Toaster theme="dark" richColors position="top-center" expand /> */}
@@ -24,4 +22,4 @@ const DeleteAnnouncementForm = ({ announcement }) => {
   );
 };
 
-export default DeleteAnnouncementForm;
+export default ModifyOrDeleteAnnouncementForm;

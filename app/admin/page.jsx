@@ -7,7 +7,7 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import TransitionManager from "../lib/TransitionManager";
 import { getAnnouncements } from "../lib/getAnnouncements";
 import AddAnnouncementForm from "../ui/announcements/add/AddAnnouncementForm";
-import DeleteAnnouncementForm from "../ui/announcements/delete/DeleteAnnouncementForm";
+import ModifyOrDeleteAnnouncementForm from "../ui/announcements/modify/ModifyOrDeleteAnnouncementForm";
 
 const splideOptions = {
   direction: "ltr",
@@ -71,7 +71,7 @@ const AddAnnouncementPage = () => {
             key={announcement.announcement_id}
             className="flex flex-grow flex-col"
           >
-            <DeleteAnnouncementForm announcement={announcement} />
+            <ModifyOrDeleteAnnouncementForm announcement={announcement} />
           </SplideSlide>
         ))}
       </Splide>

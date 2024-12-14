@@ -62,7 +62,6 @@ const Page = () => {
       <button onClick={handleSubmit} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
         Valider les horaires
       </button>
-      <Toaster theme="dark" richColors position="top-center" expand />
     </div>
   );
 };

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
-import { getAnnouncements } from "../lib/getAnnouncements";
+import { getAnnouncements } from "../../../lib/getAnnouncements";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import TransitionManager from "../lib/TransitionManager";
-import Title from "./Title";
+import TransitionManager from "../../../lib/TransitionManager";
+import Title from "../../Title";
 
 const splideOptions = {
   direction: "ltr",
@@ -19,9 +19,7 @@ const splideOptions = {
   speed: 1000,
   gap: "32px",
 };
-
 const panelsDisplayDuration = [10000, 10000]; // Duration for each panel
-
 const transitionManager = new TransitionManager();
 
 const Announce = () => {
@@ -41,6 +39,7 @@ const Announce = () => {
   };
 
   useEffect(() => {
+    handleSlideMove(splideRef.current.splide, 0);
     return () => transitionManager.resetTimer(timerRef); // Cleanup timer on unmount
   }, []);
 
@@ -65,7 +64,7 @@ const Announce = () => {
         ref={splideRef}
         options={splideOptions}
         onMoved={handleSlideMove} // Only trigger timer on slide move
-        onMounted={handleSlideMove}
+        // onMounted={handleSlideMove}
         className="flex flex-col flex-grow"
       >
         {announcements.map((announcement) => (

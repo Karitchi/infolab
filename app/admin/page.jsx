@@ -1,43 +1,80 @@
 "use client";
 
-import { useEffect } from "react";
-import { useActionState } from "react";
-import { Toaster, toast } from "sonner";
+import { useEffect, useState, useRef } from "react";
 import Title from "../ui/Title";
-import AddAnnounceInputs from "../ui/AddAnnounceInpunts";
-import AddAnnounceButton from "../ui/AddAnnounceButton";
-import { addAnnouncement } from "../lib/serverActions";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/splide/dist/css/splide.min.css";
+import TransitionManager from "../lib/TransitionManager";
+import { getAnnouncements } from "../lib/getAnnouncements";
+import AddAnnouncementForm from "../ui/announcements/add/AddAnnouncementForm";
+import DeleteAnnouncementForm from "../ui/announcements/delete/DeleteAnnouncementForm";
+
+const splideOptions = {
+  direction: "ltr",
+  rewind: true,
+  arrows: false,
+  pagination: true,
+  autoplay: false,
+  wheel: true,
+  wheelMinThreshold: 50,
+  speed: 1000,
+  gap: "32px",
+};
+const panelsDisplayDuration = [10000, 10000]; // Duration for each panel
+const transitionManager = new TransitionManager();
 
 const AddAnnouncementPage = () => {
-  const [formState, formAction, isPending] = useActionState(
-    addAnnouncement,
-    {}
-  );
+  const [announcements, setAnnouncements] = useState([]);
 
-  // Handle toast notifications based on form state
+  const splideRef = useRef(null);
+  const timerRef = useRef(null);
+
+  const handleSlideMove = async (Splide, slideIndex = 0) => {
+    transitionManager.resetTimer(timerRef);
+    timerRef.current = await transitionManager.startTimer(
+      timerRef,
+      slideIndex,
+      panelsDisplayDuration
+    );
+    // transitionManager.scroll(Splide);
+  };
+
   useEffect(() => {
-    let toastId;
+    return () => transitionManager.resetTimer(timerRef); // Cleanup timer on unmount
+  }, []);
 
-    if (isPending) {
-      toastId = toast.loading("Adding your announcement... Just a moment!");
-    } else if (formState.success) {
-      toast.dismiss(toastId);
-      toast.success("Announcement added successfully!", { id: toastId });
-    } else if (formState.error) {
-      toast.dismiss(toastId);
-      formState.error.forEach((error) => toast.error(`Oops! ${error.message}`));
-    }
-  }, [isPending, formState]);
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      let actualAnnouncements = await getAnnouncements();
+      setAnnouncements(actualAnnouncements);
+    };
+
+    fetchAnnouncements();
+  }, []);
 
   return (
     <div className="flex flex-grow flex-col">
       <Title title="Announces" />
-      <form action={formAction} className="flex flex-grow flex-col">
-        <AddAnnounceInputs />
-        <AddAnnounceButton isPending={isPending} formState={formState} />
-      </form>
+      <Splide
+        ref={splideRef}
+        options={splideOptions}
+        onMoved={handleSlideMove} // Only trigger timer on slide move
+        onMounted={handleSlideMove}
+        className="flex flex-col flex-grow"
+      >
+        <SplideSlide className="flex flex-grow flex-col">
+          <AddAnnouncementForm />
+        </SplideSlide>
 
-      <Toaster theme="dark" richColors position="top-center" expand />
+        {announcements.map((announcement) => (
+          <SplideSlide
+            key={announcement.announcement_id}
+            className="flex flex-grow flex-col"
+          >
+            <DeleteAnnouncementForm announcement={announcement} />
+          </SplideSlide>
+        ))}
+      </Splide>
     </div>
   );
 };

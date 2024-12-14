@@ -27,6 +27,7 @@ const addFormDataToDatabase = async (formData) => {
 // Handle announcement submission
 export async function addAnnouncement(currentState, formData) {
   try {
+    console.log("hello");
     // Validate form data
     await schema.validateAsync(
       {
@@ -39,6 +40,21 @@ export async function addAnnouncement(currentState, formData) {
 
     // Add the validated data to the database
     await addFormDataToDatabase(formData);
+
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error.details };
+  }
+}
+
+export async function deleteAnnouncement(announcementId, event) {
+  try {
+    const query = `
+      DELETE FROM announcements
+      WHERE announcement_id = $1
+    `;
+    const params = [announcementId];
+    await pgQuery(query, params);
 
     return { success: true };
   } catch (error) {

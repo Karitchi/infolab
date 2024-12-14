@@ -8,7 +8,7 @@ import TransitionManager from "../lib/TransitionManager";
 
 import Weather from "./Weather";
 import Schedule from "./Schedule";
-import Announce from "./Annouce";
+import Announce from "./announcements/display/AnnouncementsDisplay";
 
 const splideOptions = {
   direction: "ttb",

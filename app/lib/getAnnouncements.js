@@ -8,6 +8,5 @@ export async function getAnnouncements() {
     FROM announcements
   `;
   const { rows } = await pgQuery(query);
-  console.log(rows);
   return rows;
 }

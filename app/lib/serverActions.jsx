@@ -1,6 +1,6 @@
 "use server";
-import { pgQuery } from "@/app/lib/database";
 import Joi from "joi";
+import { pgQuery } from "./database";
 
 // Validation schema
 const schema = Joi.object({

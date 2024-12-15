@@ -14,3 +14,10 @@
 .splide__list {
   height: 100%; /* Allow slides to take full height */
 }
+
+.thumbnail {
+  transform: scale(0.75); /* Réduit l'échelle des composants */
+  max-width: 100%; /* S'assure que rien ne déborde */
+  max-height: 100%; /* Limite la hauteur */
+  transform-origin: top center; /* Centre le redimensionnement */
+}

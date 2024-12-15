@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Title from "./Title";
 
 export default function Weather() {
@@ -129,6 +129,9 @@ export default function Weather() {
     const errorHandler = (err) => {
       console.error("Erreur de géolocalisation: ", err.message);
       setError("Erreur lors de la récupération de la géolocalisation.");
+      //for our raspberry in case he cant self geo locate
+      success({ coords: { latitude: 50.6683, longitude: 4.6139 } });
+
       setLoading(false);
     };
 

@@ -28,9 +28,9 @@ const AdminPage = () => {
       <SplideSlide className="flex flex-grow flex-col">
         <ConfigPage />
       </SplideSlide>
-      {/* <SplideSlide className="flex flex-grow flex-col">
+      <SplideSlide className="flex flex-grow flex-col">
         <VisibilityPage />
-      </SplideSlide> */}
+      </SplideSlide>
     </Splide>
   );
 };

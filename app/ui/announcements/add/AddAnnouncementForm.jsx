@@ -1,15 +1,13 @@
 import { useActionState, useEffect } from "react";
 import { Toaster, toast } from "sonner";
 
-import AnnouncementTitleInput from "./inputs/AnnouncementTitleInput";
-import AnnouncementBodyInput from "./inputs/AnnouncementBodyInput";
-import AnnouncementAuthorInput from "./inputs/AnnouncementAuthorInput";
+import AnnouncementTitleInput from "@/app/ui/announcements/add/inputs/AnnouncementTitleInput";
+import AnnouncementBodyInput from "@/app/ui/announcements/add/inputs/AnnouncementBodyInput";
+import AnnouncementAuthorInput from "@/app/ui/announcements/add/inputs/AnnouncementAuthorInput";
 import { addAnnouncement } from "@/app/lib/serverActions";
 import AddAnnounceButton from "@/app/ui/announcements/add/button/AnnouncementAddButton.jsx";
 
-
 const AddAnnouncementForm = ({ announcement }) => {
-
   const [formState, formAction, isPending] = useActionState(
     addAnnouncement,
     {}
@@ -28,7 +26,6 @@ const AddAnnouncementForm = ({ announcement }) => {
       formState.error.forEach((error) => toast.error(`Oops! ${error.message}`));
     }
   }, [isPending, formState]);
-
 
   return (
     <>

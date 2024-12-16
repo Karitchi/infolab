@@ -16,13 +16,13 @@ import {
 } from "@dnd-kit/sortable";
 import { useEffect, useState } from "react";
 import { toast, Toaster } from "sonner";
-import { getAnnouncements } from "../lib/getAnnouncements";
+import { getAnnouncements } from "../../lib/getAnnouncements";
 import {
   fetchComponentVisibility,
   toggleComponentVisibility,
   updateComponentOrder,
-} from "../lib/serverActionVisibility";
-import Announce from "./announcements/display/AnnouncementsDisplay";
+} from "../../lib/serverActionVisibility";
+import Announce from "../announcements/display/AnnouncementsDisplay";
 
 import Button from "../ui/Button";
 import Schedule from "../ui/Schedule";

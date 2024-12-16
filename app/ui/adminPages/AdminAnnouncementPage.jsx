@@ -1,13 +1,13 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import Title from "./Title";
+import Title from "../Title";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import TransitionManager from "@/app/lib/TransitionManager";
 import { getAnnouncements } from "@/app/lib/getAnnouncements";
-import AddAnnouncementForm from "./announcements/add/AddAnnouncementForm";
-import DeleteAnnouncementForm from "./announcements/delete/DeleteAnnouncementForm";
+import AddAnnouncementForm from "@/app/ui/announcements/add/AddAnnouncementForm";
+import DeleteAnnouncementForm from "@/app/ui/announcements/delete/DeleteAnnouncementForm";
 
 const splideOptions = {
   direction: "ltr",

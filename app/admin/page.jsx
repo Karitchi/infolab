@@ -2,9 +2,9 @@
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import AdminAnnouncementPage from "../ui/AdminAnnouncementPage";
-import ConfigPage from "../ui/ConfigPage";
-import VisibilityPage from "../ui/VisibilityPage";
+import AdminAnnouncementPage from "../ui/adminPages/AdminAnnouncementPage";
+import ConfigPage from "../ui/adminPages/ConfigPage";
+import VisibilityPage from "../ui/adminPages/VisibilityPage";
 
 const splideOptions = {
   direction: "ttb",

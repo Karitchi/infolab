@@ -9,7 +9,7 @@ import {
 import WeeklySchedule from "@/app/ui/WeeklySchedule";
 import { useEffect, useState } from "react";
 import { toast, Toaster } from "sonner";
-import Title from "./Title";
+import Title from "../Title";
 
 const ConfigPage = () => {
   const [schedule, setSchedule] = useState({

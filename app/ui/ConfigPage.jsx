@@ -9,9 +9,9 @@ import {
 import WeeklySchedule from "@/app/ui/WeeklySchedule";
 import { useEffect, useState } from "react";
 import { toast, Toaster } from "sonner";
-import Title from "../ui/Title";
+import Title from "./Title";
 
-const Page = () => {
+const ConfigPage = () => {
   const [schedule, setSchedule] = useState({
     lundi: [],
     mardi: [],
@@ -134,4 +134,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default ConfigPage;

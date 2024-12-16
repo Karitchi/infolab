@@ -3,6 +3,7 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import AdminAnnouncementPage from "../ui/AdminAnnouncementPage";
+import ConfigPage from "../ui/ConfigPage";
 
 const splideOptions = {
   direction: "ttb",
@@ -22,6 +23,9 @@ const AdminPage = () => {
     <Splide options={splideOptions}>
       <SplideSlide className="flex flex-grow">
         <AdminAnnouncementPage />
+      </SplideSlide>
+      <SplideSlide>
+        <ConfigPage />
       </SplideSlide>
       <SplideSlide>
         <h1>hello2</h1>

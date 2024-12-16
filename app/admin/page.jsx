@@ -22,7 +22,7 @@ const splideOptions = {
 const AdminPage = () => {
   return (
     <Splide options={splideOptions}>
-      <SplideSlide className="flex flex-grow">
+      <SplideSlide className="flex flex-grow flex-col">
         <AdminAnnouncementPage />
       </SplideSlide>
       <SplideSlide>

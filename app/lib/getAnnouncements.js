@@ -1,6 +1,6 @@
 "use server";
 
-import { pgQuery } from "@/app/lib/database";
+import { pgQuery } from "./database";
 
 export async function getAnnouncements() {
   const query = `

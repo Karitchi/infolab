@@ -5,6 +5,7 @@ import "@splidejs/splide/dist/css/splide.min.css";
 import AdminAnnouncementPage from "../ui/adminPages/AdminAnnouncementPage";
 import ConfigPage from "../ui/adminPages/ConfigPage";
 import VisibilityPage from "../ui/adminPages/VisibilityPage";
+import CalendarPage from "../ui/adminPages/CalendarPage";
 
 const splideOptions = {
   direction: "ttb",
@@ -30,6 +31,9 @@ const AdminPage = () => {
       </SplideSlide>
       <SplideSlide className="flex flex-grow flex-col">
         <VisibilityPage />
+      </SplideSlide>
+      <SplideSlide className="flex flex-grow flex-col">
+        <CalendarPage />
       </SplideSlide>
     </Splide>
   );

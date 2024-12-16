@@ -22,7 +22,7 @@ import {
   toggleComponentVisibility,
   updateComponentOrder,
 } from "../lib/serverActionVisibility";
-import Announce from "../ui/announcements/display/AnnouncementsDisplay";
+import Announce from "./announcements/display/AnnouncementsDisplay";
 
 import Button from "../ui/Button";
 import Schedule from "../ui/Schedule";

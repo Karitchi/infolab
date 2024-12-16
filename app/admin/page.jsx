@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import AdminAnnouncementPage from "../ui/AdminAnnouncementPage";
 import ConfigPage from "../ui/ConfigPage";
+import VisibilityPage from "../ui/VisibilityPage";
 
 const splideOptions = {
   direction: "ttb",
@@ -28,7 +29,7 @@ const AdminPage = () => {
         <ConfigPage />
       </SplideSlide>
       <SplideSlide>
-        <h1>hello2</h1>
+        <VisibilityPage />
       </SplideSlide>
     </Splide>
   );

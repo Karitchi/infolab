@@ -53,7 +53,7 @@ const AddAnnouncementPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-grow flex-col">
+    <div className="flex flex-grow flex-col p-3">
       <Title title="Announces" />
       <Splide
         ref={splideRef}

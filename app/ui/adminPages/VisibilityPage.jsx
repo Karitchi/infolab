@@ -24,11 +24,12 @@ import {
 } from "../../lib/serverActionVisibility";
 import Announce from "../announcements/display/AnnouncementsDisplay";
 
-import Button from "../ui/Button";
-import Schedule from "../ui/Schedule";
-import { SortableItem } from "../ui/SortableItem"; // On crée un composant réutilisable pour chaque élément triable
-import Weather from "../ui/Weather";
-import Dashboard from "../ui/Dashboard";
+import Button from "../../ui/Button";
+import Schedule from "../../ui/Schedule";
+import { SortableItem } from "../../ui/SortableItem"; // On crée un composant réutilisable pour chaque élément triable
+import Weather from "../../ui/Weather";
+import Dashboard from "../../ui/Dashboard";
+import Title from "../../ui/Title";
 
 const VisibilityPage = () => {
   const [components, setComponents] = useState([]);
@@ -145,8 +146,8 @@ const VisibilityPage = () => {
   }
 
   return (
-    <div className="p-8 flex flex-col  min-h-screen text-white">
-      <h1 className="text-3xl font-bold mb-6">Gestion de Visibilité</h1>
+    <div className="p-8 flex flex-col flex-grow text-white">
+      <Title title="Gestion de Visibilité" />
 
       <DndContext
         sensors={sensors}
@@ -157,17 +158,17 @@ const VisibilityPage = () => {
           items={components.map((item) => item.id)}
           strategy={verticalListSortingStrategy}
         >
-          <ul>
+          <ul className="flex flex-col flex-grow">
             {components.map(({ id, component_name, is_visible }, index) => (
               <SortableItem key={id} id={id}>
-                <li className="flex flex-col justify-between items-center mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
+                <li className="flex flex-col flex-grow items-center mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
                   {/* Header avec bouton et actions */}
-                  <div className="w-full flex justify-between items-center">
-                    <div className="flex items-center gap-4">
-                      <span className="text-lg font-semibold text-gray-700">
+                  <div className="w-full flex flex-col items-center">
+                    <div className="flex flex-col items-center gap-4">
+                      <span className="text-lg flex flex-col font-semibold text-gray-700">
                         {component_name}
                       </span>
-                      <div className="flex flex-col gap-1">
+                      <div className="flex gap-1">
                         {index > 0 && (
                           <button
                             className="text-sm text-gray-500 hover:text-gray-800"
@@ -228,7 +229,7 @@ const VisibilityPage = () => {
                   </div>
 
                   {/* Rendu conditionnel des composants en "thumbnail" */}
-                  {is_visible && (
+                  {/* {is_visible && (
                     <div className="mt-4 w-full h-48 overflow-hidden bg-white rounded-lg shadow-lg flex justify-center items-center">
                       <div className="thumbnail">
                         {component_name === "Weather" && <Weather />}
@@ -237,7 +238,7 @@ const VisibilityPage = () => {
                         {component_name === "Dashboard" && <Dashboard />}
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </li>
               </SortableItem>
             ))}

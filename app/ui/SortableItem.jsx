@@ -18,7 +18,7 @@ export const SortableItem = ({ id, children }) => {
       style={style}
       {...attributes}
       {...listeners}
-      className="sortable-item"
+      className="sortable-item flex flex-col flex-grow"
     >
       {children}
     </div>

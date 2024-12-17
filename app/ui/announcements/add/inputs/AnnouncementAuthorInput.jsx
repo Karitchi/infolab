@@ -1,7 +1,4 @@
-import { useState } from "react";
-
-const AnnouncementAuthorInput = ({ initialAuthor }) => {
-  const [author, setAuthor] = useState(initialAuthor); // Declare a state variable...
+const AnnouncementAuthorInput = ({ value, onChange }) => {
 
   return (
     <input
@@ -9,8 +6,8 @@ const AnnouncementAuthorInput = ({ initialAuthor }) => {
       type="text"
       placeholder="Author here..."
       className="rounded bg-transparent focus:outline-none text-right"
-      value={author ? author : ""}
-      onChange={(e) => setAuthor(e.target.value)}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
     />
   );
 };

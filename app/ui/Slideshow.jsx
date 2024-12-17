@@ -8,6 +8,7 @@ import { fetchComponentVisibility } from "@/app/lib/serverActionVisibility";
 import Announce from "./announcements/display/AnnouncementsDisplay";
 import Schedule from "./Schedule";
 import Weather from "./Weather";
+import Dashboard from "./Dashboard";
 
 const splideOptions = {
   direction: "ttb",
@@ -91,6 +92,13 @@ const Slideshow = () => {
   return (
     <Splide ref={splideRef} options={splideOptions}>
       {components.map(({ component_name }) => {
+        if (component_name === "Dashboard") {
+          return (
+            <SplideSlide key={component_name} className="p-8 flex flex-grow">
+              <Dashboard />
+            </SplideSlide>
+          );
+        }
         if (component_name === "Weather") {
           return (
             <SplideSlide key={component_name} className="p-8 flex flex-grow">

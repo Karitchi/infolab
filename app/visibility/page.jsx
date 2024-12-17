@@ -28,6 +28,7 @@ import Button from "../ui/Button";
 import Schedule from "../ui/Schedule";
 import { SortableItem } from "../ui/SortableItem"; // On crée un composant réutilisable pour chaque élément triable
 import Weather from "../ui/Weather";
+import Dashboard from "../ui/Dashboard";
 
 const VisibilityPage = () => {
   const [components, setComponents] = useState([]);
@@ -233,6 +234,7 @@ const VisibilityPage = () => {
                         {component_name === "Weather" && <Weather />}
                         {component_name === "Schedule" && <Schedule />}
                         {component_name === "Announce" && <Announce />}
+                        {component_name === "Dashboard" && <Dashboard />}
                       </div>
                     </div>
                   )}

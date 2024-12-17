@@ -109,26 +109,30 @@ const Page = () => {
         setSchedule={setSchedule}
         currentDBSchedule={currentDBSchedule}
       />
-      <button
-        onClick={handleSubmit}
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
-      >
-        Valider les horaires
-      </button>
-      <button
-        onClick={async () => {
-          try {
-            await clearSchedules();
-            toast.success("Tous les horaires ont été supprimés !");
-            fetchSchedule();
-          } catch (error) {
-            toast.error("Erreur lors de la suppression de tous les horaires.");
-          }
-        }}
-        className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
-      >
-        Supprimer tous les horaires
-      </button>
+      <div className="flex space-x-3">
+        <button
+          onClick={handleSubmit}
+          className="p-3 bg-blue-500 text-white rounded"
+        >
+          Valider les horaires
+        </button>
+        <button
+          onClick={async () => {
+            try {
+              await clearSchedules();
+              toast.success("Tous les horaires ont été supprimés !");
+              fetchSchedule();
+            } catch (error) {
+              toast.error(
+                "Erreur lors de la suppression de tous les horaires."
+              );
+            }
+          }}
+          className="p-3 bg-red-500 text-white rounded"
+        >
+          Supprimer tous les horaires
+        </button>
+      </div>
       <Toaster theme="dark" richColors position="top-center" expand />
     </div>
   );

@@ -13,7 +13,7 @@ const Page = () => {
       options={{
         type: "snap", // Comportement par défaut : arrêt sur chaque slide
         perPage: 1, // Une slide visible à la fois
-        pagination: false, // Pas de points de navigation
+        pagination: true, // Active la pagination par défaut
         arrows: false, // Pas de flèches
         snap: true, // Transition automatique lorsqu'un seuil est atteint
         drag: true, // Glisser pour changer de slide
@@ -21,36 +21,46 @@ const Page = () => {
         trimSpace: true, // Supprime l'espace résiduel
         gap: "0rem", // Pas d'écart entre les slides
         width: "100%",
-        height: "100vh",
+        height: "100vh", // Hauteur dynamique selon la taille de l'écran
       }}
     >
       {/* Slide 1 : Slideshow */}
       <SplideSlide>
-        <div style={{ width: "100%", height: "100%" }}>
+        <div className="w-full h-full flex flex-col overflow-y-auto">
           <Slideshow />
         </div>
       </SplideSlide>
 
       {/* Slide 2 : Power Schedule */}
       <SplideSlide>
-        <div style={{ width: "100%", height: "100%" }}>
+        <div className="w-full h-full flex flex-col overflow-y-auto">
           <PowerSchedule />
         </div>
       </SplideSlide>
 
       {/* Slide 3 : Announcements */}
       <SplideSlide>
-        <div style={{ width: "100%", height: "100%" }}>
+        <div className="w-full h-full flex flex-col overflow-y-auto">
           <Visibility />
         </div>
       </SplideSlide>
 
       {/* Slide 4 : Visibility */}
       <SplideSlide>
-        <div style={{ width: "100%", height: "100%" }}>
+        <div className="w-full h-full flex flex-col overflow-y-auto">
           <Announcements />
         </div>
       </SplideSlide>
+
+      {/* Personnalisation de la pagination */}
+      <div className="splide__pagination">
+        <ul className="flex justify-center space-x-2">
+          <li className="splide__pagination__item w-3 h-3 bg-gray-400 rounded-full transition-all duration-300 cursor-pointer"></li>
+          <li className="splide__pagination__item w-3 h-3 bg-gray-400 rounded-full transition-all duration-300 cursor-pointer"></li>
+          <li className="splide__pagination__item w-3 h-3 bg-gray-400 rounded-full transition-all duration-300 cursor-pointer"></li>
+          <li className="splide__pagination__item w-3 h-3 bg-gray-400 rounded-full transition-all duration-300 cursor-pointer"></li>
+        </ul>
+      </div>
     </Splide>
   );
 };

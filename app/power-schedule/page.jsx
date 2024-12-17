@@ -75,7 +75,7 @@ const Page = () => {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-8" flex-grow="true">
       <Title title="Horraire d'arrêt" />
 
       {/* Affichage des horaires actuels dans la base de données */}
@@ -109,7 +109,7 @@ const Page = () => {
         setSchedule={setSchedule}
         currentDBSchedule={currentDBSchedule}
       />
-      <div className="flex space-x-3">
+      <div className="flex space-x-6 mt-6">
         <button
           onClick={handleSubmit}
           className="p-3 bg-blue-500 text-white rounded"

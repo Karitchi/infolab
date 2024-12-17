@@ -25,9 +25,10 @@ import {
 import Announce from "../ui/announcements/display/AnnouncementsDisplay";
 
 import Button from "../ui/Button";
+import Calendar from "../ui/Calendar";
+import Dashboard from "../ui/Dashboard";
 import Schedule from "../ui/Schedule";
 import { SortableItem } from "../ui/SortableItem"; // On crée un composant réutilisable pour chaque élément triable
-import Dashboard from "../ui/Dashboard";
 
 const VisibilityPage = () => {
   const [components, setComponents] = useState([]);
@@ -53,6 +54,7 @@ const VisibilityPage = () => {
   // Charger la visibilité des composants
   const fetchVisibilityData = async () => {
     const visibilityData = await fetchComponentVisibility();
+    console.log(visibilityData);
     setComponents(visibilityData.sort((a, b) => a.order_index - b.order_index));
   };
 
@@ -144,7 +146,7 @@ const VisibilityPage = () => {
   }
 
   return (
-    <div className="p-8 flex flex-col  min-h-screen text-white">
+    <div className="p-8 flex flex-col min-vh-screen min-h-screen text-white">
       <h1 className="text-3xl font-bold mb-6">Gestion de Visibilité</h1>
 
       <DndContext
@@ -159,7 +161,7 @@ const VisibilityPage = () => {
           <ul>
             {components.map(({ id, component_name, is_visible }, index) => (
               <SortableItem key={id} id={id}>
-                <li className="flex flex-col justify-between items-center mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
+                <li className="flex flex-col justify-between items-center mb-4 bg-gray-400 p-4 rounded-lg shadow-md">
                   {/* Header avec bouton et actions */}
                   <div className="w-full flex justify-between items-center">
                     <div className="flex items-center gap-4">
@@ -228,11 +230,13 @@ const VisibilityPage = () => {
 
                   {/* Rendu conditionnel des composants en "thumbnail" */}
                   {is_visible && (
-                    <div className="mt-4 w-full h-48 overflow-hidden bg-white rounded-lg shadow-lg flex justify-center items-center">
+                    <div className="mt-4 w-full h-48 overflow-hidden bg-blue-200 rounded-lg shadow-lg flex justify-center items-center">
+                      {" "}
                       <div className="thumbnail">
                         {component_name === "Schedule" && <Schedule />}
                         {component_name === "Announce" && <Announce />}
                         {component_name === "Dashboard" && <Dashboard />}
+                        {component_name === "Calendar" && <Calendar />}
                       </div>
                     </div>
                   )}

@@ -27,7 +27,6 @@ import Announce from "../ui/announcements/display/AnnouncementsDisplay";
 import Button from "../ui/Button";
 import Schedule from "../ui/Schedule";
 import { SortableItem } from "../ui/SortableItem"; // On crée un composant réutilisable pour chaque élément triable
-import Weather from "../ui/Weather";
 import Dashboard from "../ui/Dashboard";
 
 const VisibilityPage = () => {
@@ -231,7 +230,6 @@ const VisibilityPage = () => {
                   {is_visible && (
                     <div className="mt-4 w-full h-48 overflow-hidden bg-white rounded-lg shadow-lg flex justify-center items-center">
                       <div className="thumbnail">
-                        {component_name === "Weather" && <Weather />}
                         {component_name === "Schedule" && <Schedule />}
                         {component_name === "Announce" && <Announce />}
                         {component_name === "Dashboard" && <Dashboard />}

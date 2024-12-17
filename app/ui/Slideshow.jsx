@@ -9,6 +9,7 @@ import Announce from "./announcements/display/AnnouncementsDisplay";
 import Schedule from "./Schedule";
 import Weather from "./Weather";
 import Dashboard from "./Dashboard";
+import Calendar from "./Calendar";
 
 const splideOptions = {
   direction: "ttb",
@@ -16,7 +17,7 @@ const splideOptions = {
   height: "100%",
   arrows: false,
   pagination: false,
-  autoplay: true,
+  autoplay: false,
   wheel: true,
   waitForTransition: true,
   wheelMinThreshold: 50,
@@ -117,6 +118,13 @@ const Slideshow = () => {
           return (
             <SplideSlide key={component_name} className="p-8 flex flex-grow">
               <Schedule />
+            </SplideSlide>
+          );
+        }
+        if (component_name === "Calendar") {
+          return (
+            <SplideSlide key={component_name} className="p-8 flex flex-grow">
+              <Calendar />
             </SplideSlide>
           );
         }

@@ -18,7 +18,8 @@ export const initializeComponents = async () => {
         ('Weather', true, 0),
         ('Announce', $1, 1),
         ('Schedule', true, 2),
-        ('Dashboard', true, 3);
+        ('Dashboard', true, 3),
+        ('Calendar', true, 4);
     `;
     await pgQuery(query, [hasAnnouncements]);
   }

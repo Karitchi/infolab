@@ -17,7 +17,7 @@ const splideOptions = {
   height: "100%",
   arrows: false,
   pagination: false,
-  autoplay: true,
+  autoplay: false,
   wheel: true,
   waitForTransition: true,
   wheelMinThreshold: 50,

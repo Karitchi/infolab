@@ -93,9 +93,9 @@ const DayBlock = ({ day, events, onTimeSlotClick }) => {
   };
 
   return (
-    <div className="day-block">
-      <h3 className="day-name">{day}</h3>
-      <div className="time-slots">
+    <div className="day-block ">
+      <h3 className="day-name ">{day}</h3>
+      <div className="time-slots ">
         {timeSlots.map((time) => (
           <TimeSlot
             key={time}
@@ -285,7 +285,7 @@ const Calendar = () => {
   };
 
   return (
-    <div className="calendar-container">
+    <div className="calendar-container flex flex-col flex-grow">
       <div className="header">
         <h1
           className={`title ${labStatus.isFree ? "status-free" : "status-busy"}`}
@@ -293,7 +293,6 @@ const Calendar = () => {
           The Openlab is {labStatus.isFree ? "free" : "busy"} until{" "}
           {labStatus.nextTime}
         </h1>
-        <button className="settings-button">⚙️</button>
       </div>
 
       {view === "week" ? (

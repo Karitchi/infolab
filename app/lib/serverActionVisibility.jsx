@@ -15,11 +15,10 @@ export const initializeComponents = async () => {
     const query = `
       INSERT INTO component_visibility (component_name, is_visible, order_index)
       VALUES
-        ('Weather', true, 0),
         ('Announce', $1, 1),
-        ('Schedule', true, 2),
-        ('Dashboard', true, 3),
-        ('Calendar', true, 4);
+        ('Dashboard', true, 2),
+        ('Schedule', true, 4),
+        ('Calendar', true, 3);
     `;
     await pgQuery(query, [hasAnnouncements]);
   }

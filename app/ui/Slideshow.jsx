@@ -7,7 +7,6 @@ import { useEffect, useRef, useState } from "react";
 import { fetchComponentVisibility } from "@/app/lib/serverActionVisibility";
 import Announce from "./announcements/display/AnnouncementsDisplay";
 import Schedule from "./Schedule";
-import Weather from "./Weather";
 import Dashboard from "./Dashboard";
 import Calendar from "./Calendar";
 
@@ -97,13 +96,6 @@ const Slideshow = () => {
           return (
             <SplideSlide key={component_name} className="p-8 flex flex-grow">
               <Dashboard />
-            </SplideSlide>
-          );
-        }
-        if (component_name === "Weather") {
-          return (
-            <SplideSlide key={component_name} className="p-8 flex flex-grow">
-              <Weather />
             </SplideSlide>
           );
         }

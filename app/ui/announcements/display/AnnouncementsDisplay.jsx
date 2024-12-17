@@ -33,7 +33,7 @@ const Announce = () => {
     timerRef.current = await transitionManager.startTimer(
       timerRef,
       slideIndex,
-      panelsDisplayDuration
+      panelsDisplayDuration,
     );
     transitionManager.scroll(Splide);
   };

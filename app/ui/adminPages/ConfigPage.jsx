@@ -122,7 +122,7 @@ const ConfigPage = () => {
               fetchSchedule();
             } catch (error) {
               toast.error(
-                "Erreur lors de la suppression de tous les horaires."
+                "Erreur lors de la suppression de tous les horaires.",
               );
             }
           }}

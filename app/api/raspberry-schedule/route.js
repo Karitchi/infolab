@@ -9,7 +9,7 @@ export async function GET() {
   } catch (error) {
     return NextResponse.json(
       { error: "Erreur lors de la récupération des horaires." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

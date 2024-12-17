@@ -10,7 +10,7 @@ import AddAnnounceButton from "@/app/ui/announcements/add/button/AnnouncementAdd
 const AddAnnouncementForm = ({ announcement }) => {
   const [formState, formAction, isPending] = useActionState(
     addAnnouncement,
-    {}
+    {},
   );
 
   useEffect(() => {

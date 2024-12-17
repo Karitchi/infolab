@@ -46,8 +46,8 @@ const VisibilityPage = () => {
         prevComponents.map((component) =>
           component.component_name === "Announce"
             ? { ...component, is_visible: false }
-            : component
-        )
+            : component,
+        ),
       );
     }
   };
@@ -66,7 +66,7 @@ const VisibilityPage = () => {
       announcements.length === 0
     ) {
       toast.error(
-        "Impossible d'afficher 'Announce' : aucune annonce n'est disponible. Vous pouvez ajouter une annonce depuis le panneau admin."
+        "Impossible d'afficher 'Announce' : aucune annonce n'est disponible. Vous pouvez ajouter une annonce depuis le panneau admin.",
       );
       return;
     }
@@ -75,8 +75,8 @@ const VisibilityPage = () => {
       prevComponents.map((component) =>
         component.id === id
           ? { ...component, is_visible: !isVisible }
-          : component
-      )
+          : component,
+      ),
     );
 
     await toggleComponentVisibility(id, !isVisible);
@@ -105,8 +105,8 @@ const VisibilityPage = () => {
     // Mettre à jour l'ordre dans la base
     await Promise.all(
       updatedComponents.map((comp) =>
-        updateComponentOrder(comp.id, comp.order_index)
-      )
+        updateComponentOrder(comp.id, comp.order_index),
+      ),
     );
   };
 
@@ -130,7 +130,7 @@ const VisibilityPage = () => {
     }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
-    })
+    }),
   );
 
   // Gestion des actions clavier pour les boutons
@@ -183,7 +183,7 @@ const VisibilityPage = () => {
                                 handleDragEnd({
                                   active: { id },
                                   over: { id: components[index - 1].id },
-                                })
+                                }),
                               )
                             }
                           >
@@ -204,7 +204,7 @@ const VisibilityPage = () => {
                                 handleDragEnd({
                                   active: { id },
                                   over: { id: components[index + 1].id },
-                                })
+                                }),
                               )
                             }
                           >
@@ -219,7 +219,11 @@ const VisibilityPage = () => {
                       }
                       onKeyDown={(event) =>
                         handleKeyPress(event, () =>
-                          handleToggleVisibility(id, is_visible, component_name)
+                          handleToggleVisibility(
+                            id,
+                            is_visible,
+                            component_name,
+                          ),
                         )
                       }
                       isVisible={is_visible}

@@ -104,7 +104,7 @@ const Dashboard = () => {
           now.getHours(),
           0,
           0,
-          0
+          0,
         );
 
         const data = hourly.time
@@ -147,7 +147,7 @@ const Dashboard = () => {
         const response = await fetch("/api/max4466");
         if (!response.ok)
           throw new Error(
-            "Erreur lors de la récupération des données MAX4466 Front."
+            "Erreur lors de la récupération des données MAX4466 Front.",
           );
         const data = await response.json();
         setMax4466FrontData(data);
@@ -157,7 +157,7 @@ const Dashboard = () => {
         const response = await fetch("/api/max44661");
         if (!response.ok)
           throw new Error(
-            "Erreur lors de la récupération des données MAX4466 Back."
+            "Erreur lors de la récupération des données MAX4466 Back.",
           );
         const data = await response.json();
         setMax4466BackData(data);
@@ -175,7 +175,7 @@ const Dashboard = () => {
     } catch (err) {
       console.error(err.message);
       setError(
-        "Une erreur s'est produite lors de la récupération des données."
+        "Une erreur s'est produite lors de la récupération des données.",
       );
     }
   };

@@ -100,7 +100,7 @@ export default function Weather() {
 
         const timeValues = Array.from(
           { length: hourly.time.length },
-          (_, i) => new Date(hourly.time[i])
+          (_, i) => new Date(hourly.time[i]),
         );
 
         const temperatureValues = hourly.temperature_2m;
@@ -118,7 +118,7 @@ export default function Weather() {
       } catch (err) {
         console.error(
           "Erreur lors de la récupération des données météo : ",
-          err
+          err,
         );
         setError("Erreur lors du chargement des données météo.");
       } finally {

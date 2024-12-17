@@ -17,11 +17,11 @@ const WeeklySchedule = ({ schedule, setSchedule, currentDBSchedule }) => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col flex-grow">
       {days.map((day) => (
-        <div key={day}>
+        <div key={day} className="flex flex-grow">
           <h3 className="font-bold mt-4">{day}</h3>
-          <div className="grid grid-cols-5 gap-2">
+          <div className="flex flex-grow p-3 space-x-3">
             {hours.map((hour) => {
               const isPast = new Date().getHours() > hour; // Boutons dans le passé
               const isSelectedInDB = currentDBSchedule[day]?.includes(hour); // Dans la DB

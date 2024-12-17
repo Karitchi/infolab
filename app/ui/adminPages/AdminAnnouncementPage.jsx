@@ -1,11 +1,13 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { useRef } from "react";
-import { getAnnouncements } from "../../../lib/getAnnouncements";
+"use client";
+
+import { useEffect, useState, useRef } from "react";
+import Title from "../Title";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import TransitionManager from "../../../lib/TransitionManager";
-import Title from "../../Title";
+import TransitionManager from "@/app/lib/TransitionManager";
+import { getAnnouncements } from "@/app/lib/getAnnouncements";
+import AddAnnouncementForm from "@/app/ui/announcements/add/AddAnnouncementForm";
+import DeleteAnnouncementForm from "@/app/ui/announcements/delete/DeleteAnnouncementForm";
 
 const splideOptions = {
   direction: "ltr",
@@ -14,7 +16,6 @@ const splideOptions = {
   pagination: true,
   autoplay: false,
   wheel: true,
-  waitForTransition: true,
   wheelMinThreshold: 50,
   speed: 1000,
   gap: "32px",
@@ -22,7 +23,7 @@ const splideOptions = {
 const panelsDisplayDuration = [10000, 10000]; // Duration for each panel
 const transitionManager = new TransitionManager();
 
-const Announce = () => {
+const AdminAnnouncementPage = () => {
   const [announcements, setAnnouncements] = useState([]);
 
   const splideRef = useRef(null);
@@ -35,50 +36,42 @@ const Announce = () => {
       slideIndex,
       panelsDisplayDuration,
     );
-    transitionManager.scroll(Splide);
+    // transitionManager.scroll(Splide);
   };
 
   useEffect(() => {
-    handleSlideMove(splideRef.current.splide, 0);
     return () => transitionManager.resetTimer(timerRef); // Cleanup timer on unmount
   }, []);
 
   useEffect(() => {
-    const updateAnnouncements = async () => {
+    const fetchAnnouncements = async () => {
       let actualAnnouncements = await getAnnouncements();
       setAnnouncements(actualAnnouncements);
     };
 
-    updateAnnouncements();
-    const interval = setInterval(updateAnnouncements, 5000);
-
-    return () => {
-      clearInterval(interval); // Cleanup interval on component unmount
-    };
+    fetchAnnouncements();
   }, []);
 
   return (
-    <div className="flex flex-col flex-grow">
-      <Title title="Announcements" />
+    <div className="flex flex-grow flex-col">
+      <Title title="Announces" />
       <Splide
         ref={splideRef}
         options={splideOptions}
         onMoved={handleSlideMove} // Only trigger timer on slide move
-        // onMounted={handleSlideMove}
+        onMounted={handleSlideMove}
         className="flex flex-col flex-grow"
       >
+        <SplideSlide className="flex flex-grow flex-col">
+          <AddAnnouncementForm />
+        </SplideSlide>
+
         {announcements.map((announcement) => (
           <SplideSlide
             key={announcement.announcement_id}
-            className="bg-secondary-blue rounded-3xl flex flex-col flex-grow space-y-8 p-8 mb-8"
+            className="flex flex-grow flex-col"
           >
-            <div>{announcement.title}</div>
-            <div className="rounded bg-transparent flex-grow">
-              {announcement.body}
-            </div>
-            <div className="rounded bg-transparent text-right">
-              {announcement.author}
-            </div>
+            <DeleteAnnouncementForm announcement={announcement} />
           </SplideSlide>
         ))}
       </Splide>
@@ -86,4 +79,4 @@ const Announce = () => {
   );
 };
 
-export default Announce;
+export default AdminAnnouncementPage;

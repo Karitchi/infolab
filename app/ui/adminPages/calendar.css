@@ -31,7 +31,7 @@ body {
 }
 
 .title.status-free {
-  color: #4CAF50;
+  color: #4caf50;
   animation: statusUpdate 2s infinite;
 }
 
@@ -117,7 +117,7 @@ body {
 }
 
 .status-marker.free {
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .status-marker.busy {
@@ -250,12 +250,19 @@ body {
 }
 
 @keyframes statusUpdate {
-  0% { opacity: 0.7; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }
 
-.day-block, .time-block {
+.day-block,
+.time-block {
   animation: fadeIn 0.3s ease-out;
 }
 

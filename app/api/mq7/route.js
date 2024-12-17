@@ -17,17 +17,26 @@ export async function POST(request) {
     // Vérifier que les données sont valides
     if (typeof voltage === "number" && typeof ppm === "number") {
       mq7Data = { voltage, ppm }; // Mettre à jour les données
-      return NextResponse.json({ message: "Données mises à jour avec succès" }, { status: 200 });
+      return NextResponse.json(
+        { message: "Données mises à jour avec succès" },
+        { status: 200 },
+      );
     } else {
       return NextResponse.json(
-        { message: "Données invalides. Les champs 'voltage' et 'ppm' doivent être des nombres." },
-        { status: 400 }
+        {
+          message:
+            "Données invalides. Les champs 'voltage' et 'ppm' doivent être des nombres.",
+        },
+        { status: 400 },
       );
     }
   } catch (error) {
     return NextResponse.json(
-      { message: "Erreur lors du traitement des données", error: error.message },
-      { status: 500 }
+      {
+        message: "Erreur lors du traitement des données",
+        error: error.message,
+      },
+      { status: 500 },
     );
   }
 }

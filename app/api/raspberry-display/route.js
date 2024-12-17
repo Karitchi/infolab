@@ -8,7 +8,7 @@ export async function GET() {
   } catch (error) {
     return NextResponse.json(
       { error: "Erreur lors de la récupération des données de visibilité." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

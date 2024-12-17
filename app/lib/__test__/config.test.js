@@ -34,7 +34,7 @@ describe("serverActionEndpoint", () => {
         hours INT[] NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
-      `
+      `,
     );
   });
 

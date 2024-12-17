@@ -3,7 +3,14 @@
 import { useEffect, useState } from "react";
 
 // Fonction pour obtenir l'icône appropriée (inchangée)
-const getWeatherIcon = ({ cloudcover, precipitation, temperature, snow, isDaytime, wind }) => {
+const getWeatherIcon = ({
+  cloudcover,
+  precipitation,
+  temperature,
+  snow,
+  isDaytime,
+  wind,
+}) => {
   if (cloudcover < 20 && precipitation === 0) {
     return isDaytime ? "/icons/soleil.png" : "/icons/lune.png"; // Soleil/Lune clair
   }
@@ -39,7 +46,9 @@ const getWeatherIcon = ({ cloudcover, precipitation, temperature, snow, isDaytim
   }
 
   if (cloudcover > 50 && precipitation === 0) {
-    return isDaytime ? "/icons/soleilBrouillard.png" : "/icons/luneBrouillard.png"; // Brouillard
+    return isDaytime
+      ? "/icons/soleilBrouillard.png"
+      : "/icons/luneBrouillard.png"; // Brouillard
   }
 
   if (wind > 10 && wind <= 20) {
@@ -68,14 +77,21 @@ const Dashboard = () => {
         const params = new URLSearchParams({
           latitude: "50.8503", // Exemple : Bruxelles
           longitude: "4.3517",
-          hourly: ["temperature_2m", "cloudcover", "precipitation", "snowfall", "windspeed_10m"].join(","),
+          hourly: [
+            "temperature_2m",
+            "cloudcover",
+            "precipitation",
+            "snowfall",
+            "windspeed_10m",
+          ].join(","),
           timezone: "Europe/Berlin",
           forecast_days: 2,
         });
 
         const url = `https://api.open-meteo.com/v1/forecast?${params.toString()}`;
         const response = await fetch(url);
-        if (!response.ok) throw new Error("Erreur lors de la récupération des données météo.");
+        if (!response.ok)
+          throw new Error("Erreur lors de la récupération des données météo.");
         const weather = await response.json();
 
         const hourly = weather.hourly;
@@ -98,7 +114,8 @@ const Dashboard = () => {
             cloudcover: Math.round(hourly.cloudcover[index]),
             precipitation: Math.round(hourly.precipitation[index]),
             snow: Math.round(hourly.snowfall[index]),
-            isDaytime: new Date(time).getHours() >= 6 && new Date(time).getHours() < 18,
+            isDaytime:
+              new Date(time).getHours() >= 6 && new Date(time).getHours() < 18,
             wind: Math.round(hourly.windspeed_10m[index] || 0),
           }))
           .filter((item) => item.time >= currentHour)
@@ -109,7 +126,8 @@ const Dashboard = () => {
 
       const fetchDhtData = async () => {
         const response = await fetch("/api/dht11");
-        if (!response.ok) throw new Error("Erreur lors de la récupération des données DHT11.");
+        if (!response.ok)
+          throw new Error("Erreur lors de la récupération des données DHT11.");
         const data = await response.json();
         setDhtData({
           temperature: Math.round(data.temperature),
@@ -119,21 +137,28 @@ const Dashboard = () => {
 
       const fetchMq7Data = async () => {
         const response = await fetch("/api/mq7");
-        if (!response.ok) throw new Error("Erreur lors de la récupération des données MQ7.");
+        if (!response.ok)
+          throw new Error("Erreur lors de la récupération des données MQ7.");
         const data = await response.json();
         setMq7Data({ ppm: Math.round(data.ppm) });
       };
 
       const fetchMax4466FrontData = async () => {
         const response = await fetch("/api/max4466");
-        if (!response.ok) throw new Error("Erreur lors de la récupération des données MAX4466 Front.");
+        if (!response.ok)
+          throw new Error(
+            "Erreur lors de la récupération des données MAX4466 Front."
+          );
         const data = await response.json();
         setMax4466FrontData(data);
       };
 
       const fetchMax4466BackData = async () => {
         const response = await fetch("/api/max44661");
-        if (!response.ok) throw new Error("Erreur lors de la récupération des données MAX4466 Back.");
+        if (!response.ok)
+          throw new Error(
+            "Erreur lors de la récupération des données MAX4466 Back."
+          );
         const data = await response.json();
         setMax4466BackData(data);
       };
@@ -149,7 +174,9 @@ const Dashboard = () => {
       setLoading(false);
     } catch (err) {
       console.error(err.message);
-      setError("Une erreur s'est produite lors de la récupération des données.");
+      setError(
+        "Une erreur s'est produite lors de la récupération des données."
+      );
     }
   };
 
@@ -165,9 +192,28 @@ const Dashboard = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "90vh" }}>
       {/* Section Extérieur */}
-      <section style={{ flex: 1, color: "#FFF", padding: "20px", boxSizing: "border-box" }}>
-        <h2 style={{ marginBottom: "40px", textAlign: "left", fontSize: "52px" }}>Extérieur</h2>
-        <div style={{ display: "flex", gap: "10px", justifyContent: "center", alignItems: "stretch", height: "80%" }}>
+      <section
+        style={{
+          flex: 1,
+          color: "#FFF",
+          padding: "20px",
+          boxSizing: "border-box",
+        }}
+      >
+        <h2
+          style={{ marginBottom: "40px", textAlign: "left", fontSize: "52px" }}
+        >
+          Extérieur
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            justifyContent: "center",
+            alignItems: "stretch",
+            height: "80%",
+          }}
+        >
           {weatherData.map((item, index) => (
             <div
               key={index}
@@ -185,10 +231,17 @@ const Dashboard = () => {
               }}
             >
               <p style={{ marginTop: 20, fontSize: "60px" }}>
-                {item.time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                {item.time.toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               </p>
               <img
-                src={item.temperature !== null ? getWeatherIcon(item) : "/icons/default.png"}
+                src={
+                  item.temperature !== null
+                    ? getWeatherIcon(item)
+                    : "/icons/default.png"
+                }
                 alt="weather icon"
                 style={{ width: "150px", height: "150px", margin: "0 auto" }}
               />
@@ -201,9 +254,33 @@ const Dashboard = () => {
       </section>
 
       {/* Section Intérieur */}
-      <section style={{ flex: 1, color: "#FFF", padding: "20px", boxSizing: "border-box" }}>
-        <h2 style={{ marginTop: "20px", marginBottom: "40px", textAlign: "left", fontSize: "52px" }}>Intérieur</h2>
-        <div style={{ display: "flex", gap: "10px", justifyContent: "center", alignItems: "stretch", height: "90%" }}>
+      <section
+        style={{
+          flex: 1,
+          color: "#FFF",
+          padding: "20px",
+          boxSizing: "border-box",
+        }}
+      >
+        <h2
+          style={{
+            marginTop: "20px",
+            marginBottom: "40px",
+            textAlign: "left",
+            fontSize: "52px",
+          }}
+        >
+          Intérieur
+        </h2>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            justifyContent: "center",
+            alignItems: "stretch",
+            height: "90%",
+          }}
+        >
           <div
             style={{
               flex: "1",
@@ -219,7 +296,14 @@ const Dashboard = () => {
             }}
           >
             <h3 style={{ marginBottom: "auto" }}>Température</h3>
-            <p style={{ alignSelf: "center", marginTop: "auto", marginBottom: "auto", fontSize: "100px" }}>
+            <p
+              style={{
+                alignSelf: "center",
+                marginTop: "auto",
+                marginBottom: "auto",
+                fontSize: "100px",
+              }}
+            >
               {dhtData.temperature || "N/A"} °C
             </p>
           </div>
@@ -238,7 +322,14 @@ const Dashboard = () => {
             }}
           >
             <h3 style={{ marginBottom: "auto" }}>Humidité</h3>
-            <p style={{ alignSelf: "center", marginTop: "auto", marginBottom: "auto", fontSize: "100px" }}>
+            <p
+              style={{
+                alignSelf: "center",
+                marginTop: "auto",
+                marginBottom: "auto",
+                fontSize: "100px",
+              }}
+            >
               {dhtData.humidity || "N/A"} %
             </p>
           </div>
@@ -257,7 +348,14 @@ const Dashboard = () => {
             }}
           >
             <h3 style={{ marginBottom: "auto" }}>Carbon Monoxide</h3>
-            <p style={{ alignSelf: "center", marginTop: "auto", marginBottom: "auto", fontSize: "100px" }}>
+            <p
+              style={{
+                alignSelf: "center",
+                marginTop: "auto",
+                marginBottom: "auto",
+                fontSize: "100px",
+              }}
+            >
               {mq7Data.ppm || "N/A"} ppm
             </p>
           </div>
@@ -276,7 +374,14 @@ const Dashboard = () => {
             }}
           >
             <h3 style={{ marginBottom: "auto" }}>Son de la salle avant</h3>
-            <p style={{ alignSelf: "center", marginTop: "auto", marginBottom: "auto", fontSize: "100px" }}>
+            <p
+              style={{
+                alignSelf: "center",
+                marginTop: "auto",
+                marginBottom: "auto",
+                fontSize: "100px",
+              }}
+            >
               {max4466FrontData.decibels || "N/A"} dB
             </p>
           </div>
@@ -295,7 +400,14 @@ const Dashboard = () => {
             }}
           >
             <h3 style={{ marginBottom: "auto" }}>Son de la salle arrière</h3>
-            <p style={{ alignSelf: "center", marginTop: "auto", marginBottom: "auto", fontSize: "100px" }}>
+            <p
+              style={{
+                alignSelf: "center",
+                marginTop: "auto",
+                marginBottom: "auto",
+                fontSize: "100px",
+              }}
+            >
               {max4466BackData.decibels || "N/A"} dB
             </p>
           </div>
@@ -305,4 +417,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard
+export default Dashboard;

@@ -39,7 +39,7 @@ jobs:
           file: Dockerfile.postgres
           push: true
           tags: ghcr.io/karitchi/infolab/postgres:latest
-
+          
       - name: Verify the images were pushed
         run: |
           echo "Node image has been pushed to GitHub Container Registry: ghcr.io/${{ github.repository }}/node:latest"

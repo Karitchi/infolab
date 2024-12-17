@@ -16,20 +16,19 @@ import {
 } from "@dnd-kit/sortable";
 import { useEffect, useState } from "react";
 import { toast, Toaster } from "sonner";
-import { getAnnouncements } from "../../lib/getAnnouncements";
+import { getAnnouncements } from "../lib/getAnnouncements";
 import {
   fetchComponentVisibility,
   toggleComponentVisibility,
   updateComponentOrder,
-} from "../../lib/serverActionVisibility";
-import Announce from "../announcements/display/AnnouncementsDisplay";
+} from "../lib/serverActionVisibility";
+import Announce from "../ui/announcements/display/AnnouncementsDisplay";
 
-import Button from "../../ui/Button";
-import Schedule from "../../ui/Schedule";
-import { SortableItem } from "../../ui/SortableItem"; // On crée un composant réutilisable pour chaque élément triable
-import Weather from "../../ui/Weather";
-import Dashboard from "../../ui/Dashboard";
-import Title from "../../ui/Title";
+import Button from "../ui/Button";
+import Schedule from "../ui/Schedule";
+import { SortableItem } from "../ui/SortableItem"; // On crée un composant réutilisable pour chaque élément triable
+import Weather from "../ui/Weather";
+import Dashboard from "../ui/Dashboard";
 
 const VisibilityPage = () => {
   const [components, setComponents] = useState([]);
@@ -46,8 +45,8 @@ const VisibilityPage = () => {
         prevComponents.map((component) =>
           component.component_name === "Announce"
             ? { ...component, is_visible: false }
-            : component,
-        ),
+            : component
+        )
       );
     }
   };
@@ -66,7 +65,7 @@ const VisibilityPage = () => {
       announcements.length === 0
     ) {
       toast.error(
-        "Impossible d'afficher 'Announce' : aucune annonce n'est disponible. Vous pouvez ajouter une annonce depuis le panneau admin.",
+        "Impossible d'afficher 'Announce' : aucune annonce n'est disponible. Vous pouvez ajouter une annonce depuis le panneau admin."
       );
       return;
     }
@@ -75,8 +74,8 @@ const VisibilityPage = () => {
       prevComponents.map((component) =>
         component.id === id
           ? { ...component, is_visible: !isVisible }
-          : component,
-      ),
+          : component
+      )
     );
 
     await toggleComponentVisibility(id, !isVisible);
@@ -105,8 +104,8 @@ const VisibilityPage = () => {
     // Mettre à jour l'ordre dans la base
     await Promise.all(
       updatedComponents.map((comp) =>
-        updateComponentOrder(comp.id, comp.order_index),
-      ),
+        updateComponentOrder(comp.id, comp.order_index)
+      )
     );
   };
 
@@ -130,7 +129,7 @@ const VisibilityPage = () => {
     }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
-    }),
+    })
   );
 
   // Gestion des actions clavier pour les boutons
@@ -146,8 +145,8 @@ const VisibilityPage = () => {
   }
 
   return (
-    <div className="p-8 flex flex-col flex-grow text-white">
-      <Title title="Gestion de Visibilité" />
+    <div className="p-8 flex flex-col  min-h-screen text-white">
+      <h1 className="text-3xl font-bold mb-6">Gestion de Visibilité</h1>
 
       <DndContext
         sensors={sensors}
@@ -158,17 +157,17 @@ const VisibilityPage = () => {
           items={components.map((item) => item.id)}
           strategy={verticalListSortingStrategy}
         >
-          <ul className="flex flex-col flex-grow">
+          <ul>
             {components.map(({ id, component_name, is_visible }, index) => (
               <SortableItem key={id} id={id}>
-                <li className="flex flex-col flex-grow items-center mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
+                <li className="flex flex-col justify-between items-center mb-4 bg-gray-100 p-4 rounded-lg shadow-md">
                   {/* Header avec bouton et actions */}
-                  <div className="w-full flex flex-col items-center">
-                    <div className="flex flex-col items-center gap-4">
-                      <span className="text-lg flex flex-col font-semibold text-gray-700">
+                  <div className="w-full flex justify-between items-center">
+                    <div className="flex items-center gap-4">
+                      <span className="text-lg font-semibold text-gray-700">
                         {component_name}
                       </span>
-                      <div className="flex gap-1">
+                      <div className="flex flex-col gap-1">
                         {index > 0 && (
                           <button
                             className="text-sm text-gray-500 hover:text-gray-800"
@@ -183,7 +182,7 @@ const VisibilityPage = () => {
                                 handleDragEnd({
                                   active: { id },
                                   over: { id: components[index - 1].id },
-                                }),
+                                })
                               )
                             }
                           >
@@ -204,7 +203,7 @@ const VisibilityPage = () => {
                                 handleDragEnd({
                                   active: { id },
                                   over: { id: components[index + 1].id },
-                                }),
+                                })
                               )
                             }
                           >
@@ -219,11 +218,7 @@ const VisibilityPage = () => {
                       }
                       onKeyDown={(event) =>
                         handleKeyPress(event, () =>
-                          handleToggleVisibility(
-                            id,
-                            is_visible,
-                            component_name,
-                          ),
+                          handleToggleVisibility(id, is_visible, component_name)
                         )
                       }
                       isVisible={is_visible}
@@ -233,7 +228,7 @@ const VisibilityPage = () => {
                   </div>
 
                   {/* Rendu conditionnel des composants en "thumbnail" */}
-                  {/* {is_visible && (
+                  {is_visible && (
                     <div className="mt-4 w-full h-48 overflow-hidden bg-white rounded-lg shadow-lg flex justify-center items-center">
                       <div className="thumbnail">
                         {component_name === "Weather" && <Weather />}
@@ -242,7 +237,7 @@ const VisibilityPage = () => {
                         {component_name === "Dashboard" && <Dashboard />}
                       </div>
                     </div>
-                  )} */}
+                  )}
                 </li>
               </SortableItem>
             ))}

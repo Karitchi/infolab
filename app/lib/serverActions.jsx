@@ -35,7 +35,7 @@ export async function addAnnouncement(currentState, formData) {
         body: formData.get("body"),
         author: formData.get("author"),
       },
-      { abortEarly: false }, // Collect all errors
+      { abortEarly: false } // Collect all errors
     );
 
     // Add the validated data to the database

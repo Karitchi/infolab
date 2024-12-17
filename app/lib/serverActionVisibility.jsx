@@ -71,7 +71,7 @@ export const updateComponentOrder = async (id, newIndex) => {
     pgQuery(`UPDATE component_visibility SET order_index = $1 WHERE id = $2;`, [
       index,
       comp.id,
-    ]),
+    ])
   );
 
   await Promise.all(updateQueries);

@@ -9,9 +9,9 @@ import {
 import WeeklySchedule from "@/app/ui/WeeklySchedule";
 import { useEffect, useState } from "react";
 import { toast, Toaster } from "sonner";
-import Title from "../Title";
+import Title from "../ui/Title";
 
-const ConfigPage = () => {
+const Page = () => {
   const [schedule, setSchedule] = useState({
     lundi: [],
     mardi: [],
@@ -75,11 +75,14 @@ const ConfigPage = () => {
   };
 
   return (
-    <div className="flex flex-grow flex-col">
+    <div className="p-8">
       <Title title="Horraire d'arrêt" />
 
       {/* Affichage des horaires actuels dans la base de données */}
-      {/* <div className="p-4">
+      <div className="p-4">
+        <h2 className="text-lg font-semibold">
+          Horaires actuels dans la base de données :
+        </h2>
         <ul className="list-disc pl-5 mt-2">
           {Object.entries(currentDBSchedule).map(([day, hours], index) => (
             <li key={index} className="flex justify-between items-center">
@@ -99,41 +102,36 @@ const ConfigPage = () => {
             </li>
           ))}
         </ul>
-      </div> */}
+      </div>
 
       <WeeklySchedule
         schedule={schedule}
         setSchedule={setSchedule}
         currentDBSchedule={currentDBSchedule}
-        className="flex flex-grow"
       />
-      <div className="flex space-x-3">
-        <button
-          onClick={handleSubmit}
-          className="p-3 bg-blue-500 text-white rounded"
-        >
-          Valider les horaires
-        </button>
-        <button
-          onClick={async () => {
-            try {
-              await clearSchedules();
-              toast.success("Tous les horaires ont été supprimés !");
-              fetchSchedule();
-            } catch (error) {
-              toast.error(
-                "Erreur lors de la suppression de tous les horaires.",
-              );
-            }
-          }}
-          className="p-3 bg-red-500 text-white rounded"
-        >
-          Supprimer tous les horaires
-        </button>
-      </div>
+      <button
+        onClick={handleSubmit}
+        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
+      >
+        Valider les horaires
+      </button>
+      <button
+        onClick={async () => {
+          try {
+            await clearSchedules();
+            toast.success("Tous les horaires ont été supprimés !");
+            fetchSchedule();
+          } catch (error) {
+            toast.error("Erreur lors de la suppression de tous les horaires.");
+          }
+        }}
+        className="mt-4 px-4 py-2 bg-red-500 text-white rounded"
+      >
+        Supprimer tous les horaires
+      </button>
       <Toaster theme="dark" richColors position="top-center" expand />
     </div>
   );
 };
 
-export default ConfigPage;
+export default Page;

@@ -1,18 +1,19 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { Toaster } from "sonner";
-import Title from "../ui/Title";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import { useEffect, useRef, useState } from "react";
+import { Toaster } from "sonner";
 import TransitionManager from "../lib/TransitionManager";
 import { getAnnouncements } from "../lib/getAnnouncements";
+import Title from "../ui/Title";
 import AddAnnouncementForm from "../ui/announcements/add/AddAnnouncementForm";
 import DeleteAnnouncementForm from "../ui/announcements/delete/DeleteAnnouncementForm";
 
 const splideOptions = {
-  direction: "ltr",
+  direction: "ttb",
   rewind: true,
+  height: "100%",
   arrows: false,
   pagination: true,
   autoplay: false,

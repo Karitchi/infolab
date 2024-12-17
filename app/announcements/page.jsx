@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { Toaster } from "sonner";
 import Title from "../ui/Title";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
@@ -54,6 +55,8 @@ const AddAnnouncementPage = () => {
 
   return (
     <div className="flex flex-grow flex-col p-3">
+      <Toaster theme="dark" richColors position="top-center" expand />
+
       <Title title="Announces" />
       <Splide
         ref={splideRef}

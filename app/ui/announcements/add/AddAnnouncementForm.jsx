@@ -1,5 +1,5 @@
 import { useActionState, useEffect, useState } from "react";
-import { Toaster, toast } from "sonner";
+import { toast } from "sonner";
 
 import AnnouncementTitleInput from "./inputs/AnnouncementTitleInput";
 import AnnouncementBodyInput from "./inputs/AnnouncementBodyInput";
@@ -40,8 +40,6 @@ const AddAnnouncementForm = ({ announcement }) => {
 
   return (
     <>
-      <Toaster theme="dark" richColors position="top-center" expand />
-
       <form action={formAction} className="flex flex-grow flex-col">
         <div className="bg-secondary-blue flex flex-col flex-grow rounded-3xl space-y-8 p-8 mb-8">
           {/* Pass state and setters */}

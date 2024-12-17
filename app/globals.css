@@ -4,6 +4,7 @@
 
 .splide {
   height: 100%; /* Ensure Splide fills the height of the parent */
+  border-radius: 8px;
 }
 
 .splide__track {
@@ -16,7 +17,7 @@
 }
 
 .thumbnail {
-  transform: scale(0.75); /* Réduit l'échelle des composants */
+  transform: scale(0.3); /* Réduit l'échelle des composants */
   max-width: 100%; /* S'assure que rien ne déborde */
   max-height: 100%; /* Limite la hauteur */
   transform-origin: top center; /* Centre le redimensionnement */

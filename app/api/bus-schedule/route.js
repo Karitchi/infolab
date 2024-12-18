@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import csv from "csv-parser";
 
-// Fonction pour lire le fichier CSV
+// Fonction pour lire un fichier CSV
 const readCsvFile = (filePath) => {
   const rows = [];
   return new Promise((resolve, reject) => {
@@ -15,7 +15,7 @@ const readCsvFile = (filePath) => {
   });
 };
 
-// Fonction principale de gestion des requêtes
+// API principale
 export async function GET(request) {
   const stopIds = ["Bllngr01", "Bllngr02", "Bllngr03", "Bllngr04", "Bllngr05", "Bllngr06"];
 
@@ -42,25 +42,28 @@ export async function GET(request) {
       a.departure_time.localeCompare(b.departure_time)
     );
 
-    // Prendre uniquement les bus uniques basés sur trip_id
-    const seenTrips = new Set();
+    // Éliminer les doublons en fonction de la ligne (route_short_name)
+    const seenRoutes = new Set();
     const uniqueBuses = [];
 
     for (const stopTime of filteredStopTimes) {
-      if (!seenTrips.has(stopTime.trip_id)) {
-        seenTrips.add(stopTime.trip_id);
-        const trip = trips.find((t) => t.trip_id === stopTime.trip_id);
-        const route = routes.find((r) => r.route_id === trip?.route_id);
+      const trip = trips.find((t) => t.trip_id === stopTime.trip_id);
+      const route = routes.find((r) => r.route_id === trip?.route_id);
 
+      if (route && !seenRoutes.has(route.route_short_name)) {
+        seenRoutes.add(route.route_short_name); // Marquer la ligne comme déjà vue
         uniqueBuses.push({
           stop_id: stopTime.stop_id,
           departure_time: stopTime.departure_time,
-          route_short_name: route?.route_short_name || "Inconnu",
-          route_long_name: route?.route_long_name || "Inconnu",
+          route_short_name: route.route_short_name || "Inconnu",
+          route_long_name: route.route_long_name || "Inconnu",
         });
       }
-      if (uniqueBuses.length >= 5) break; // Limiter à 5 résultats
+
+      if (uniqueBuses.length >= 5) break; // Limiter à 5 résultats uniques
     }
+
+    console.log("Bus uniques envoyés :", uniqueBuses); // Débogage
 
     return NextResponse.json(uniqueBuses);
   } catch (error) {
@@ -71,3 +74,5 @@ export async function GET(request) {
     );
   }
 }
+
+

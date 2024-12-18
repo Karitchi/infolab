@@ -353,7 +353,7 @@ const Dashboard = () => {
                 alignSelf: "center",
                 marginTop: "auto",
                 marginBottom: "auto",
-                fontSize: "100px",
+                fontSize: "90px",
               }}
             >
               {mq7Data.ppm || "N/A"} ppm

@@ -1,0 +1,624 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type
+Baegd741,,"GEROMPONT Avenue des Déportés 74",,  50.651957,   4.890238,6427,,0
+Baegd742,,"GEROMPONT Avenue des Déportés 74",,  50.651979,   4.890100,6427,,0
+Blhutco2,,"LA HULPE Trois Colonnes (Rue des Combattants)",,  50.730626,   4.483428,6244,,0
+Blhutco3,,"LA HULPE Trois Colonnes (Ch. de Bruxelles)",,  50.731487,   4.481253,6244,,0
+Blhutco4,,"LA HULPE Trois Colonnes (Rue Broodcoorens)",,  50.729989,   4.481983,6244,,0
+Blhutma1,,"LA HULPE Trois Maisons",,  50.741984,   4.470349,6244,,0
+Blilgar1,,"LILLOIS Gare",,  50.644664,   4.365044,6171,,0
+Blilhay1,,"LILLOIS Hayettes",,  50.654529,   4.364473,6171,,0
+Blilton1,,"LILLOIS Tonnelier",,  50.648653,   4.366101,6171,,0
+Blilwit1,,"LILLOIS Witterzée",,  50.653049,   4.373556,6171,,0
+Blimbet1,,"LIMELETTE Buston Etang (Avenue des Sorbiers)",,  50.681333,   4.560564,6140,,0
+Blimchâ1,,"LIMELETTE Château",,  50.683897,   4.532735,6241,,0
+Blimchâ2,,"LIMELETTE Château",,  50.683033,   4.533027,6241,,0
+Blimd672,,"LIMELETTE Avenue Demolder 67",,  50.678767,   4.563023,6140,,0
+Blimegl1,,"LIMELETTE Eglise",,  50.680036,   4.573006,6140,,0
+Blimegl2,,"LIMELETTE Eglise",,  50.680180,   4.572821,6140,,0
+Blimeur1,,"LIMELETTE Europe",,  50.684036,   4.571596,6140,,0
+Blimeur2,,"LIMELETTE Europe",,  50.684019,   4.571427,6140,,0
+Blimmer2,,"LIMELETTE Avenue des Merisiers",,  50.676039,   4.564793,6140,,0
+Blimrof1,,"LIMELETTE Rofessart",,  50.689909,   4.532523,6248,,0
+Blimrof2,,"LIMELETTE Rofessart",,  50.689869,   4.532323,6248,,0
+Blimsob2,,"LIMELETTE Sorbiers",,  50.677601,   4.562009,6140,,0
+Blimvcg2,,"LIMELETTE Vieux Chemin de Genappe",,  50.674118,   4.558795,6140,,0
+Blinbru1,,"LINCENT La Bruyère",,  50.712699,   5.040247,5251,,0
+Blinbru2,,"LINCENT La Bruyère",,  50.712749,   5.039934,5251,,0
+Blincal1,,"LINCENT Calvaire",,  50.714590,   5.020885,5251,,0
+Blincal2,,"LINCENT Calvaire",,  50.714517,   5.020969,5251,,0
+Blincoo1,,"LINCENT Coopérative",,  50.710975,   5.024039,5251,,0
+Blincoo2,,"LINCENT Coopérative",,  50.711057,   5.024168,5251,,0
+Blindel1,,"LINCENT Delvaux (Rue de la Bruyère)",,  50.712658,   5.036679,5251,,0
+Blindel2,,"LINCENT Delvaux (Rue de la Bruyère)",,  50.712797,   5.036530,5251,,0
+Blindel3,,"LINCENT Delvaux (Route de Huy)",,  50.713127,   5.035936,5251,,0
+Blindel4,,"LINCENT Delvaux (Route de Huy)",,  50.712952,   5.035877,5251,,0
+Blindel5,,"LINCENT Delvaux (Rue de Lussac)",,  50.712728,   5.035126,5251,,0
+Blindel6,,"LINCENT Delvaux (Rue de Lussac)",,  50.712830,   5.034963,5251,,0
+Blineco1,,"LINCENT Rue des Ecoles",,  50.711538,   5.031131,5251,,0
+Blineco2,,"LINCENT Rue des Ecoles",,  50.711654,   5.030484,5251,,0
+Blingar1,,"LINCENT Gare (Route de Huy)",,  50.719791,   5.028931,5251,,0
+Blingar2,,"LINCENT Gare (Route de Huy)",,  50.719265,   5.029163,5251,,0
+Blingar3,,"LINCENT Gare (Rue Warichet)",,  50.718915,   5.027477,5251,,0
+Blingar4,,"LINCENT Gare (Rue Warichet)",,  50.719495,   5.028270,5251,,0
+Blinhue1,,"LINCENT Route de Huez",,  50.709905,   5.039140,5251,,0
+Blinhue2,,"LINCENT Route de Huez",,  50.709430,   5.039378,5251,,0
+Blkbavo1,,"LINKEBEEK Avondvrede",,  50.775012,   4.326371,6261,,0
+Blkbavo2,,"LINKEBEEK Avondvrede",,  50.774915,   4.326269,6261,,0
+Blkbbeu1,,"LINKEBEEK Beukenstraat",,  50.773042,   4.326960,6261,,0
+Blkbbeu2,,"LINKEBEEK Beukenstraat",,  50.772540,   4.326989,6261,,0
+Blkbbvh1,,"LINKEBEEK Hess de Lilez",,  50.777833,   4.325725,6221,,0
+Blkbbvh2,,"LINKEBEEK Hess de Lilez",,  50.777842,   4.325522,6221,,0
+Bllnald1,,"LOUVAIN-LA-NEUVE Aldi",,  50.664210,   4.612661,6160,,0
+Bllncbr2,,"LOUVAIN-LA-NEUVE Chemin des Bruyères",,  50.658320,   4.609563,6160,,0
+Bllnchv1,,"LOUVAIN-LA-NEUVE Champ Vallée",,  50.669064,   4.607506,6160,,0
+Bllnchv2,,"LOUVAIN-LA-NEUVE Champ Vallée",,  50.669205,   4.607338,6160,,0
+Bllncom1,,"LOUVAIN-LA-NEUVE Centre Commercial",,  50.670902,   4.615597,6160,,0
+Bllncom2,,"LOUVAIN-LA-NEUVE Centre Commercial",,  50.670358,   4.616730,6160,,0
+Bllncyc1,,"LOUVAIN-LA-NEUVE Cyclotron",,  50.666509,   4.622661,6160,,0
+Bllncyc2,,"LOUVAIN-LA-NEUVE Cyclotron",,  50.666151,   4.622872,6160,,0
+Bllnein3,,"LOUVAIN-LA-NEUVE Avenue Einstein",,  50.665929,   4.626837,6160,,0
+Bllnein4,,"LOUVAIN-LA-NEUVE Avenue Einstein",,  50.666089,   4.626756,6160,,0
+Bllnfdm1,,"LOUVAIN-LA-NEUVE Fond des Més",,  50.666721,   4.633364,6160,,0
+Bllnfdm2,,"LOUVAIN-LA-NEUVE Fond des Més",,  50.666989,   4.633715,6160,,0
+Bllnfeq1,,"LOUVAIN-LA-NEUVE Ferme Equestre",,  50.662177,   4.606718,6160,,0
+Bllnfla1,,"LOUVAIN-LA-NEUVE Ferme de Lauzelle (N4)",,  50.677310,   4.621877,6160,,0
+Bllnfla2,,"LOUVAIN-LA-NEUVE Ferme de Lauzelle (N4)",,  50.677248,   4.621488,6160,,0
+Bllnfla3,,"LOUVAIN-LA-NEUVE Ferme de Lauzelle (Bd. Wallonie)",,  50.675372,   4.622167,6160,,0
+Bllnfle1,,"LOUVAIN-LA-NEUVE Fleming",,  50.663675,   4.638993,6160,,0
+Bllnfle2,,"LOUVAIN-LA-NEUVE Fleming",,  50.664017,   4.638755,6160,,0
+Bllngr01,,"LOUVAIN-LA-NEUVE Gare d'Autobus - Quai 1",,  50.667839,   4.613018,6160,,0
+Bllngr02,,"LOUVAIN-LA-NEUVE Gare d'Autobus - Quai 2",,  50.667529,   4.613340,6160,,0
+Bllngr03,,"LOUVAIN-LA-NEUVE Gare d'Autobus - Quai 3",,  50.667589,   4.613373,6160,,0
+Bllngr04,,"LOUVAIN-LA-NEUVE Gare d'Autobus - Quai 4",,  50.667811,   4.613117,6160,,0
+Bllngr05,,"LOUVAIN-LA-NEUVE Gare d'Autobus - Quai 5",,  50.667930,   4.613499,6160,,0
+Bllngr06,,"LOUVAIN-LA-NEUVE Gare d'Autobus - Quai 6",,  50.667816,   4.614001,6160,,0
+Bllnhoc1,,"LOUVAIN-LA-NEUVE Hocaille",,  50.671155,   4.605735,6160,,0
+Bllnhoc2,,"LOUVAIN-LA-NEUVE Hocaille",,  50.671245,   4.605703,6160,,0
+Bllnjpa1,,"LOUVAIN-LA-NEUVE Jean Pâques",,  50.662198,   4.635910,6160,,0
+Bllnjpa2,,"LOUVAIN-LA-NEUVE Jean Pâques",,  50.662162,   4.635781,6160,,0
+Bllnlb11,,"LOUVAIN-LA-NEUVE Laid Burnia 1",,  50.663443,   4.633240,6160,,0
+Bllnlb12,,"LOUVAIN-LA-NEUVE Laid Burnia 1",,  50.663504,   4.633134,6160,,0
+Bllnlb51,,"LOUVAIN-LA-NEUVE Laid Burnia 5",,  50.665078,   4.636397,6160,,0
+Bllnlb52,,"LOUVAIN-LA-NEUVE Laid Burnia 5",,  50.665138,   4.636289,6160,,0
+Bllnlen1,,"LOUVAIN-LA-NEUVE Rue Lenoir",,  50.661784,   4.627461,6160,,0
+Bllnlen2,,"LOUVAIN-LA-NEUVE Rue Lenoir",,  50.661755,   4.627655,6160,,0
+Bllnmet1,,"LOUVAIN-LA-NEUVE Météo",,  50.663796,   4.620049,6160,,0
+Bllnmet2,,"LOUVAIN-LA-NEUVE Météo",,  50.664038,   4.620664,6160,,0
+Bllnpaf1,,"LOUVAIN-LA-NEUVE Parc d'Affaires (Bd Baudouin Ier)",,  50.660087,   4.616269,6160,,0
+Bllnpaf2,,"LOUVAIN-LA-NEUVE Parc d'Affaires (Bd Baudouin Ier)",,  50.659513,   4.615814,6160,,0
+Bllnpaf3,,"LOUVAIN-LA-NEUVE Parc d'Affaires (Rue Rodeuhaie)",,  50.660149,   4.617407,6160,,0
+Bllnpaf4,,"LOUVAIN-LA-NEUVE Parc d'Affaires (Rue Rodeuhaie)",,  50.660205,   4.617644,6160,,0
+Bllnpeq1,,"LOUVAIN-LA-NEUVE Place de l'Equerre",,  50.663547,   4.609530,6160,,0
+Bllnpsc1,,"LOUVAIN-LA-NEUVE Parc Scientifique",,  50.663632,   4.631849,6160,,0
+Bllnpsc2,,"LOUVAIN-LA-NEUVE Parc Scientifique",,  50.663539,   4.631553,6160,,0
+Bllnrge2,,"LOUVAIN-LA-NEUVE Rue Genistroit",,  50.669213,   4.627790,6160,,0
+Bllnrod1,,"LOUVAIN-LA-NEUVE Rue Rodeuhaie",,  50.662611,   4.631279,6160,,0
+Bllnrod2,,"LOUVAIN-LA-NEUVE Rue Rodeuhaie",,  50.662711,   4.631193,6160,,0
+Bllnrod3,,"LOUVAIN-LA-NEUVE Rue Rodeuhaie (Av. Einstein)",,  50.662864,   4.630375,6160,,0
+Bllnrod4,,"LOUVAIN-LA-NEUVE Rue Rodeuhaie (Av. Einstein)",,  50.662985,   4.630438,6160,,0
+Bllnrro1,,"LOUVAIN-LA-NEUVE Rue Fonds Cattelain",,  50.660816,   4.623555,6160,,0
+Bllnrro2,,"LOUVAIN-LA-NEUVE Rue Fonds Cattelain",,  50.660985,   4.624639,6160,,0
+Blmlbif1,,"LIMAL Bifurcation",,  50.712349,   4.549718,6249,,0
+Blmlbif2,,"LIMAL Bifurcation",,  50.712417,   4.549851,6249,,0
+Blmlbou1,,"LIMAL Bourse",,  50.703882,   4.556719,6249,,0
+Blmlbou2,,"LIMAL Bourse",,  50.704274,   4.556882,6249,,0
+Blmlcar1,,"LIMAL Rue des Carmes",,  50.699685,   4.558178,6249,,0
+Blmlcar2,,"LIMAL Rue des Carmes",,  50.700054,   4.558222,6249,,0
+Blmlcim1,,"LIMAL Cimetière",,  50.697313,   4.560707,6249,,0
+Blmlcim2,,"LIMAL Cimetière",,  50.697387,   4.560873,6249,,0
+Blmlcle1,,"LIMAL Rue Constant Legrève",,  50.698352,   4.577956,6249,,0
+Blmlcle2,,"LIMAL Rue Constant Legrève",,  50.697819,   4.577066,6249,,0
+Blmldmi1,,"LIMAL Centre Sportif",,  50.701217,   4.581869,6250,,0
+Blmldmi2,,"LIMAL Centre Sportif",,  50.701151,   4.581620,6250,,0
+Blmlfau1,,"LIMAL Avenue des Fauvettes",,  50.708869,   4.553874,6249,,0
+Blmlfau2,,"LIMAL Avenue des Fauvettes",,  50.709377,   4.553577,6249,,0
+Blmlgar1,,"LIMAL Gare",,  50.691343,   4.574537,6249,,0
+Blmlgar2,,"LIMAL Gare",,  50.691215,   4.574456,6249,,0
+Blmlmco1,,"LIMAL Maison Communale",,  50.695880,   4.575524,6249,,0
+Blmlmco2,,"LIMAL Maison Communale",,  50.695110,   4.575345,6249,,0
+Blmlpla1,,"LIMAL Place",,  50.693288,   4.572941,6249,,0
+Blmlpla2,,"LIMAL Place",,  50.693340,   4.572728,6249,,0
+Blmlqlo1,,"LIMAL Quartier Louise",,  50.695303,   4.568296,6249,,0
+Blmlqlo2,,"LIMAL Quartier Louise",,  50.695405,   4.568350,6249,,0
+Blmlvex1,,"LIMAL Village Expo",,  50.712512,   4.558021,6249,,0
+Blmlvex2,,"LIMAL Village Expo",,  50.712657,   4.558304,6249,,0
+Blonegl1,,"LONGUEVILLE Eglise",,  50.702245,   4.740337,6458,,0
+Blonegl2,,"LONGUEVILLE Eglise",,  50.702472,   4.739965,6458,,0
+Blontry1,,"LONGUEVILLE Le Try",,  50.705225,   4.736386,6458,,0
+Blontry2,,"LONGUEVILLE Le Try",,  50.705154,   4.736138,6458,,0
+Blpgbat1,,"LOUPOIGNE Chemin de Baty",,  50.605299,   4.423193,6136,,0
+Blpgbat2,,"LOUPOIGNE Chemin de Baty",,  50.605067,   4.422652,6136,,0
+Blpgcmo1,,"LOUPOIGNE Café Moderne",,  50.602260,   4.408567,6136,,0
+Blpgcmo2,,"LOUPOIGNE Café Moderne",,  50.602274,   4.409395,6136,,0
+Blpgeco1,,"LOUPOIGNE Ecoles",,  50.593929,   4.442180,6137,,0
+Blpgeco2,,"LOUPOIGNE Ecoles",,  50.593857,   4.442307,6137,,0
+Blpghou1,,"LOUPOIGNE Chemin de Houtain",,  50.602838,   4.414247,6136,,0
+Blpghou2,,"LOUPOIGNE Chemin de Houtain",,  50.602970,   4.415041,6136,,0
+Blpglon1,,"LOUPOIGNE Loncée",,  50.591101,   4.437734,6137,,0
+Blpglon2,,"LOUPOIGNE Loncée",,  50.590994,   4.437760,6137,,0
+Blpgvil1,,"LOUPOIGNE Village",,  50.597445,   4.444440,6137,,0
+Blpgvil2,,"LOUPOIGNE Village",,  50.597431,   4.444566,6137,,0
+Blsmbfe1,,"LINSMEAU Belle Femme",,  50.736463,   5.001108,6443,,0
+Blsmbfe2,,"LINSMEAU Belle Femme",,  50.736569,   5.000431,6443,,0
+Blsmcha1,,"LINSMEAU Chapelle (Ch. de Hannut)",,  50.734907,   5.005154,6443,,0
+Blsmcha2,,"LINSMEAU Chapelle (Ch. de Hannut)",,  50.734635,   5.005464,6443,,0
+Blsmcha3,,"LINSMEAU Chapelle (Rue des Martyrs)",,  50.734746,   5.006093,6443,,0
+Blsmcha4,,"LINSMEAU Chapelle (Rue des Martyrs)",,  50.734814,   5.005961,6443,,0
+Blsmjja1,,"LINSMEAU Rue Joseph Jadin",,  50.734373,   4.998801,6443,,0
+Blsmjja2,,"LINSMEAU Rue Joseph Jadin",,  50.734793,   4.998189,6443,,0
+Blsmvan1,,"LINSMEAU Vandalle",,  50.733372,   5.008594,6443,,0
+Blsmvan2,,"LINSMEAU Vandalle",,  50.733284,   5.008453,6443,,0
+Blthbss1,,"LATHUY Bois Saint-Servais",,  50.735159,   4.809088,6412,,0
+Blthbss2,,"LATHUY Bois Saint-Servais",,  50.735112,   4.810334,6412,,0
+Blthvil1,,"LATHUY Village",,  50.726375,   4.829769,6412,,0
+Blthwav1,,"LATHUY Chaussée de Wavre (Rue Hesserée)",,  50.732778,   4.827912,6410,,0
+Blthwav2,,"LATHUY Chaussée de Wavre (Rue Hesserée)",,  50.732759,   4.828079,6410,,0
+Blthwav3,,"LATHUY Chaussée de Wavre (Rue Dongelberg)",,  50.732049,   4.827824,6410,,0
+Blthwav4,,"LATHUY Chaussée de Wavre (Rue Dongelberg)",,  50.732095,   4.828000,6410,,0
+Bmalcar1,,"MALEVES-SAINTE-MARIE Carrefour",,  50.658258,   4.781377,6364,,0
+Bmalcar2,,"MALEVES-SAINTE-MARIE Carrefour",,  50.658090,   4.781063,6364,,0
+Bmalper1,,"WASTINES Rte de Perwez",,  50.654962,   4.779086,6364,,0
+Bmalper2,,"WASTINES Rte de Perwez",,  50.654877,   4.779193,6364,,0
+Bmalsmc1,,"MALEVES-SAINTE-MARIE Chapelle",,  50.663868,   4.791158,6364,,0
+Bmalsmc2,,"MALEVES-SAINTE-MARIE Chapelle",,  50.663914,   4.791448,6364,,0
+Bmalsme1,,"MALEVES-SAINTE-MARIE Rue de l'Eglise",,  50.660853,   4.787207,6364,,0
+Bmalsme2,,"MALEVES-SAINTE-MARIE Rue de l'Eglise",,  50.660876,   4.787461,6364,,0
+Bmalwop1,,"WASTINES Rte d'Opprebais",,  50.671081,   4.799701,6364,,0
+Bmalwop2,,"WASTINES Rte d'Opprebais",,  50.671197,   4.800024,6364,,0
+Bmalwvi1,,"WASTINES Village",,  50.670014,   4.804163,6364,,0
+Bmalwvi2,,"WASTINES Village",,  50.669831,   4.804373,6364,,0
+Bmanati1,,"MANAGE ATI",,  50.514766,   4.245790,3265,,0
+Bmanati2,,"MANAGE ATI",,  50.514178,   4.245604,3265,,0
+Bmanfbg1,,"MANAGE Faubourg",,  50.506937,   4.238639,3265,,0
+Bmanfbg2,,"MANAGE Faubourg",,  50.506859,   4.238893,3265,,0
+Bmangar1,,"MANAGE Gare",,  50.505247,   4.235888,3265,,0
+Bmangen1,,"MANAGE Gendarmerie",,  50.511696,   4.243069,3265,,0
+Bmangen2,,"MANAGE Gendarmerie",,  50.511321,   4.242936,3265,,0
+Bmarcat1,,"MARBISOUX Rue Catalogne",,  50.543901,   4.556574,6152,,0
+Bmarcat2,,"MARBISOUX Rue Catalogne",,  50.544061,   4.556369,6152,,0
+Bmarcha1,,"MARBAIS La Chapelle",,  50.537811,   4.531124,6152,,0
+Bmarcha2,,"MARBAIS La Chapelle",,  50.537796,   4.531302,6152,,0
+Bmarchn1,,"MARBAIS Chaussée de Namur",,  50.540688,   4.532581,6152,,0
+Bmarchn2,,"MARBAIS Chaussée de Namur",,  50.540508,   4.532750,6152,,0
+Bmaregl1,,"MARBISOUX Eglise",,  50.548554,   4.553971,6152,,0
+Bmaregl2,,"MARBISOUX Eglise",,  50.548434,   4.554168,6152,,0
+Bmarfjo1,,"MARBAIS Ferme Jouerie",,  50.544890,   4.535230,6152,,0
+Bmarfjo2,,"MARBAIS Ferme Jouerie",,  50.544604,   4.535306,6152,,0
+Bmargve1,,"MARBAIS Garage Vermeesch",,  50.548150,   4.539084,6152,,0
+Bmargve2,,"MARBAIS Garage Vermeesch",,  50.547939,   4.538746,6152,,0
+Bmarlor1,,"MARBAIS Rue Lorrain",,  50.545805,   4.528040,6152,,0
+Bmarlor2,,"MARBAIS Rue Lorrain",,  50.545306,   4.527899,6152,,0
+Bmarmco1,,"MARBAIS Maison Communale",,  50.546146,   4.532596,6152,,0
+Bmarmco2,,"MARBAIS Maison Communale",,  50.546227,   4.532617,6152,,0
+Bmarmpr1,,"MARBISOUX Rue de Priesmont",,  50.550865,   4.543228,6152,,0
+Bmarmpr2,,"MARBISOUX Rue de Priesmont",,  50.550912,   4.543449,6152,,0
+Bmarmru1,,"MARBISOUX Rue Ruffin",,  50.550506,   4.548186,6152,,0
+Bmarmru2,,"MARBISOUX Rue Ruffin",,  50.550427,   4.548214,6152,,0
+Bmarpla1,,"MARBAIS Place Leghain (Rue Petit Marmeau)",,  50.547049,   4.534823,6152,,0
+Bmarpla2,,"MARBAIS Place Leghain (Rue Petit Marmeau)",,  50.547026,   4.534700,6152,,0
+Bmarpla3,,"MARBAIS Place Leghain (Rue Jouerie)",,  50.545921,   4.535219,6152,,0
+Bmarpla4,,"MARBAIS Place Leghain (Rue Jouerie)",,  50.545983,   4.535327,6152,,0
+Bmartil1,,"MARBAIS Route de Tilly",,  50.545365,   4.519314,6152,,0
+Bmartil2,,"MARBAIS Route de Tilly",,  50.545601,   4.519092,6152,,0
+Bmarvil1,,"MARBAIS Village (Rue Lalou)",,  50.542810,   4.526641,6152,,0
+Bmarvil2,,"MARBAIS Village (Rue Lalou)",,  50.542882,   4.526556,6152,,0
+Bmarvil3,,"MARBAIS Village (Ch. de Namur)",,  50.542792,   4.526240,6152,,0
+Bmarvil4,,"MARBAIS Village (Ch. de Namur)",,  50.542685,   4.526138,6152,,0
+Bmasegl2,,"MONT-SAINT-ANDRE Eglise",,  50.655522,   4.864899,6333,,0
+Bmelegl1,,"MELLERY Eglise",,  50.581432,   4.568730,6266,,0
+Bmelegl2,,"MELLERY Eglise",,  50.581377,   4.568864,6266,,0
+Bmelenf1,,"MELLERY Rue de l'Enfer",,  50.576997,   4.560728,6266,,0
+Bmelenf2,,"MELLERY Rue de l'Enfer",,  50.576752,   4.560914,6266,,0
+Bmelmqu1,,"MELLERY Manoir de la Quiétude",,  50.584050,   4.572968,6266,,0
+Bmelmqu2,,"MELLERY Manoir de la Quiétude",,  50.583982,   4.573101,6266,,0
+Bmelsab1,,"MELLERY Sablonnière",,  50.577564,   4.565309,6266,,0
+Bmelsab2,,"MELLERY Sablonnière",,  50.577504,   4.565457,6266,,0
+Bmlnbpr1,,"MELIN Rue des Beaux Prés",,  50.745953,   4.809493,6411,,0
+Bmlnbpr2,,"MELIN Rue des Beaux Prés",,  50.746019,   4.809419,6411,,0
+Bmlncha1,,"MELIN Chavia",,  50.743635,   4.823008,6411,,0
+Bmlncha2,,"MELIN Chavia",,  50.743707,   4.823068,6411,,0
+Bmlncle1,,"MELIN Champs de Leck",,  50.747140,   4.786954,6412,,0
+Bmlncle2,,"MELIN Champs de Leck",,  50.746927,   4.787048,6412,,0
+Bmlnegl1,,"MELIN Eglise (Place)",,  50.740064,   4.828342,6411,,0
+Bmlnegl2,,"MELIN Eglise (Rue Maison du Bois)",,  50.740433,   4.828265,6411,,0
+Bmlnegl3,,"MELIN Eglise (Rue du Rivage)",,  50.740224,   4.829011,6411,,0
+Bmlnegl4,,"MELIN Eglise (Rue du Rivage)",,  50.740316,   4.828912,6411,,0
+Bmlngch1,,"MELIN Gobertange Chapelle",,  50.744656,   4.847648,6411,,0
+Bmlngch2,,"MELIN Gobertange Chapelle",,  50.744662,   4.847318,6411,,0
+Bmlngvi1,,"MELIN Gobertange Village",,  50.742490,   4.842756,6411,,0
+Bmlngvi2,,"MELIN Gobertange Village",,  50.742435,   4.842306,6411,,0
+Bmlnmbo1,,"MELIN Maison du Bois",,  50.746720,   4.814419,6411,,0
+Bmlnmbo2,,"MELIN Maison du Bois",,  50.746792,   4.814477,6411,,0
+Bmlnpab1,,"MELIN Petites Abeilles",,  50.739667,   4.779789,6412,,0
+Bmlnpab2,,"MELIN Petites Abeilles",,  50.739632,   4.779951,6412,,0
+Bmlnsms1,,"SART-MELIN La Sarte",,  50.738020,   4.793357,6412,,0
+Bmlnsms2,,"SART-MELIN La Sarte",,  50.738055,   4.793033,6412,,0
+Bmlnsmv1,,"SART-MELIN Village",,  50.740004,   4.800563,6412,,0
+Bmlnsmv2,,"SART-MELIN Village",,  50.740089,   4.800460,6412,,0
+Bmonbor1,,"MONSTREUX Borne",,  50.600846,   4.294411,6113,,0
+Bmonbor2,,"MONSTREUX Borne",,  50.600720,   4.294411,6113,,0
+Bmonbri1,,"MONSTREUX Briqueterie",,  50.599440,   4.302885,6113,,0
+Bmonbri2,,"MONSTREUX Briqueterie",,  50.599385,   4.302788,6113,,0
+Bmoncab1,,"MONSTREUX Cabine",,  50.602026,   4.289951,6113,,0
+Bmoncab2,,"MONSTREUX Cabine",,  50.601977,   4.289768,6113,,0
+Bmoucnd1,,"MOUSTY Rue Chapelle Notre-Dame",,  50.657638,   4.562719,6140,,0
+Bmoucnd2,,"MOUSTY Rue Chapelle Notre-Dame",,  50.657783,   4.562894,6140,,0
+Bmoucoq1,,"MOUSTY Rue Coquerée",,  50.662492,   4.552765,6140,,0
+Bmoucoq2,,"MOUSTY Rue Coquerée",,  50.662529,   4.552485,6140,,0
+Bmouegl1,,"MOUSTY Eglise",,  50.661933,   4.564146,6140,,0
+Bmouegl2,,"MOUSTY Eglise",,  50.661772,   4.564247,6140,,0
+Bmoufil1,,"MOUSTY Filatures",,  50.654366,   4.563273,6140,,0
+Bmoufil2,,"MOUSTY Filatures",,  50.654526,   4.563443,6140,,0
+Bmrl4ch1,,"MARILLES Quatre chemins",,  50.700758,   4.960323,6421,,0
+Bmrl4ch2,,"MARILLES Quatre chemins",,  50.700688,   4.960257,6421,,0
+Bmrlcch1,,"MARILLES Cinq chemins",,  50.701165,   4.931593,6421,,0
+Bmrlcch2,,"MARILLES Cinq chemins",,  50.701244,   4.931476,6421,,0
+Bmrleco1,,"MARILLES Ecoles (Rue de Hannut)",,  50.703860,   4.947220,6421,,0
+Bmrleco2,,"MARILLES Ecoles (Rue de Hannut)",,  50.703753,   4.947190,6421,,0
+Bmrleco3,,"MARILLES Ecoles (Rue Dielhère)",,  50.703222,   4.947139,6421,,0
+Bmrleco4,,"MARILLES Ecoles (Rue Dielhère)",,  50.703188,   4.947270,6421,,0
+Bmrlegl1,,"MARILLES Eglise",,  50.707299,   4.952600,6421,,0
+Bmrlegl2,,"MARILLES Eglise",,  50.707354,   4.952712,6421,,0
+Bmrlhan1,,"MARILLES Rue de Hannut",,  50.705183,   4.942317,6421,,0
+Bmrlhan2,,"MARILLES Rue de Hannut",,  50.705376,   4.942101,6421,,0
+Bmrlhan3,,"MARIILES Rue de Hannut",,  50.705271,   4.940193,6421,,0
+Bmrlhan4,,"MARIILES Rue de Hannut",,  50.705888,   4.941249,6421,,0
+Bmrlhau1,,"MARILLES Rue Haute",,  50.709704,   4.945209,6421,,0
+Bmrlhau2,,"MARILLES Rue Haute",,  50.709719,   4.945083,6421,,0
+Bmrllgr1,,"MARILLES Rue Léon Gramme",,  50.704189,   4.937385,6421,,0
+Bmrllgr2,,"MARILLES Rue Léon Gramme",,  50.704212,   4.936982,6421,,0
+Bmrlnce1,,"NODRENGE Centre",,  50.699962,   4.945491,6421,,0
+Bmrlnce2,,"NODRENGE Centre",,  50.699959,   4.945643,6421,,0
+Bmrlsau1,,"MARILLES Saussoy",,  50.702733,   4.921597,6421,,0
+Bmrlsau2,,"MARILLES Saussoy",,  50.702953,   4.921518,6421,,0
+Bmrqgar1,,"MARCQ Gare",,  50.696002,   4.006912,3118,,0
+Bmrqgar2,,"MARCQ Gare",,  50.695478,   4.007624,3118,,0
+Bmrqpla1,,"MARCQ Place",,  50.691339,   4.015153,3118,,0
+Bmrqpla2,,"MARCQ Place",,  50.691293,   4.016268,3118,,0
+Bmrsayw1,,"MARANSART Aywiers",,  50.669458,   4.464742,6234,,0
+Bmrsayw2,,"MARANSART Aywiers",,  50.669542,   4.464636,6234,,0
+Bmrshan1,,"MARANSART Rue d'Anogrune",,  50.659050,   4.435007,6234,,0
+Bmrshan2,,"MARANSART Rue d'Anogrune",,  50.659728,   4.434174,6234,,0
+Bmrspel1,,"MARANSART Avenue des Pélerins",,  50.664207,   4.447408,6234,,0
+Bmrspel2,,"MARANSART Avenue des Pélerins",,  50.664129,   4.446777,6234,,0
+Bmrswag1,,"MARANSART Avenue Wagram",,  50.661217,   4.441340,6234,,0
+Bmrswag2,,"MARANSART Avenue Wagram",,  50.661078,   4.440819,6234,,0
+Bmsaegl1,,"MONT-SAINT-ANDRE Eglise",,  50.655439,   4.865007,6333,,0
+Bmsgaxp1,,"MONT-SAINT-GUIBERT Axis Parc",,  50.658570,   4.625864,6160,,0
+Bmsgaxp2,,"MONT-SAINT-GUIBERT Axis Parc",,  50.658266,   4.625818,6160,,0
+Bmsgbay1,,"MONT-SAINT-GUIBERT Rue Bayaux",,  50.629777,   4.617321,6269,,0
+Bmsgbay2,,"MONT-SAINT-GUIBERT Rue Bayaux",,  50.629777,   4.617492,6269,,0
+Bmsgbur1,,"MONT-SAINT-GUIBERT Trois Burettes",,  50.645955,   4.613535,6271,,0
+Bmsgbur2,,"MONT-SAINT-GUIBERT Trois Burettes",,  50.646399,   4.613975,6271,,0
+Bmsgcap1,,"MONT-SAINT-GUIBERT Rue Capitaine Aviateur Paul",,  50.642331,   4.610960,6271,,0
+Bmsgcap2,,"MONT-SAINT-GUIBERT Rue Capitaine Aviateur Paul",,  50.642258,   4.610805,6271,,0
+Bmsgeco1,,"MONT-SAINT-GUIBERT Rue des Ecoles",,  50.636897,   4.610303,6271,,0
+Bmsgeco2,,"MONT-SAINT-GUIBERT Rue des Ecoles",,  50.636846,   4.610749,6271,,0
+Bmsgfon1,,"MONT-SAINT-GUIBERT Avenue de la Fontaine",,  50.640886,   4.622021,6271,,0
+Bmsgfon2,,"MONT-SAINT-GUIBERT Avenue de la Fontaine",,  50.640780,   4.622052,6271,,0
+Bmsggra2,,"MONT-SAINT-GUIBERT Granbonpré",,  50.661621,   4.641185,6160,,0
+Bmsggra3,,"MONT-SAINT-GUIBERT Granbonpré",,  50.661353,   4.640861,6160,,0
+Bmsgmon1,,"MONT-SAINT-GUIBERT Monument",,  50.635206,   4.610202,6271,,0
+Bmsgmon2,,"MONT-SAINT-GUIBERT Monument",,  50.635496,   4.609723,6271,,0
+Bmsgpap1,,"MONT-SAINT-GUIBERT Papeteries",,  50.639524,   4.604866,6271,,0
+Bmsgpap2,,"MONT-SAINT-GUIBERT Papeteries",,  50.639483,   4.604757,6271,,0
+Bmsgpfo1,,"MONT-SAINT-GUIBERT Place de la Fosse",,  50.634010,   4.618372,6271,,0
+Bmsgpfo2,,"MONT-SAINT-GUIBERT Place de la Fosse",,  50.634023,   4.618646,6271,,0
+Bmsgrco1,,"MONT-SAINT-GUIBERT Rue de Corbais",,  50.641679,   4.628658,6271,,0
+Bmsgrco2,,"MONT-SAINT-GUIBERT Rue de Corbais",,  50.641568,   4.628516,6271,,0
+Bmsgstj1,,"MONT-SAINT-GUIBERT Gare (Saint-Jean)",,  50.638558,   4.614104,6271,,0
+Bmsgstj2,,"MONT-SAINT-GUIBERT Gare (Saint-Jean)",,  50.638420,   4.613863,6271,,0
+Bndb4ch1,,"NODEBAIS Quatre Chemins",,  50.772185,   4.741359,6415,,0
+Bndb4ch2,,"NODEBAIS Quatre Chemins",,  50.772258,   4.741517,6415,,0
+Bndbdra1,,"NODEBAIS Rue Draye",,  50.769923,   4.731591,6415,,0
+Bndbdra2,,"NODEBAIS Rue Draye",,  50.770243,   4.731858,6415,,0
+Bndbgar1,,"NODEBAIS Ancienne Station",,  50.775904,   4.743000,6415,,0
+Bndbgar2,,"NODEBAIS Ancienne Station",,  50.775795,   4.742800,6415,,0
+Bndbnod1,,"NODEBAIS Route de Nodebais",,  50.768899,   4.729456,6416,,0
+Bndbnod2,,"NODEBAIS Route de Nodebais",,  50.768919,   4.729221,6416,,0
+Bndbpco1,,"NODEBAIS Place Communale",,  50.773094,   4.736387,6415,,0
+Bndbpco2,,"NODEBAIS Place Communale",,  50.773205,   4.736389,6415,,0
+Bneeace1,,"ARDEVOOR Centre",,  50.761565,   4.997223,6439,,0
+Bneeace2,,"ARDEVOOR Centre",,  50.761661,   4.997166,6439,,0
+Bneeblo1,,"NEERHEYLISSEM Bois Lowet",,  50.763253,   4.991756,6439,,0
+Bneeblo2,,"NEERHEYLISSEM Bois Lowet",,  50.763299,   4.991572,6439,,0
+Bneecha1,,"NEERHEYLISSEM Château (Rue Abbaye)",,  50.751960,   4.982579,6439,,0
+Bneecha2,,"NEERHEYLISSEM Château (Rue Abbaye)",,  50.751021,   4.981503,6439,,0
+Bneecha3,,"NEERHEYLISSEM Château (Rue de Flône)",,  50.751658,   4.982860,6439,,0
+Bneedia1,,"NEERHEYLISSEM Chemin du Diable",,  50.750360,   4.987575,6439,,0
+Bneedia2,,"NEERHEYLISSEM Chemin du Diable",,  50.750557,   4.987407,6439,,0
+Bneeegl1,,"NEERHEYLISSEM Eglise",,  50.755695,   4.987622,6439,,0
+Bneeegl2,,"NEERHEYLISSEM Eglise",,  50.755615,   4.987437,6439,,0
+Bneehou1,,"ARDEVOOR Rue des Houilles",,  50.759845,   4.995288,6439,,0
+Bneehou2,,"ARDEVOOR Rue des Houilles",,  50.759555,   4.994930,6439,,0
+Bneelaa1,,"ARDEVOOR Route de Laar",,  50.765337,   5.001837,6439,,0
+Bneelaa2,,"ARDEVOOR Route de Laar",,  50.765383,   5.001378,6439,,0
+Bneepne1,,"NEERHEYLISSEM Pont Neuf",,  50.758999,   4.992052,6439,,0
+Bneepne2,,"NEERHEYLISSEM Pont Neuf",,  50.759062,   4.992059,6439,,0
+Bneersa2,,"NEERHEYLISSEM Rue Sainte-Anne",,  50.760107,   4.985224,6439,,0
+Bneervc1,,"NEERHEYLISSEM Rue de la Vieille Cense",,  50.757543,   4.993683,6439,,0
+Bneervc2,,"NEERHEYLISSEM Rue de la Vieille Cense",,  50.757572,   4.993533,6439,,0
+Bneesan1,,"NEERHEYLISSEM Sainte-Anne",,  50.758667,   4.989175,6439,,0
+Bneesan2,,"NEERHEYLISSEM Sainte-Anne",,  50.758865,   4.989070,6439,,0
+Bneesj31,,"NEERHEYLISSEM Rue Saint-Job n°3",,  50.762800,   4.985536,6439,,0
+Bneesj32,,"NEERHEYLISSEM Rue Saint-Job n°3",,  50.762885,   4.985484,6439,,0
+Bneesjo1,,"NEERHEYLISSEM Rue Saint-Job",,  50.764176,   4.989085,6439,,0
+Bneesjo2,,"NEERHEYLISSEM Rue Saint-Job",,  50.764305,   4.989598,6439,,0
+Bnetace1,,"NETHEN Arbre du Centenaire",,  50.783478,   4.692991,6416,,0
+Bnetace2,,"NETHEN Arbre du Centenaire",,  50.783432,   4.693328,6416,,0
+Bnetegl1,,"NETHEN Eglise (Rue de Bossut)",,  50.783846,   4.673844,6417,,0
+Bnetegl2,,"NETHEN Eglise (Rue de Bossut)",,  50.783901,   4.673991,6417,,0
+Bnetegl3,,"NETHEN Eglise (Rue de Pécrot)",,  50.783533,   4.673814,6417,,0
+Bnetegl4,,"NETHEN Eglise (Rue de Pécrot)",,  50.783591,   4.673664,6417,,0
+Bnetrbr1,,"NETHEN Rue des Bruyères",,  50.783517,   4.682115,6417,,0
+Bnetrbr2,,"NETHEN Rue des Bruyères",,  50.783667,   4.682048,6417,,0
+Bnetrec1,,"NETHEN Rue de l'Ecole",,  50.783978,   4.677355,6417,,0
+Bnetrec2,,"NETHEN Rue de l'Ecole",,  50.784020,   4.677039,6417,,0
+Bnetrtb1,,"NETHEN Rue Tienne Binnard",,  50.782028,   4.688585,6416,,0
+Bnetrtb2,,"NETHEN Rue Tienne Binnard",,  50.782138,   4.688273,6416,,0
+Bnil3fo1,,"NIL-ST-VINCENT Ch des 3 Fontaines",,  50.635228,   4.651490,6272,,0
+Bnil3fo2,,"NIL-ST-VINCENT Ch des 3 Fontaines",,  50.635797,   4.651513,6272,,0
+Bnilcab1,,"NIL-ST-VINCENT Cabine",,  50.635980,   4.659209,6272,,0
+Bnilcab2,,"NIL-ST-VINCENT Cabine",,  50.636157,   4.659309,6272,,0
+Bnilcha1,,"NIL-ST-VINCENT Chapelle",,  50.634522,   4.666208,6272,,0
+Bnilcha2,,"NIL-ST-VINCENT Chapelle",,  50.634457,   4.666410,6272,,0
+Bnilcim1,,"NIL-ST-VINCENT Cimetière",,  50.643792,   4.672565,6272,,0
+Bnilcim2,,"NIL-ST-VINCENT Cimetière",,  50.643078,   4.672705,6272,,0
+Bnilegl1,,"NIL-ST-VINCENT Eglise St-Martin",,  50.642287,   4.680363,6272,,0
+Bnilegl2,,"NIL-ST-VINCENT Eglise St-Martin",,  50.642137,   4.680212,6272,,0
+Bnilhau1,,"NIL-ST-VINCENT Rue Haute",,  50.647171,   4.686442,6272,,0
+Bnilhau2,,"NIL-ST-VINCENT Rue Haute",,  50.647187,   4.686059,6272,,0
+Bnilhay1,,"NIL-ST-VINCENT Hayettes",,  50.627030,   4.656003,6272,,0
+Bnilhay2,,"NIL-ST-VINCENT Hayettes",,  50.627096,   4.655922,6272,,0
+Bnilpco1,,"NIL-ST-VINCENT Place Communale",,  50.640817,   4.673889,6272,,0
+Bnilpco2,,"NIL-ST-VINCENT Place Communale",,  50.640924,   4.674267,6272,,0
+Bnilpie1,,"NIL-ST-VINCENT Pierreux (Rue Haubiermont)",,  50.632360,   4.654176,6272,,0
+Bnilpie2,,"NIL-ST-VINCENT Pierreux (Rue Haubiermont)",,  50.632349,   4.653862,6272,,0
+Bnilpie3,,"NIL-ST-VINCENT Pierreux (Ch. de Namur)",,  50.632002,   4.653868,6272,,0
+Bnilpie4,,"NIL-ST-VINCENT Pierreux (Ch. de Namur)",,  50.632412,   4.653295,6272,,0
+Bnilpje1,,"NIL-ST-VINCENT Plaine de Jeux",,  50.637287,   4.666120,6272,,0
+Bnilpje2,,"NIL-ST-VINCENT Plaine de Jeux",,  50.637379,   4.666935,6272,,0
+Bnilpor3,,"NIL-ST-VINCENT Au Pois d'Or",,  50.637103,   4.663630,6272,,0
+Bnilpor4,,"NIL-ST-VINCENT Au Pois d'Or",,  50.637243,   4.663470,6272,,0
+Bnilreg1,,"NIL-ST-VINCENT Rue de l'Eglise",,  50.645556,   4.676792,6272,,0
+Bnilreg2,,"NIL-ST-VINCENT Rue de l'Eglise",,  50.645645,   4.676765,6272,,0
+Bnilspe1,,"NIL-ST-VINCENT Rue Speche",,  50.643760,   4.687666,6272,,0
+Bnilspe2,,"NIL-ST-VINCENT Rue Speche",,  50.643800,   4.687818,6272,,0
+Bnilspe3,,"NIL-ST-VINCENT Rue Speche (Rue St-Martin)",,  50.643601,   4.687933,6272,,0
+Bnilspe4,,"NIL-ST-VINCENT Rue Speche (Rue St-Martin)",,  50.643481,   4.687981,6272,,0
+Bniltri1,,"NIL-ST-VINCENT Rue de Trichon",,  50.634116,   4.672415,6272,,0
+Bniltri2,,"NIL-ST-VINCENT Rue de Trichon",,  50.634235,   4.672370,6272,,0
+Bnilwal1,,"NIL-ST-VINCENT Rue de Walhain",,  50.637766,   4.675169,6272,,0
+Bnilwal2,,"NIL-ST-VINCENT Rue de Walhain",,  50.637693,   4.675317,6272,,0
+Bniv4co1,,"NIVELLES Quatre Colonnes",,  50.603100,   4.337933,6110,,0
+Bniv4co2,,"NIVELLES Quatre Colonnes",,  50.602648,   4.338077,6110,,0
+Bnivaba1,,"NIVELLES Abattoir",,  50.597424,   4.314265,6110,,0
+Bnivaba2,,"NIVELLES Abattoir",,  50.597317,   4.314775,6110,,0
+Bnivace1,,"NIVELLES Avenue du Centenaire",,  50.597862,   4.346032,6110,,0
+Bnivace2,,"NIVELLES Avenue du Centenaire",,  50.597794,   4.346103,6110,,0
+Bnivaig1,,"NIVELLES Aiglon",,  50.595226,   4.338069,6110,,0
+Bnivaig2,,"NIVELLES Aiglon",,  50.595143,   4.338299,6110,,0
+Bnivall1,,"NIVELLES Allemagne",,  50.613069,   4.321734,6111,,0
+Bnivall2,,"NIVELLES Allemagne",,  50.613204,   4.321420,6111,,0
+Bnivari1,,"NIVELLES Artisanat",,  50.597036,   4.359196,6110,,0
+Bnivari2,,"NIVELLES Artisanat",,  50.596940,   4.359121,6110,,0
+Bnivasa1,,"NIVELLES Allée du Sablon",,  50.593066,   4.317421,6110,,0
+Bnivasa2,,"NIVELLES Allée du Sablon",,  50.593028,   4.317535,6110,,0
+Bnivath1,,"NIVELLES Athénée",,  50.594148,   4.334677,6110,,0
+Bnivath2,,"NIVELLES Athénée",,  50.593953,   4.334086,6110,,0
+Bnivbau1,,"NIVELLES Chemin de Baudémont",,  50.606601,   4.318952,6110,,0
+Bnivbau2,,"NIVELLES Chemin de Baudémont",,  50.605912,   4.318297,6110,,0
+Bnivbne1,,"BOIS DE NIVELLES Ecoles",,  50.570900,   4.349680,7161,,0
+Bnivbne2,,"BOIS DE NIVELLES Ecoles",,  50.570970,   4.349845,7161,,0
+Bnivbng1,,"BOIS DE NIVELLES Gare",,  50.565005,   4.355002,7161,,0
+Bnivbng2,,"BOIS DE NIVELLES Gare",,  50.564794,   4.355420,7161,,0
+Bnivbos1,,"NIVELLES Bosquet",,  50.581023,   4.356820,6110,,0
+Bnivbos2,,"NIVELLES Bosquet",,  50.581088,   4.356041,6110,,0
+Bnivche1,,"NIVELLES Rue du Chêne",,  50.603492,   4.340972,6110,,0
+Bnivche2,,"NIVELLES Rue du Chêne",,  50.603467,   4.340838,6110,,0
+Bnivchh1,,"NIVELLES Chaussée de Hal",,  50.612644,   4.320864,6110,,0
+Bnivchh2,,"NIVELLES Chaussée de Hal",,  50.612822,   4.321077,6110,,0
+Bnivcma1,,"NIVELLES Cité Maillebotte",,  50.599227,   4.343637,6110,,0
+Bnivcma2,,"NIVELLES Cité Maillebotte",,  50.599146,   4.343637,6110,,0
+Bnivcol1,,"NIVELLES Collège (Rue de Mons)",,  50.595021,   4.320184,6110,,0
+Bnivcol2,,"NIVELLES Collège (Fbg de Mons)",,  50.594596,   4.319491,6110,,0
+Bnivcol3,,"NIVELLES Collège (Bd de la Batterie)",,  50.594892,   4.319608,6110,,0
+Bnivcom1,,"NIVELLES Commerce",,  50.590098,   4.365043,6110,,0
+Bnivcom2,,"NIVELLES Commerce",,  50.590206,   4.365236,6110,,0
+Bniveco1,,"NIVELLES Ecole Enfant Jésus",,  50.604559,   4.325000,6110,,0
+Bnivfch1,,"NIVELLES Faubourg de Charleroi",,  50.594413,   4.326954,6110,,0
+Bnivfch2,,"NIVELLES Faubourg de Charleroi",,  50.594411,   4.327081,6110,,0
+Bnivfdu1,,"NIVELLES Ferme Dubois",,  50.601504,   4.395503,6136,,0
+Bnivfdu2,,"NIVELLES Ferme Dubois",,  50.601389,   4.395794,6136,,0
+Bnivfhu1,,"NIVELLES Ferme Huart",,  50.616855,   4.319892,6111,,0
+Bnivfhu2,,"NIVELLES Ferme Huart",,  50.616826,   4.320058,6111,,0
+Bnivfle1,,"NIVELLES Fleuriste",,  50.582746,   4.338200,6110,,0
+Bnivfle2,,"NIVELLES Fleuriste",,  50.582806,   4.338341,6110,,0
+Bnivfra1,,"NIVELLES France",,  50.616157,   4.324400,6111,,0
+Bnivfra2,,"NIVELLES France",,  50.616279,   4.324177,6111,,0
+Bnivfro1,,"NIVELLES Fief de Rognon",,  50.592959,   4.332533,6110,,0
+Bnivfro2,,"NIVELLES Fief de Rognon",,  50.593309,   4.332491,6110,,0
+Bnivga11,,"NIVELLES Gare - Quai 1",,  50.601047,   4.334725,6110,,0
+Bnivga21,,"NIVELLES Gare - Quai 2",,  50.600441,   4.334656,6110,,0
+Bnivga31,,"NIVELLES Gare - Quai 3",,  50.600369,   4.334801,6110,,0
+Bnivga41,,"NIVELLES Gare - Quai 4",,  50.600433,   4.334890,6110,,0
+Bnivga51,,"NIVELLES Gare - Quai 5",,  50.600244,   4.334904,6110,,0
+Bnivga61,,"NIVELLES Gare - Quai 6",,  50.600003,   4.334867,6110,,0
+Bnivga71,,"NIVELLES Gare - Quai 7",,  50.599779,   4.334812,6110,,0
+Bnivgam1,,"NIVELLES Chemin de Grambais",,  50.599324,   4.317171,6110,,0
+Bnivgam2,,"NIVELLES Chemin de Grambais",,  50.599361,   4.317284,6110,,0
+Bnivgen1,,"NIVELLES Gendarmerie",,  50.592097,   4.328206,6110,,0
+Bnivgen2,,"NIVELLES Gendarmerie",,  50.592134,   4.328319,6110,,0
+Bnivgpl2,,"NIVELLES Grand Place",,  50.597102,   4.323998,6110,,0
+Bnivgpl3,,"NIVELLES Grand Place",,  50.597119,   4.323706,6110,,0
+Bnivhon1,,"NIVELLES D'Hondt",,  50.595134,   4.366044,6110,,0
+Bnivhon2,,"NIVELLES D'Hondt",,  50.595032,   4.365986,6110,,0
+Bnivhôp1,,"NIVELLES Hôpital",,  50.596059,   4.318672,6110,,0
+Bnivhôp2,,"NIVELLES Hôpital",,  50.596093,   4.318282,6110,,0
+Bnivhut1,,"NIVELLES Chemin de Hututu",,  50.575212,   4.345748,7161,,0
+Bnivhut2,,"NIVELLES Chemin de Hututu",,  50.575906,   4.345359,7161,,0
+Bnivind1,,"NIVELLES Industrie",,  50.588334,   4.356694,6110,,0
+Bnivind2,,"NIVELLES Industrie",,  50.588710,   4.356710,6110,,0
+Bnivite2,,"NIVELLES Institut Technique",,  50.607237,   4.321777,6110,,0
+Bnivjli1,,"NIVELLES Joseph Luns",,  50.625691,   4.324229,6111,,0
+Bnivjli2,,"NIVELLES Joseph Luns",,  50.625532,   4.324307,6111,,0
+Bnivlab1,,"NIVELLES Laboratoire",,  50.580840,   4.363142,6110,,0
+Bnivlab2,,"NIVELLES Laboratoire",,  50.580677,   4.363276,6110,,0
+Bnivlai1,,"NIVELLES Laiterie",,  50.598519,   4.308268,6110,,0
+Bnivlai2,,"NIVELLES Laiterie",,  50.598445,   4.308320,6110,,0
+Bnivlbr1,,"NIVELLES Louis Braille",,  50.578641,   4.358413,6110,,0
+Bnivlde1,,"NIVELLES Rue L. Delvaux",,  50.601932,   4.328353,6110,,0
+Bnivlde2,,"NIVELLES Rue L. Delvaux",,  50.601826,   4.328009,6110,,0
+Bnivlpa1,,"NIVELLES Laid Patard",,  50.629689,   4.322581,6111,,0
+Bnivlpa2,,"NIVELLES Laid Patard",,  50.629655,   4.322772,6111,,0
+Bnivmat1,,"NIVELLES Maîtrise",,  50.582555,   4.358115,6110,,0
+Bnivmet1,,"NIVELLES Métallurgie",,  50.602565,   4.316875,6110,,0
+Bnivmet2,,"NIVELLES Métallurgie",,  50.602026,   4.317297,6110,,0
+Bnivmfr1,,"NIVELLES Monument Français",,  50.578574,   4.342691,7161,,0
+Bnivmfr2,,"NIVELLES Monument Français",,  50.578646,   4.342853,7161,,0
+Bnivmon1,,"NIVELLES Chemin de Monstreux",,  50.581682,   4.299515,6110,,0
+Bnivmon2,,"NIVELLES Chemin de Monstreux",,  50.581248,   4.299211,6110,,0
+Bnivpal1,,"NIVELLES Le Palais",,  50.597017,   4.375274,6110,,0
+Bnivpal2,,"NIVELLES Le Palais",,  50.597155,   4.375867,6110,,0
+Bnivpar1,,"NIVELLES Rue du Paradis",,  50.605888,   4.331667,6110,,0
+Bnivpba1,,"NIVELLES Petit Baulers",,  50.617667,   4.328541,6111,,0
+Bnivpba2,,"NIVELLES Petit Baulers",,  50.617497,   4.328286,6111,,0
+Bnivpeu1,,"NIVELLES Place de l'Euros",,  50.586708,   4.336133,6110,,0
+Bnivpeu2,,"NIVELLES Place de l'Euros",,  50.586627,   4.336143,6110,,0
+Bnivpgr1,,"NIVELLES Progrès",,  50.594476,   4.360448,6110,,0
+Bnivpgr2,,"NIVELLES Progrès",,  50.594566,   4.360479,6110,,0
+Bnivphm1,,"NIVELLES Pharmacie Militaire",,  50.598747,   4.353023,6110,,0
+Bnivphm2,,"NIVELLES Pharmacie Militaire",,  50.598589,   4.353081,6110,,0
+Bnivphs1,,"NIVELLES Paul-Henri Spaak",,  50.619087,   4.328480,6111,,0
+Bnivphs2,,"NIVELLES Paul-Henri Spaak",,  50.619205,   4.328319,6111,,0
+Bnivpla1,,"NIVELLES Place de Lalieux",,  50.598779,   4.327474,6110,,0
+Bnivpla2,,"NIVELLES Place de Lalieux",,  50.598825,   4.327579,6110,,0
+Bnivplt1,,"NIVELLES La Palette",,  50.586348,   4.316070,6110,,0
+Bnivplt2,,"NIVELLES La Palette",,  50.586332,   4.315902,6110,,0
+Bnivpri1,,"NIVELLES Allée des Primevères",,  50.603179,   4.349923,6110,,0
+Bnivpri2,,"NIVELLES Allée des Primevères",,  50.603295,   4.349914,6110,,0
+Bnivpro1,,"NIVELLES Route de Petit-Roeulx",,  50.590655,   4.314720,6110,,0
+Bnivpro2,,"NIVELLES Route de Petit-Roeulx",,  50.590017,   4.314031,6110,,0
+Bnivpso1,,"NIVELLES Place du Souvenir",,  50.595345,   4.327967,6110,,0
+Bnivpso2,,"NIVELLES Place du Souvenir",,  50.595676,   4.326906,6110,,0
+Bnivpve1,,"NIVELLES Panier Vert",,  50.595493,   4.311880,6110,,0
+Bnivpve2,,"NIVELLES Panier Vert",,  50.595577,   4.312158,6110,,0
+Bnivrec1,,"NIVELLES Recherche",,  50.585920,   4.355771,6110,,0
+Bnivrec2,,"NIVELLES Recherche",,  50.586222,   4.355742,6110,,0
+Bnivros1,,"NIVELLES Allée des Roses",,  50.600700,   4.348150,6110,,0
+Bnivros2,,"NIVELLES Allée des Roses",,  50.600624,   4.348104,6110,,0
+Bnivrsa1,,"NIVELLES Résidence Samiette",,  50.595497,   4.314802,6110,,0
+Bnivrsa2,,"NIVELLES Résidence Samiette",,  50.595430,   4.314945,6110,,0
+Bnivrsh1,,"NIVELLES Robert Schuman",,  50.621917,   4.325154,6111,,0
+Bnivrsh2,,"NIVELLES Robert Schuman",,  50.621670,   4.325376,6111,,0
+Bnivrwi1,,"NIVELLES Rue Willame",,  50.600873,   4.335579,6110,,0
+Bnivrwi2,,"NIVELLES Rue Willame",,  50.600907,   4.335696,6110,,0
+Bnivsba1,,"NIVELLES Sainte-Barbe",,  50.592034,   4.312753,6110,,0
+Bnivsba2,,"NIVELLES Sainte-Barbe",,  50.591718,   4.313149,6110,,0
+Bnivsci1,,"NIVELLES Science",,  50.582026,   4.354202,6110,,0
+Bnivsci2,,"NIVELLES Science",,  50.582046,   4.354109,6110,,0
+Bnivsho1,,"NIVELLES Shopping",,  50.588801,   4.310405,6110,,0
+Bnivsho2,,"NIVELLES Shopping",,  50.588421,   4.309900,6110,,0
+Bnivsnu1,,"NIVELLES Square des Nations-Unies",,  50.601399,   4.345077,6110,,0
+Bnivsnu2,,"NIVELLES Square des Nations-Unies",,  50.601627,   4.344104,6110,,0
+Bnivsoi1,,"NIVELLES Rue de Soignies",,  50.597257,   4.320032,6110,,0
+Bnivsoi2,,"NIVELLES Rue de Soignies",,  50.597204,   4.320219,6110,,0
+Bnivspi1,,"NIVELLES Chemin Saint-Pierre",,  50.608125,   4.320675,6110,,0
+Bnivspi2,,"NIVELLES Chemin Saint-Pierre",,  50.608533,   4.321053,6110,,0
+Bnivsse1,,"NIVELLES Saint-Sépulcre",,  50.601131,   4.331553,6110,,0
+Bnivsto1,,"NIVELLES Chemin de Stoisy",,  50.588485,   4.331841,6110,,0
+Bnivsto2,,"NIVELLES Chemin de Stoisy",,  50.588529,   4.331947,6110,,0
+Bnivthe1,,"NIVELLES Thomas Edison",,  50.577167,   4.360297,6110,,0
+Bnivtra1,,"NIVELLES Travail",,  50.591015,   4.357734,6110,,0
+Bnivtra2,,"NIVELLES Travail",,  50.591029,   4.357609,6110,,0
+Bnivvco2,,"NIVELLES Chemin Vieille Cour",,  50.581943,   4.360120,6110,,0
+Bnivvcw1,,"NIVELLES Vieux Chemin de Wavre",,  50.600239,   4.352803,6110,,0
+Bnivvcw2,,"NIVELLES Vieux Chemin de Wavre",,  50.600356,   4.352870,6110,,0
+Bnivver1,,"NIVELLES Vert Chemin",,  50.589043,   4.336142,6110,,0
+Bnivver2,,"NIVELLES Vert Chemin",,  50.589072,   4.336262,6110,,0
+Bnivvri1,,"NIVELLES Val Riant",,  50.599150,   4.347876,6110,,0
+Bnivvri2,,"NIVELLES Val Riant",,  50.599080,   4.347306,6110,,0
+Bnivzep1,,"NIVELLES Rue de Zéphyr",,  50.588243,   4.333803,6110,,0
+Bnivzep2,,"NIVELLES Rue de Zéphyr",,  50.588273,   4.333922,6110,,0
+Bnivzon1,,"NIVELLES Zoning Nord",,  50.625224,   4.322596,6111,,0
+Bnivzon2,,"NIVELLES Zoning Nord",,  50.625204,   4.322861,6111,,0
+Bnodblt1,,"NODUWEZ Bois Larges Tailles",,  50.736157,   4.959463,6442,,0
+Bnodblt2,,"NODUWEZ Bois Larges Tailles",,  50.736195,   4.959622,6442,,0
+Bnodcab1,,"NODUWEZ Cabine",,  50.733070,   4.963695,6442,,0
+Bnodcab2,,"NODUWEZ Cabine",,  50.732702,   4.963916,6442,,0
+Bnodeco1,,"NODUWEZ Ecoles",,  50.729306,   4.967142,6442,,0
+Bnodeco2,,"NODUWEZ Ecoles",,  50.729379,   4.967310,6442,,0
+Bnodegl1,,"NODUWEZ Eglise",,  50.729806,   4.963641,6442,,0
+Bnodegl2,,"NODUWEZ Eglise",,  50.729884,   4.963787,6442,,0
+Bnodlce1,,"LIBERTANGE Centre",,  50.731711,   4.986981,6442,,0
+Bnodlce2,,"LIBERTANGE Centre",,  50.731745,   4.986654,6442,,0
+Bnodtir1,,"NODUWEZ Rue de Tirlemont (Rue Tumulus)",,  50.730926,   4.969078,6442,,0
+Bnodtir2,,"NODUWEZ Rue de Tirlemont (Rue Tumulus)",,  50.730964,   4.968949,6442,,0
+Bnodtir4,,"NODUWEZ Rue de Tirlemont",,  50.731583,   4.968158,6442,,0
+Bnstgar1,,"NAAST Station",,  50.553005,   4.103994,3258,,0
+Bnstgar2,,"NAAST Station",,  50.553113,   4.103994,3258,,0
+Bnstlna1,,"NAAST Limite de Naast",,  50.555036,   4.127899,3258,,0
+Bnstlna2,,"NAAST Limite de Naast",,  50.555196,   4.127935,3258,,0
+Bnstmig1,,"NAAST Chemin de Mignault",,  50.552095,   4.112654,3258,,0
+Bnstmig2,,"NAAST Chemin de Mignault",,  50.552213,   4.112546,3258,,0
+Bnstpla1,,"NAAST Place",,  50.553750,   4.100611,3258,,0
+Bnstpla2,,"NAAST Place",,  50.553994,   4.100234,3258,,0
+Bnstver1,,"NAAST Rue Verte",,  50.552989,   4.120175,3258,,0
+Bnstver2,,"NAAST Rue Verte",,  50.553104,   4.120032,3258,,0
+Bnvmfba1,,"NOVILLE-SUR-MEHAIGNE Ferme de la Baccusse",,  50.619004,   4.882352,6333,,0
+Bnvmfba2,,"NOVILLE-SUR-MEHAIGNE Ferme de la Baccusse",,  50.618920,   4.882167,6333,,0
+Bobacar2,,"ROSSEIGNIES Carrefour",,  50.543605,   4.324103,7141,,0
+Bobacar3,,"ROSSEIGNIES Carrefour",,  50.543640,   4.324329,7141,,0
+Bobacou1,,"OBAIX Couturelles",,  50.529649,   4.357137,7161,,0
+Bobacou2,,"OBAIX Couturelles",,  50.529495,   4.357222,7161,,0
+Boffegl1,,"RAMILLIES Eglise",,  50.636731,   4.914784,6427,,0
+Boffegl2,,"RAMILLIES Eglise",,  50.636632,   4.914673,6427,,0
+Bohnbra1,,"OHAIN Basse Ransbèche",,  50.708627,   4.439686,6245,,0
+Bohnbra2,,"OHAIN Basse Ransbèche",,  50.708335,   4.439485,6245,,0
+Bohncha1,,"OHAIN Chemin de Chaubrire",,  50.700871,   4.480710,6245,,0
+Bohncha2,,"OHAIN Chemin de Chaubrire",,  50.700802,   4.480517,6245,,0
+Bohnegl1,,"ARGENTEUIL Eglise",,  50.714624,   4.445798,6245,,0
+Bohnegl2,,"ARGENTEUIL Eglise",,  50.713993,   4.444970,6245,,0
+Bohngai1,,"OHAIN Gaillemarde",,  50.715325,   4.447935,6245,,0
+Bohngai2,,"OHAIN Gaillemarde",,  50.715851,   4.449271,6245,,0
+Bohngen1,,"OHAIN Route de Genval",,  50.708357,   4.476683,6245,,0
+Bohngen2,,"OHAIN Route de Genval",,  50.708463,   4.477435,6245,,0
+Bohnhan1,,"OHAIN Hannonsart",,  50.721575,   4.461635,6245,,0
+Bohnhan2,,"OHAIN Hannonsart",,  50.721179,   4.461099,6245,,0
+Bohnman1,,"OHAIN Manhattan",,  50.705388,   4.471943,6245,,0
+Bohnman2,,"OHAIN Manhattan",,  50.705332,   4.472089,6245,,0
+Bohnmes1,,"OHAIN Messager (Rte de Genval)",,  50.701992,   4.466998,6245,,0
+Bohnmes2,,"OHAIN Messager (Rte de Genval)",,  50.701965,   4.467322,6245,,0
+Bohnmes3,,"OHAIN Messager (Rue du Try Bara)",,  50.701153,   4.467263,6245,,0
+Bohnmes4,,"OHAIN Messager (Rue du Try Bara)",,  50.701023,   4.467187,6245,,0
+Bohnmon1,,"OHAIN Monument",,  50.702640,   4.455727,6245,,0
+Bohnmon2,,"OHAIN Monument",,  50.702723,   4.453765,6245,,0
+Bohnpla1,,"OHAIN Place Communale",,  50.697829,   4.470890,6245,,0
+Bohnpla2,,"OHAIN Place Communale",,  50.697536,   4.470990,6245,,0
+Bohnr731,,"OHAIN Route de Rénipont n°73",,  50.699859,   4.488897,6245,,0
+Bohnr732,,"OHAIN Route de Rénipont n°73",,  50.699812,   4.487650,6245,,0
+Bohnrph1,,"OHAIN R.J Philippe",,  50.718572,   4.457282,6245,,0
+Bohnrph2,,"OHAIN R.J Philippe",,  50.718466,   4.457391,6245,,0
+Bohnrpl1,,"RANSBECK Place",,  50.704294,   4.439620,6245,,0
+Bohnrpl2,,"RANSBECK Place",,  50.703481,   4.440412,6245,,0
+Bohnrsc1,,"RANSBECK Square du Coq",,  50.706493,   4.435447,6245,,0
+Bohnrsc2,,"RANSBECK Square du Coq",,  50.706388,   4.435557,6245,,0
+Bolgcsa1,,"ORP-LE-GRAND Chapelle Sainte-Adèle",,  50.700515,   4.981934,6428,,0
+Bolgcsa2,,"ORP-LE-GRAND Chapelle Sainte-Adèle",,  50.700402,   4.982036,6428,,0
+Bolgegl1,,"ORP-LE-GRAND Eglise (Pl. 11è Dragons Français)",,  50.703657,   4.990657,6428,,0
+Bolgegl2,,"ORP-LE-GRAND Eglise (Pl. 11è Dragons Français)",,  50.703845,   4.990649,6428,,0
+Bolgegl4,,"ORP-LE-GRAND Eglise (Rue Ovart)",,  50.703843,   4.990886,6428,,0
+Bolgeva1,,"ORP-LE-GRAND Rue Emile Vandervelde",,  50.707211,   4.992583,6428,,0
+Bolgeva2,,"ORP-LE-GRAND Rue Emile Vandervelde",,  50.707741,   4.992834,6428,,0
+Bolgfon1,,"ORP-LE-GRAND Rue de Fontigny",,  50.702641,   4.994945,6428,,0
+Bolgfon2,,"ORP-LE-GRAND Rue de Fontigny",,  50.702722,   4.995148,6428,,0
+Bolggar1,,"ORP-LE-GRAND Gare",,  50.697953,   4.988007,6428,,0
+Bolggar2,,"ORP-LE-GRAND Gare",,  50.697732,   4.987638,6428,,0
+Bolgmpl1,,"MARET Place",,  50.714632,   4.994916,6428,,0
+Bolgrga1,,"ORP-LE-GRAND Route de la Gare",,  50.713268,   4.997291,6428,,0
+Bolgrga2,,"ORP-LE-GRAND Route de la Gare",,  50.713191,   4.996968,6428,,0
+Bolgrsa1,,"ORP-LE-GRAND Gare (Ste-Adèle)",,  50.698876,   4.987516,6428,,0
+Bolgrsa2,,"ORP-LE-GRAND Gare (Ste-Adèle)",,  50.698956,   4.987740,6428,,0
+Bolgsha1,,"ORP-LE-GRAND Rue Soldat Haccourt",,  50.701109,   4.989330,6428,,0
+Bolgsha2,,"ORP-LE-GRAND Rue Soldat Haccourt",,  50.701058,   4.989134,6428,,0
+Bolphgr1,,"ORP-LE-PETIT Rue Henri Grenier",,  50.689730,   4.976901,6428,,0

@@ -57,7 +57,7 @@ const AddAnnouncementPage = () => {
     <div className="flex flex-grow flex-col p-3">
       <Toaster theme="dark" richColors position="top-center" expand />
 
-      <Title title="Announces" />
+      <Title title="Annonces" />
       <Splide
         ref={splideRef}
         options={splideOptions}

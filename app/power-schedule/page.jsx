@@ -76,7 +76,7 @@ const Page = () => {
 
   return (
     <div className="p-8">
-      <Title title="Horraire d'arrêt" />
+      <Title title="Horaire d'arrêt" />
 
       {/* Affichage des horaires actuels dans la base de données */}
       <div className="p-4">

@@ -59,7 +59,7 @@ const Announce = () => {
 
   return (
     <div className="flex flex-col flex-grow">
-      <Title title="Announcements" />
+      <Title title="Annonces" />
       <Splide
         ref={splideRef}
         options={splideOptions}

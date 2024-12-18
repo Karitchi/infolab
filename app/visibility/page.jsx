@@ -145,7 +145,7 @@ const VisibilityPage = () => {
 
   return (
     <div className="p-8 flex flex-col  min-h-screen text-white">
-      <h1 className="text-3xl font-bold mb-6">Gestion de Visibilité</h1>
+      <h1 className="text-3xl font-bold mb-6">Gestion de la Visibilité</h1>
 
       <DndContext
         sensors={sensors}

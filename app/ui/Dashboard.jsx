@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Title from "./Title";
 
 // Fonction pour obtenir l'icône appropriée (inchangée)
 const getWeatherIcon = ({
@@ -190,229 +191,199 @@ const Dashboard = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "90vh" }}>
+    <div className="flex flex-col flex-grow">
       {/* Section Extérieur */}
-      <section
+      <Title title="Extérieur" />
+      <div
         style={{
-          flex: 1,
-          color: "#FFF",
-          padding: "20px",
-          boxSizing: "border-box",
+          display: "flex",
+          gap: "10px",
+          justifyContent: "center",
+          alignItems: "stretch",
+          height: "80%",
         }}
       >
-        <h2
-          style={{ marginBottom: "40px", textAlign: "left", fontSize: "52px" }}
-        >
-          Extérieur
-        </h2>
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-            justifyContent: "center",
-            alignItems: "stretch",
-            height: "80%",
-          }}
-        >
-          {weatherData.map((item, index) => (
-            <div
-              key={index}
-              style={{
-                flex: index === 0 ? "2" : "1",
-                textAlign: "center",
-                backgroundColor: "#273c55",
-                color: "#FFF",
-                borderRadius: "10px",
-                padding: "10px",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                height: "100%",
-              }}
-            >
-              <p style={{ marginTop: 20, fontSize: "60px" }}>
-                {item.time.toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}
-              </p>
-              <img
-                src={
-                  item.temperature !== null
-                    ? getWeatherIcon(item)
-                    : "/icons/default.png"
-                }
-                alt="weather icon"
-                style={{ width: "150px", height: "150px", margin: "0 auto" }}
-              />
-              <p style={{ marginBottom: 20, fontSize: "60px" }}>
-                {item.temperature !== null ? `${item.temperature} °C` : "N/A"}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+        {weatherData.map((item, index) => (
+          <div
+            key={index}
+            style={{
+              flex: index === 0 ? "2" : "1",
+              textAlign: "center",
+              backgroundColor: "#273c55",
+              color: "#FFF",
+              borderRadius: "10px",
+              padding: "10px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: "100%",
+            }}
+          >
+            <p style={{ marginTop: 20, fontSize: "60px" }}>
+              {item.time.toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </p>
+            <img
+              src={
+                item.temperature !== null
+                  ? getWeatherIcon(item)
+                  : "/icons/default.png"
+              }
+              alt="weather icon"
+              style={{ width: "150px", height: "150px", margin: "0 auto" }}
+            />
+            <p style={{ marginBottom: 20, fontSize: "60px" }}>
+              {item.temperature !== null ? `${item.temperature} °C` : "N/A"}
+            </p>
+          </div>
+        ))}
+      </div>
 
       {/* Section Intérieur */}
-      <section
+      <Title title="Intérieur" />
+
+      <div
         style={{
-          flex: 1,
-          color: "#FFF",
-          padding: "20px",
-          boxSizing: "border-box",
+          display: "flex",
+          gap: "10px",
+          justifyContent: "center",
+          alignItems: "stretch",
+          height: "90%",
         }}
       >
-        <h2
-          style={{
-            marginTop: "20px",
-            marginBottom: "40px",
-            textAlign: "left",
-            fontSize: "52px",
-          }}
-        >
-          Intérieur
-        </h2>
         <div
           style={{
+            flex: "1",
+            textAlign: "left",
+            backgroundColor: "#273c55",
+            color: "#FFF",
+            borderRadius: "10px",
+            padding: "20px",
             display: "flex",
-            gap: "10px",
-            justifyContent: "center",
-            alignItems: "stretch",
+            flexDirection: "column",
+            justifyContent: "space-between",
             height: "90%",
           }}
         >
-          <div
+          <h3 style={{ marginBottom: "auto" }}>Température</h3>
+          <p
             style={{
-              flex: "1",
-              textAlign: "left",
-              backgroundColor: "#273c55",
-              color: "#FFF",
-              borderRadius: "10px",
-              padding: "20px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "90%",
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              fontSize: "100px",
             }}
           >
-            <h3 style={{ marginBottom: "auto" }}>Température</h3>
-            <p
-              style={{
-                alignSelf: "center",
-                marginTop: "auto",
-                marginBottom: "auto",
-                fontSize: "100px",
-              }}
-            >
-              {dhtData.temperature || "N/A"} °C
-            </p>
-          </div>
-          <div
-            style={{
-              flex: "1",
-              textAlign: "left",
-              backgroundColor: "#273c55",
-              color: "#FFF",
-              borderRadius: "10px",
-              padding: "20px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "90%",
-            }}
-          >
-            <h3 style={{ marginBottom: "auto" }}>Humidité</h3>
-            <p
-              style={{
-                alignSelf: "center",
-                marginTop: "auto",
-                marginBottom: "auto",
-                fontSize: "100px",
-              }}
-            >
-              {dhtData.humidity || "N/A"} %
-            </p>
-          </div>
-          <div
-            style={{
-              flex: "1",
-              textAlign: "left",
-              backgroundColor: "#273c55",
-              color: "#FFF",
-              borderRadius: "10px",
-              padding: "20px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "90%",
-            }}
-          >
-            <h3 style={{ marginBottom: "auto" }}>Carbon Monoxide</h3>
-            <p
-              style={{
-                alignSelf: "center",
-                marginTop: "auto",
-                marginBottom: "auto",
-                fontSize: "90px",
-              }}
-            >
-              {mq7Data.ppm || "N/A"} ppm
-            </p>
-          </div>
-          <div
-            style={{
-              flex: "1",
-              textAlign: "left",
-              backgroundColor: "#273c55",
-              color: "#FFF",
-              borderRadius: "10px",
-              padding: "20px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "90%",
-            }}
-          >
-            <h3 style={{ marginBottom: "auto" }}>Son de la salle avant</h3>
-            <p
-              style={{
-                alignSelf: "center",
-                marginTop: "auto",
-                marginBottom: "auto",
-                fontSize: "100px",
-              }}
-            >
-              {max4466FrontData.decibels || "N/A"} dB
-            </p>
-          </div>
-          <div
-            style={{
-              flex: "1",
-              textAlign: "left",
-              backgroundColor: "#273c55",
-              color: "#FFF",
-              borderRadius: "10px",
-              padding: "20px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "90%",
-            }}
-          >
-            <h3 style={{ marginBottom: "auto" }}>Son de la salle arrière</h3>
-            <p
-              style={{
-                alignSelf: "center",
-                marginTop: "auto",
-                marginBottom: "auto",
-                fontSize: "100px",
-              }}
-            >
-              {max4466BackData.decibels || "N/A"} dB
-            </p>
-          </div>
+            {dhtData.temperature || "N/A"} °C
+          </p>
         </div>
-      </section>
+        <div
+          style={{
+            flex: "1",
+            textAlign: "left",
+            backgroundColor: "#273c55",
+            color: "#FFF",
+            borderRadius: "10px",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "90%",
+          }}
+        >
+          <h3 style={{ marginBottom: "auto" }}>Humidité</h3>
+          <p
+            style={{
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              fontSize: "100px",
+            }}
+          >
+            {dhtData.humidity || "N/A"} %
+          </p>
+        </div>
+        <div
+          style={{
+            flex: "1",
+            textAlign: "left",
+            backgroundColor: "#273c55",
+            color: "#FFF",
+            borderRadius: "10px",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "90%",
+          }}
+        >
+          <h3 style={{ marginBottom: "auto" }}>Carbon Monoxide</h3>
+          <p
+            style={{
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              fontSize: "90px",
+            }}
+          >
+            {mq7Data.ppm || "N/A"} ppm
+          </p>
+        </div>
+        <div
+          style={{
+            flex: "1",
+            textAlign: "left",
+            backgroundColor: "#273c55",
+            color: "#FFF",
+            borderRadius: "10px",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "90%",
+          }}
+        >
+          <h3 style={{ marginBottom: "auto" }}>Son de la salle avant</h3>
+          <p
+            style={{
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              fontSize: "100px",
+            }}
+          >
+            {max4466FrontData.decibels || "N/A"} dB
+          </p>
+        </div>
+        <div
+          style={{
+            flex: "1",
+            textAlign: "left",
+            backgroundColor: "#273c55",
+            color: "#FFF",
+            borderRadius: "10px",
+            padding: "20px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "90%",
+          }}
+        >
+          <h3 style={{ marginBottom: "auto" }}>Son de la salle arrière</h3>
+          <p
+            style={{
+              alignSelf: "center",
+              marginTop: "auto",
+              marginBottom: "auto",
+              fontSize: "100px",
+            }}
+          >
+            {max4466BackData.decibels || "N/A"} dB
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

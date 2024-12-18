@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Title from "./Title";
 
 export default function Home() {
   const [trains, setTrains] = useState([]);
@@ -27,7 +28,10 @@ export default function Home() {
     // Requête pour les horaires des trains
     fetch(`/api/train-schedule?station_id=BE.NMBS.008811676`)
       .then((response) => {
-        if (!response.ok) throw new Error("Erreur lors de la récupération des horaires des trains");
+        if (!response.ok)
+          throw new Error(
+            "Erreur lors de la récupération des horaires des trains"
+          );
         return response.json();
       })
       .then((data) => {
@@ -42,7 +46,10 @@ export default function Home() {
     // Requête pour les horaires des bus
     fetch(`/api/bus-schedule`)
       .then((response) => {
-        if (!response.ok) throw new Error("Erreur lors de la récupération des horaires des bus");
+        if (!response.ok)
+          throw new Error(
+            "Erreur lors de la récupération des horaires des bus"
+          );
         return response.json();
       })
       .then((data) => {
@@ -56,9 +63,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-transparent min-h-screen text-white p-8">
+    <div className="bg-transparent flex flex-grow flex-col text-white">
       {/* Titre principal */}
-      <h1 className="text-5xl font-bold mb-8 text-left">Depart</h1>
+      <Title title="Départ" />
 
       {/* Conteneur des deux colonnes */}
       <div className="flex flex-col md:flex-row justify-between gap-8">
@@ -73,7 +80,9 @@ export default function Home() {
           </div>
           <div>
             {loadingTrains ? (
-              <p className="text-center">Chargement des horaires des trains...</p>
+              <p className="text-center">
+                Chargement des horaires des trains...
+              </p>
             ) : errorTrains ? (
               <p className="text-center">{errorTrains}</p>
             ) : (

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const stationId = searchParams.get("station_id") || "BE.NMBS.008814001"; // Exemple : Bruxelles-Midi
+  const stationId = searchParams.get("station_id") || "BE.NMBS.008811676"; // Exemple : Gare LLN
   const apiUrl = `https://api.irail.be/liveboard/?id=${stationId}&format=json&arrdep=departure`;
 
   try {
@@ -10,14 +10,11 @@ export async function GET(request) {
     const data = await response.json();
 
     if (!data.departures || !data.departures.departure) {
-      return NextResponse.json(
-        { message: "Aucun départ trouvé." },
-        { status: 404 },
-      );
+      return NextResponse.json({ message: "Aucun départ trouvé." }, { status: 404 });
     }
 
     // Limiter aux 3 prochains départs
-    const nextTrains = data.departures.departure.slice(0, 3).map((train) => ({
+    const nextTrains = data.departures.departure.slice(0, 4).map((train) => ({
       destination: train.station,
       departureTime: new Date(train.time * 1000).toLocaleTimeString(),
       platform: train.platform,
@@ -29,7 +26,7 @@ export async function GET(request) {
     console.error("Erreur lors de la récupération des horaires:", error);
     return NextResponse.json(
       { message: "Erreur lors de la récupération des horaires." },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }
